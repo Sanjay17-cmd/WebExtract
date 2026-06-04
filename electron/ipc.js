@@ -1,8 +1,10 @@
 const fs = require("fs");
 const path = require("path");
-const { ipcMain } = require("electron");
+const { ipcMain, session } = require("electron");
 const { pool } = require("../storage/postgres");
 const { takeFullPageScreenshot } = require("../capture/playwrightCapture");
+const { createVisualDiff } = require("../capture/visualDiff");
+const { getElectronCookies } = require("../capture/sessionExport");
 
 // ========================================
 // SAVE CAPTURE
@@ -71,11 +73,18 @@ ipcMain.handle("save-capture", async (event, captureData) => {
 
     `);
 
+const cookies =
+    await getElectronCookies(
+        captureData.url
+    );
+
 await takeFullPageScreenshot(
 
     captureData.url,
 
-    screenshotPath
+    screenshotPath,
+
+    cookies
 );
 
         const query = `
@@ -220,3 +229,138 @@ ipcMain.handle("get-capture-details", async (event, captureId) => {
         };
     }
 });
+ipcMain.handle(
+
+    "generate-visual-diff",
+
+    async (
+
+        event,
+
+        captureAId,
+
+        captureBId
+
+    ) => {
+
+        try {
+
+            const resultA =
+                await pool.query(
+
+                    `
+
+                    SELECT *
+
+                    FROM captures
+
+                    WHERE id = $1
+
+                    `,
+
+                    [captureAId]
+                );
+
+            const resultB =
+                await pool.query(
+
+                    `
+
+                    SELECT *
+
+                    FROM captures
+
+                    WHERE id = $1
+
+                    `,
+
+                    [captureBId]
+                );
+
+            if (
+
+                resultA.rows.length === 0 ||
+
+                resultB.rows.length === 0
+
+            ) {
+
+                return {
+
+                    success: false
+                };
+            }
+
+            const captureA =
+                resultA.rows[0];
+
+            const captureB =
+                resultB.rows[0];
+
+            const diffPath =
+                path.join(
+
+                    process.cwd(),
+
+                    "data",
+
+                    "visualdiff",
+
+                    `${captureAId}_${captureBId}.png`
+                );
+
+            fs.mkdirSync(
+
+                path.dirname(
+                    diffPath
+                ),
+
+                {
+
+                    recursive:
+                        true
+                }
+            );
+
+            const result =
+                await createVisualDiff(
+
+                    captureA
+                    .screenshot_path,
+
+                    captureB
+                    .screenshot_path,
+
+                    diffPath
+                );
+
+            return {
+
+                success: true,
+
+                diffPath,
+
+                changedPixels:
+                    result.changedPixels
+            };
+
+        } catch (
+
+            err
+
+        ) {
+
+            console.error(
+                err
+            );
+
+            return {
+
+                success: false,
+
+                error:
+                    err.message
+            };
+        }
+    }
+);

@@ -10,6 +10,9 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "monaco-editor": "^0.53.0",
+    "pixelmatch": "^7.2.0",
+    "pngjs": "^7.0.0",
     "react": "^19.2.6",
     "react-dom": "^19.2.6"
   },

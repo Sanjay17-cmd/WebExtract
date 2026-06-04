@@ -1,0 +1,820 @@
+{
+  "buttons": [
+    {
+      "text": "Skip to main content",
+      "id": "",
+      "className": "d8302f36 _1d064af0 _55225a01 d58e9fb6 cd9492d6 _8580a031 _1fda22c9 _816a94f4 _7d12cdae f8edf3c8 _09bef42f _4ada97fd c0ab5576",
+      "type": "button"
+    },
+    {
+      "text": "Skip to sidebar",
+      "id": "",
+      "className": "d8302f36 _1d064af0 _55225a01 d58e9fb6 cd9492d6 _8580a031 _1fda22c9 _816a94f4 _7d12cdae f8edf3c8 _09bef42f _4ada97fd c0ab5576",
+      "type": "button"
+    },
+    {
+      "text": "Skip to primary content",
+      "id": "",
+      "className": "d8302f36 _1d064af0 _55225a01 d58e9fb6 cd9492d6 _8580a031 _1fda22c9 _816a94f4 _7d12cdae f8edf3c8 _09bef42f _4ada97fd c0ab5576",
+      "type": "button"
+    },
+    {
+      "text": "Skip to footer",
+      "id": "",
+      "className": "d8302f36 _1d064af0 _55225a01 d58e9fb6 cd9492d6 _8580a031 _1fda22c9 _816a94f4 _7d12cdae f8edf3c8 _09bef42f _4ada97fd c0ab5576",
+      "type": "button"
+    },
+    {
+      "text": "",
+      "id": "",
+      "className": "d8302f36 _1d064af0 _55225a01 d58e9fb6 cd9492d6 _8580a031 _1fda22c9 _816a94f4 _7d12cdae f8edf3c8 _09bef42f _4ada97fd c0ab5576",
+      "type": "button"
+    },
+    {
+      "text": "Home",
+      "id": "",
+      "className": "_40f57a02 b6c529e0 _4ada97fd _55225a01 d58e9fb6 _278f7db9 _89c2f049 _93c620e2 _7009cb85 _8580a031 _65d7d88a d3269aa5 _41e8deac _372efd98 c0ab5576 _6a9e41e5 _1fda22c9 _5637d532 ac483480",
+      "type": "submit"
+    },
+    {
+      "text": "Me",
+      "id": "",
+      "className": "_40f57a02 b6c529e0 _4ada97fd _55225a01 d58e9fb6 _278f7db9 _89c2f049 _93c620e2 _7009cb85 _8580a031 _65d7d88a d3269aa5 _41e8deac _372efd98 c0ab5576 _6a9e41e5 _1fda22c9 _5637d532",
+      "type": "submit"
+    },
+    {
+      "text": "For Business",
+      "id": "",
+      "className": "_40f57a02 b6c529e0 _4ada97fd _55225a01 d58e9fb6 _278f7db9 _89c2f049 _93c620e2 _7009cb85 _8580a031 _65d7d88a d3269aa5 _41e8deac _372efd98 c0ab5576 _6a9e41e5 _1fda22c9 _5637d532",
+      "type": "submit"
+    },
+    {
+      "text": "New posts",
+      "id": "",
+      "className": "d8302f36 _1d064af0 _55225a01 d58e9fb6 cd9492d6 _8580a031 _1fda22c9 ad5e986f _7d12cdae f8edf3c8 _09bef42f _4ada97fd c0ab5576 e10c0555 _4800ceb7",
+      "type": "button"
+    },
+    {
+      "text": "",
+      "id": "",
+      "className": "d8302f36 _1d064af0 _55225a01 d58e9fb6 cd9492d6 _8580a031 _1fda22c9 ad5e986f _7d12cdae f8edf3c8 _09bef42f _4ada97fd c0ab5576 _81fc7b22 a97baebc _16271874 _1ca5ef29",
+      "type": "button"
+    },
+    {
+      "text": "",
+      "id": "",
+      "className": "d8302f36 _1d064af0 _55225a01 d58e9fb6 cd9492d6 _8580a031 _1fda22c9 ad5e986f _7d12cdae f8edf3c8 _09bef42f _4ada97fd c0ab5576 _81fc7b22 _708d2a09 a97baebc _16271874 _1ca5ef29",
+      "type": "button"
+    },
+    {
+      "text": "Follow",
+      "id": "",
+      "className": "d8302f36 _1d064af0 _55225a01 d58e9fb6 cd9492d6 _8580a031 _1fda22c9 _69c21ffa _7d12cdae f8edf3c8 _09bef42f _4ada97fd c0ab5576",
+      "type": "button"
+    },
+    {
+      "text": "… more",
+      "id": "",
+      "className": "_943aac44 _605a09b0 c0a3d984 fa126f85 _28661309 d5edaec6 _31996400 _53e43071 e2d79070 _05044237 _55225a01 _7a8e807e _908d2835 _35cba81d eceefec5",
+      "type": "button"
+    },
+    {
+      "text": "",
+      "id": "",
+      "className": "d8302f36 _1d064af0 _55225a01 d58e9fb6 cd9492d6 _8580a031 _1fda22c9 _69c21ffa _7d12cdae f8edf3c8 _09bef42f _4ada97fd c0ab5576 _4427af63 _0bae84b7 f182230f _445cd6d4 _19bc4d18 _4800ceb7",
+      "type": "button"
+    },
+    {
+      "text": "Like",
+      "id": "",
+      "className": "d8302f36 _1d064af0 _55225a01 d58e9fb6 cd9492d6 _8580a031 _1fda22c9 ad5e986f _7d12cdae f8edf3c8 _09bef42f _4ada97fd c0ab5576",
+      "type": "button"
+    },
+    {
+      "text": "",
+      "id": "",
+      "className": "d8302f36 _1d064af0 _55225a01 d58e9fb6 cd9492d6 _8580a031 _1fda22c9 _4f939c5a e67cbcd3 d5edaec6 _31996400 _53e43071 e2d79070 _539e111d aac04710 e924ae76",
+      "type": "button"
+    },
+    {
+      "text": "Comment",
+      "id": "",
+      "className": "d8302f36 _1d064af0 _55225a01 d58e9fb6 cd9492d6 _8580a031 _1fda22c9 _69c21ffa _7d12cdae f8edf3c8 _09bef42f _4ada97fd c0ab5576",
+      "type": "button"
+    },
+    {
+      "text": "Repost",
+      "id": "",
+      "className": "d8302f36 _1d064af0 _55225a01 d58e9fb6 cd9492d6 _8580a031 _1fda22c9 _69c21ffa _7d12cdae f8edf3c8 _09bef42f _4ada97fd c0ab5576",
+      "type": "button"
+    },
+    {
+      "text": "",
+      "id": "",
+      "className": "d8302f36 _1d064af0 _55225a01 d58e9fb6 cd9492d6 _8580a031 _1fda22c9 ad5e986f _7d12cdae f8edf3c8 _09bef42f _4ada97fd c0ab5576 ec4aba1e _81d782c1 _708d2a09 a97baebc _16271874 _1ca5ef29",
+      "type": "button"
+    },
+    {
+      "text": "… more",
+      "id": "",
+      "className": "_943aac44 _605a09b0 c0a3d984 fa126f85 _28661309 d5edaec6 _31996400 _53e43071 e2d79070 _05044237 _55225a01 _7a8e807e _908d2835 _35cba81d eceefec5",
+      "type": "button"
+    },
+    {
+      "text": "Like",
+      "id": "",
+      "className": "d8302f36 _1d064af0 _55225a01 d58e9fb6 cd9492d6 _8580a031 _1fda22c9 ad5e986f _7d12cdae f8edf3c8 _09bef42f _4ada97fd c0ab5576",
+      "type": "button"
+    },
+    {
+      "text": "",
+      "id": "",
+      "className": "d8302f36 _1d064af0 _55225a01 d58e9fb6 cd9492d6 _8580a031 _1fda22c9 _4f939c5a e67cbcd3 d5edaec6 _31996400 _53e43071 e2d79070 _539e111d aac04710 e924ae76",
+      "type": "button"
+    },
+    {
+      "text": "Comment",
+      "id": "",
+      "className": "d8302f36 _1d064af0 _55225a01 d58e9fb6 cd9492d6 _8580a031 _1fda22c9 _69c21ffa _7d12cdae f8edf3c8 _09bef42f _4ada97fd c0ab5576",
+      "type": "button"
+    },
+    {
+      "text": "Repost",
+      "id": "",
+      "className": "d8302f36 _1d064af0 _55225a01 d58e9fb6 cd9492d6 _8580a031 _1fda22c9 _69c21ffa _7d12cdae f8edf3c8 _09bef42f _4ada97fd c0ab5576",
+      "type": "button"
+    },
+    {
+      "text": "",
+      "id": "",
+      "className": "d8302f36 _1d064af0 _55225a01 d58e9fb6 cd9492d6 _8580a031 _1fda22c9 ad5e986f _7d12cdae f8edf3c8 _09bef42f _4ada97fd c0ab5576 ec4aba1e _81d782c1 _708d2a09 a97baebc _16271874 _1ca5ef29",
+      "type": "button"
+    },
+    {
+      "text": "",
+      "id": "",
+      "className": "d8302f36 _1d064af0 _55225a01 d58e9fb6 cd9492d6 _8580a031 _1fda22c9 ad5e986f _7d12cdae f8edf3c8 _09bef42f _4ada97fd c0ab5576 ec4aba1e _708d2a09 a97baebc _16271874 _1ca5ef29",
+      "type": "button"
+    },
+    {
+      "text": "Like",
+      "id": "",
+      "className": "d8302f36 _1d064af0 _55225a01 d58e9fb6 cd9492d6 _8580a031 _1fda22c9 ad5e986f _7d12cdae f8edf3c8 _09bef42f _4ada97fd c0ab5576",
+      "type": "button"
+    },
+    {
+      "text": "",
+      "id": "",
+      "className": "d8302f36 _1d064af0 _55225a01 d58e9fb6 cd9492d6 _8580a031 _1fda22c9 _4f939c5a e67cbcd3 d5edaec6 _31996400 _53e43071 e2d79070 _539e111d aac04710 e924ae76",
+      "type": "button"
+    },
+    {
+      "text": "Comment",
+      "id": "",
+      "className": "d8302f36 _1d064af0 _55225a01 d58e9fb6 cd9492d6 _8580a031 _1fda22c9 _69c21ffa _7d12cdae f8edf3c8 _09bef42f _4ada97fd c0ab5576",
+      "type": "button"
+    },
+    {
+      "text": "Repost",
+      "id": "",
+      "className": "d8302f36 _1d064af0 _55225a01 d58e9fb6 cd9492d6 _8580a031 _1fda22c9 _69c21ffa _7d12cdae f8edf3c8 _09bef42f _4ada97fd c0ab5576",
+      "type": "button"
+    },
+    {
+      "text": "Load more",
+      "id": "",
+      "className": "d8302f36 _1d064af0 _55225a01 d58e9fb6 cd9492d6 _8580a031 _1fda22c9 _816a94f4 _7d12cdae f8edf3c8 _09bef42f _4ada97fd c0ab5576 c89ed875",
+      "type": "button"
+    },
+    {
+      "text": "",
+      "id": "",
+      "className": "d8302f36 _1d064af0 _55225a01 d58e9fb6 cd9492d6 _8580a031 _1fda22c9 ad5e986f _7d12cdae f8edf3c8 _09bef42f _4ada97fd c0ab5576",
+      "type": "button"
+    },
+    {
+      "text": "Show more news",
+      "id": "",
+      "className": "d8302f36 _1d064af0 _55225a01 d58e9fb6 cd9492d6 _8580a031 _1fda22c9 ad5e986f _7d12cdae f8edf3c8 _09bef42f _4ada97fd c0ab5576 _4427af63 f182230f",
+      "type": "button"
+    },
+    {
+      "text": "Show more",
+      "id": "",
+      "className": "d8302f36 _1d064af0 _55225a01 d58e9fb6 cd9492d6 _8580a031 _1fda22c9 ad5e986f _7d12cdae f8edf3c8 _09bef42f _4ada97fd c0ab5576 _3d83cc4e _4800ceb7",
+      "type": "button"
+    },
+    {
+      "text": "",
+      "id": "",
+      "className": "d8302f36 _1d064af0 _55225a01 d58e9fb6 cd9492d6 _8580a031 _1fda22c9 _816a94f4 _7d12cdae f8edf3c8 _09bef42f _4ada97fd c0ab5576 f49bdd4a f1d24038 be72e7c1 e653f95d",
+      "type": "button"
+    },
+    {
+      "text": "Why am I seeing this ad?Manage your ad preferences",
+      "id": "",
+      "className": "_0a9bb6dd _244b7afb _6303379e _55225a01 _445cd6d4 _1ff4e4fa _6ce92c17 _970ebcd5 c71196ae _7be19aff _0d1a2e30",
+      "type": "button"
+    },
+    {
+      "text": "Hide or report this adI don’t want to see this ad in my feed",
+      "id": "",
+      "className": "_0a9bb6dd _244b7afb _6303379e _55225a01 _445cd6d4 _1ff4e4fa _6ce92c17 _970ebcd5 c71196ae _7be19aff _0d1a2e30",
+      "type": "button"
+    },
+    {
+      "text": "",
+      "id": "",
+      "className": "d8302f36 _1d064af0 _55225a01 d58e9fb6 cd9492d6 _8580a031 _1fda22c9 _816a94f4 _7d12cdae f8edf3c8 _09bef42f _4ada97fd c0ab5576 f49bdd4a f1d24038 be72e7c1 e653f95d",
+      "type": "button"
+    },
+    {
+      "text": "Report this ad",
+      "id": "",
+      "className": "d8302f36 _1d064af0 _55225a01 d58e9fb6 cd9492d6 _8580a031 _1fda22c9 _816a94f4 _7d12cdae f8edf3c8 _09bef42f _4ada97fd c0ab5576",
+      "type": "button"
+    },
+    {
+      "text": "Submit",
+      "id": "",
+      "className": "d8302f36 _1d064af0 _55225a01 d58e9fb6 cd9492d6 _8580a031 _1fda22c9 _816a94f4 _7d12cdae f8edf3c8 _09bef42f _4ada97fd c0ab5576",
+      "type": "submit"
+    }
+  ],
+  "links": [
+    {
+      "text": "My Network",
+      "href": "https://www.linkedin.com/mynetwork"
+    },
+    {
+      "text": "Jobs",
+      "href": "https://www.linkedin.com/jobs/"
+    },
+    {
+      "text": "Messaging",
+      "href": "https://www.linkedin.com/messaging/"
+    },
+    {
+      "text": "18 Notifications",
+      "href": "https://www.linkedin.com/notifications/"
+    },
+    {
+      "text": "Try Premium for ₹0",
+      "href": "https://www.linkedin.com/feed/"
+    },
+    {
+      "text": "",
+      "href": "https://www.linkedin.com/in/sanjay-ranganathan-6a016a326/"
+    },
+    {
+      "text": "Sanjay Ranganathan Intern @hashagiletechnologies Greater Coimbatore Area",
+      "href": "https://www.linkedin.com/in/sanjay-ranganathan-6a016a326/"
+    },
+    {
+      "text": "Hash Agile Technologies",
+      "href": "https://www.linkedin.com/in/sanjay-ranganathan-6a016a326/"
+    },
+    {
+      "text": "Grow your business and get ahead Try Premium for ₹0",
+      "href": "https://www.linkedin.com/premium/products/?upsellOrderOrigin=Tracking%3Av1%3Apremium_homepage_identity_upsell%3ANav%3AIn-Product&utype=network&referenceId=RaTuyEikTIKyV1E%2BtzUGrA%3D%3D&isSS=true&upsellSlotId=IDENTITY_MODULE"
+    },
+    {
+      "text": "Profile viewers 27",
+      "href": "https://www.linkedin.com/me/profile-views/"
+    },
+    {
+      "text": "View all analytics",
+      "href": "https://www.linkedin.com/analytics/creator/content/"
+    },
+    {
+      "text": "Saved items",
+      "href": "https://www.linkedin.com/my-items/saved-posts/"
+    },
+    {
+      "text": "Groups",
+      "href": "https://www.linkedin.com/groups/"
+    },
+    {
+      "text": "Newsletters",
+      "href": "https://www.linkedin.com/mynetwork/network-manager/newsletters/"
+    },
+    {
+      "text": "Events",
+      "href": "https://www.linkedin.com/events/"
+    },
+    {
+      "text": "",
+      "href": "https://www.linkedin.com/in/sanjay-ranganathan-6a016a326/"
+    },
+    {
+      "text": "Write article",
+      "href": "https://www.linkedin.com/article/new/"
+    },
+    {
+      "text": "",
+      "href": "https://www.linkedin.com/in/niharika-rakhewar-2a149b21b/"
+    },
+    {
+      "text": "Niharika Rakhewar • 3rd+",
+      "href": "https://www.linkedin.com/in/niharika-rakhewar-2a149b21b/"
+    },
+    {
+      "text": "",
+      "href": "https://www.linkedin.com/in/niharika-rakhewar-2a149b21b/"
+    },
+    {
+      "text": "#AI",
+      "href": "https://www.linkedin.com/search/results/all/?keywords=%23ai&origin=HASH_TAG_FROM_FEED"
+    },
+    {
+      "text": "#DeveloperLife",
+      "href": "https://www.linkedin.com/search/results/all/?keywords=%23developerlife&origin=HASH_TAG_FROM_FEED"
+    },
+    {
+      "text": "#TechHumor",
+      "href": "https://www.linkedin.com/search/results/all/?keywords=%23techhumor&origin=HASH_TAG_FROM_FEED"
+    },
+    {
+      "text": "#CareerGrowth",
+      "href": "https://www.linkedin.com/search/results/all/?keywords=%23careergrowth&origin=HASH_TAG_FROM_FEED"
+    },
+    {
+      "text": "",
+      "href": "https://www.linkedin.com/feed/"
+    },
+    {
+      "text": "34 reactions 34",
+      "href": "https://www.linkedin.com/feed/"
+    },
+    {
+      "text": "1 repost 1 repost",
+      "href": "https://www.linkedin.com/feed/"
+    },
+    {
+      "text": "Send",
+      "href": "https://www.linkedin.com/feed/"
+    },
+    {
+      "text": "",
+      "href": "https://www.linkedin.com/company/siemenssoftware/posts/"
+    },
+    {
+      "text": "Siemens Digital Industries Software",
+      "href": "https://www.linkedin.com/company/siemenssoftware/posts/"
+    },
+    {
+      "text": "",
+      "href": "https://www.linkedin.com/company/siemenssoftware/posts/"
+    },
+    {
+      "text": "",
+      "href": "https://www.linkedin.com/feed/"
+    },
+    {
+      "text": "Tackle complex engineering challenges with AI Tackle complex engineering challen",
+      "href": "https://www.linkedin.com/feed/"
+    },
+    {
+      "text": "Learn more",
+      "href": "https://www.linkedin.com/feed/"
+    },
+    {
+      "text": "13 reactions 13",
+      "href": "https://www.linkedin.com/feed/"
+    },
+    {
+      "text": "Send",
+      "href": "https://www.linkedin.com/feed/"
+    },
+    {
+      "text": "",
+      "href": "https://www.linkedin.com/groups/121615/?q=highlightedFeedForGroups&highlightedUpdateUrn=urn%3Ali%3Aactivity%3A7467759652898803712"
+    },
+    {
+      "text": "JavaScript",
+      "href": "https://www.linkedin.com/groups/121615/?q=highlightedFeedForGroups&highlightedUpdateUrn=urn%3Ali%3Aactivity%3A7467759652898803712"
+    },
+    {
+      "text": "",
+      "href": "https://www.linkedin.com/groups/121615/?q=highlightedFeedForGroups&highlightedUpdateUrn=urn%3Ali%3Aactivity%3A7467759652898803712"
+    },
+    {
+      "text": "",
+      "href": "https://www.linkedin.com/feed/"
+    },
+    {
+      "text": "3,522 reactions 3,522",
+      "href": "https://www.linkedin.com/feed/"
+    },
+    {
+      "text": "102 reposts 102 reposts",
+      "href": "https://www.linkedin.com/feed/"
+    },
+    {
+      "text": "Send",
+      "href": "https://www.linkedin.com/feed/"
+    },
+    {
+      "text": "Making AI truly work for marketing 1d ago • 221 readers",
+      "href": "https://www.linkedin.com/news/story/making-ai-truly-work-for-marketing-7336020/"
+    },
+    {
+      "text": "SEBI cracks down on Rajesh Exports 2h ago",
+      "href": "https://www.linkedin.com/news/story/sebi-cracks-down-on-rajesh-exports-8929530/"
+    },
+    {
+      "text": "India’s solar energy boom outshines the US 2h ago",
+      "href": "https://www.linkedin.com/news/story/indias-solar-energy-boom-outshines-the-us-8933026/"
+    },
+    {
+      "text": "India GDP to slow down in FY27: OECD 1h ago",
+      "href": "https://www.linkedin.com/news/story/india-gdp-to-slow-down-in-fy27-oecd-8925330/"
+    },
+    {
+      "text": "Centre offers assistance to cushion ATF price hikes 1h ago",
+      "href": "https://www.linkedin.com/news/story/centre-offers-assistance-to-cushion-atf-price-hikes-8937914/"
+    },
+    {
+      "text": "Patches #79 Piece it together",
+      "href": "https://www.linkedin.com/games/patches/"
+    },
+    {
+      "text": "Zip #444 Complete the path",
+      "href": "https://www.linkedin.com/games/zip/"
+    },
+    {
+      "text": "Mini Sudoku #297 The classic game, made mini",
+      "href": "https://www.linkedin.com/games/mini-sudoku/"
+    },
+    {
+      "text": "Tango #605 Harmonize the grid",
+      "href": "https://www.linkedin.com/games/tango/"
+    },
+    {
+      "text": "About",
+      "href": "https://about.linkedin.com/"
+    },
+    {
+      "text": "Accessibility",
+      "href": "https://www.linkedin.com/accessibility/"
+    },
+    {
+      "text": "Help Center",
+      "href": "https://www.linkedin.com/help/linkedin/"
+    },
+    {
+      "text": "Ad Choices",
+      "href": "https://www.linkedin.com/help/linkedin/answer/62931/"
+    },
+    {
+      "text": "Advertising",
+      "href": "https://www.linkedin.com/ad/start/?trk=n_nav_ads_rr"
+    },
+    {
+      "text": "Get the LinkedIn app",
+      "href": "https://www.linkedin.com/mobile/"
+    },
+    {
+      "text": "More",
+      "href": "https://www.linkedin.com/feed/"
+    }
+  ],
+  "forms": [
+    {
+      "action": "https://www.linkedin.com/feed/",
+      "method": "get",
+      "inputCount": 2
+    }
+  ],
+  "tables": [],
+  "headings": [
+    {
+      "tag": "h2",
+      "text": "0 notifications"
+    },
+    {
+      "tag": "h2",
+      "text": "Feed post"
+    },
+    {
+      "tag": "h2",
+      "text": "Feed post"
+    },
+    {
+      "tag": "h2",
+      "text": "Feed post"
+    },
+    {
+      "tag": "h2",
+      "text": "Ad Options"
+    },
+    {
+      "tag": "h2",
+      "text": "Don’t want to see this"
+    }
+  ],
+  "sections": [
+    {
+      "tag": "section",
+      "id": "",
+      "heading": "0 notifications"
+    },
+    {
+      "tag": "aside",
+      "id": "",
+      "heading": ""
+    },
+    {
+      "tag": "section",
+      "id": "",
+      "heading": "Feed post"
+    },
+    {
+      "tag": "aside",
+      "id": "",
+      "heading": "Ad Options"
+    }
+  ],
+  "apiCalls": [
+    {
+      "name": "https://www.linkedin.com/flagship-web/rsc-action/actions/component?componentId=com.linkedin.sdui.generated.jobseeker.dsl.impl.jobSearchBox&sduiid=com.linkedin.sdui.generated.jobseeker.dsl.impl.jobSearchBox&parentSpanId=jtH%2F8yX13DU%3D",
+      "initiatorType": "fetch",
+      "duration": 521
+    },
+    {
+      "name": "https://www.linkedin.com/flagship-web/rsc-action/actions/app-config",
+      "initiatorType": "fetch",
+      "duration": 542
+    },
+    {
+      "name": "https://www.linkedin.com/flagship-web/rsc-action/actions/server-request?sduiid=com.linkedin.sdui.impl.homenav.requests.getThirdPartyTrackingPixels&parentSpanId=GA2lbaN8X4w%3D",
+      "initiatorType": "fetch",
+      "duration": 398
+    },
+    {
+      "name": "https://www.linkedin.com/flagship-web/feed/",
+      "initiatorType": "fetch",
+      "duration": 1629
+    },
+    {
+      "name": "https://platform.linkedin.com/litms/allowlist/voyager-web-jobs",
+      "initiatorType": "xmlhttprequest",
+      "duration": 4
+    },
+    {
+      "name": "https://platform.linkedin.com/litms/allowlist/voyager-web-feed",
+      "initiatorType": "xmlhttprequest",
+      "duration": 414
+    },
+    {
+      "name": "https://media.licdn.com/media/AAYAAgWlAAkAAQAAAAAAASZmD_eShxeKRuKeUAYEA2jYpg.json",
+      "initiatorType": "fetch",
+      "duration": 806
+    },
+    {
+      "name": "https://static.licdn.com/aero-v1/sc/h/ev3prx6qwul6j3me07vap4ui1",
+      "initiatorType": "fetch",
+      "duration": 74
+    },
+    {
+      "name": "https://static.licdn.com/aero-v1/sc/h/110fsyx0qy3osvndgpas3j4rh",
+      "initiatorType": "fetch",
+      "duration": 165
+    },
+    {
+      "name": "https://static.licdn.com/aero-v1/sc/h/1z8w840mfg50wzzkoavor03oa",
+      "initiatorType": "fetch",
+      "duration": 190
+    },
+    {
+      "name": "https://static.licdn.com/aero-v1/sc/h/9io2oxpk9p9y6w1o2818fv5og",
+      "initiatorType": "fetch",
+      "duration": 91
+    },
+    {
+      "name": "https://static.licdn.com/aero-v1/sc/h/875wusd8r0g1r1ljk8aexm9z0",
+      "initiatorType": "fetch",
+      "duration": 85
+    },
+    {
+      "name": "https://static.licdn.com/aero-v1/sc/h/9lhl83fyzra322t4fvt04bmmq",
+      "initiatorType": "fetch",
+      "duration": 86
+    },
+    {
+      "name": "https://static.licdn.com/aero-v1/sc/h/4oh9r66yxuaqvezedncxmyowe",
+      "initiatorType": "fetch",
+      "duration": 86
+    },
+    {
+      "name": "https://static.licdn.com/aero-v1/sc/h/2ptkqit7fkd9k7k1rr03mau9s",
+      "initiatorType": "fetch",
+      "duration": 86
+    },
+    {
+      "name": "https://static.licdn.com/aero-v1/sc/h/7tldu7rqyuhu4zt1pmh49huq3",
+      "initiatorType": "fetch",
+      "duration": 126
+    },
+    {
+      "name": "https://static.licdn.com/aero-v1/sc/h/1sufbxo3bbo9nde70jwltz7dr",
+      "initiatorType": "fetch",
+      "duration": 90
+    },
+    {
+      "name": "https://static.licdn.com/aero-v1/sc/h/8li7bh3x0vjl6eog3k6gdnec8",
+      "initiatorType": "fetch",
+      "duration": 92
+    },
+    {
+      "name": "https://static.licdn.com/aero-v1/sc/h/4kqemjz6wnrwxht8otc1zstb5",
+      "initiatorType": "fetch",
+      "duration": 94
+    },
+    {
+      "name": "https://static.licdn.com/aero-v1/sc/h/3o46pahpsvlgywm445w8gxsrb",
+      "initiatorType": "fetch",
+      "duration": 99
+    },
+    {
+      "name": "https://static.licdn.com/aero-v1/sc/h/bqb9vp31tzora09h6603cxigp",
+      "initiatorType": "fetch",
+      "duration": 112
+    },
+    {
+      "name": "https://static.licdn.com/aero-v1/sc/h/ah84a4kcg2akgyt6296nd7cp6",
+      "initiatorType": "fetch",
+      "duration": 100
+    },
+    {
+      "name": "https://static.licdn.com/aero-v1/sc/h/98ztlkd46sxq076gx566dqlm8",
+      "initiatorType": "fetch",
+      "duration": 105
+    },
+    {
+      "name": "https://static.licdn.com/aero-v1/sc/h/ev3prx6qwul6j3me07vap4ui1",
+      "initiatorType": "fetch",
+      "duration": 116
+    },
+    {
+      "name": "https://static.licdn.com/aero-v1/sc/h/110fsyx0qy3osvndgpas3j4rh",
+      "initiatorType": "fetch",
+      "duration": 164
+    },
+    {
+      "name": "https://static.licdn.com/aero-v1/sc/h/1z8w840mfg50wzzkoavor03oa",
+      "initiatorType": "fetch",
+      "duration": 190
+    },
+    {
+      "name": "https://static.licdn.com/aero-v1/sc/h/9io2oxpk9p9y6w1o2818fv5og",
+      "initiatorType": "fetch",
+      "duration": 121
+    },
+    {
+      "name": "https://static.licdn.com/aero-v1/sc/h/875wusd8r0g1r1ljk8aexm9z0",
+      "initiatorType": "fetch",
+      "duration": 121
+    },
+    {
+      "name": "https://static.licdn.com/aero-v1/sc/h/9lhl83fyzra322t4fvt04bmmq",
+      "initiatorType": "fetch",
+      "duration": 122
+    },
+    {
+      "name": "https://static.licdn.com/aero-v1/sc/h/4oh9r66yxuaqvezedncxmyowe",
+      "initiatorType": "fetch",
+      "duration": 122
+    },
+    {
+      "name": "https://static.licdn.com/aero-v1/sc/h/2ptkqit7fkd9k7k1rr03mau9s",
+      "initiatorType": "fetch",
+      "duration": 123
+    },
+    {
+      "name": "https://static.licdn.com/aero-v1/sc/h/7tldu7rqyuhu4zt1pmh49huq3",
+      "initiatorType": "fetch",
+      "duration": 153
+    },
+    {
+      "name": "https://static.licdn.com/aero-v1/sc/h/1sufbxo3bbo9nde70jwltz7dr",
+      "initiatorType": "fetch",
+      "duration": 125
+    },
+    {
+      "name": "https://static.licdn.com/aero-v1/sc/h/8li7bh3x0vjl6eog3k6gdnec8",
+      "initiatorType": "fetch",
+      "duration": 125
+    },
+    {
+      "name": "https://static.licdn.com/aero-v1/sc/h/4kqemjz6wnrwxht8otc1zstb5",
+      "initiatorType": "fetch",
+      "duration": 128
+    },
+    {
+      "name": "https://static.licdn.com/aero-v1/sc/h/3o46pahpsvlgywm445w8gxsrb",
+      "initiatorType": "fetch",
+      "duration": 131
+    },
+    {
+      "name": "https://static.licdn.com/aero-v1/sc/h/bqb9vp31tzora09h6603cxigp",
+      "initiatorType": "fetch",
+      "duration": 142
+    },
+    {
+      "name": "https://static.licdn.com/aero-v1/sc/h/ah84a4kcg2akgyt6296nd7cp6",
+      "initiatorType": "fetch",
+      "duration": 132
+    },
+    {
+      "name": "https://static.licdn.com/aero-v1/sc/h/98ztlkd46sxq076gx566dqlm8",
+      "initiatorType": "fetch",
+      "duration": 157
+    },
+    {
+      "name": "https://static.licdn.com/aero-v1/sc/h/ev3prx6qwul6j3me07vap4ui1",
+      "initiatorType": "fetch",
+      "duration": 126
+    },
+    {
+      "name": "https://static.licdn.com/aero-v1/sc/h/110fsyx0qy3osvndgpas3j4rh",
+      "initiatorType": "fetch",
+      "duration": 167
+    },
+    {
+      "name": "https://static.licdn.com/aero-v1/sc/h/1z8w840mfg50wzzkoavor03oa",
+      "initiatorType": "fetch",
+      "duration": 189
+    },
+    {
+      "name": "https://static.licdn.com/aero-v1/sc/h/9io2oxpk9p9y6w1o2818fv5og",
+      "initiatorType": "fetch",
+      "duration": 126
+    },
+    {
+      "name": "https://static.licdn.com/aero-v1/sc/h/875wusd8r0g1r1ljk8aexm9z0",
+      "initiatorType": "fetch",
+      "duration": 147
+    },
+    {
+      "name": "https://static.licdn.com/aero-v1/sc/h/9lhl83fyzra322t4fvt04bmmq",
+      "initiatorType": "fetch",
+      "duration": 148
+    },
+    {
+      "name": "https://static.licdn.com/aero-v1/sc/h/4oh9r66yxuaqvezedncxmyowe",
+      "initiatorType": "fetch",
+      "duration": 148
+    },
+    {
+      "name": "https://static.licdn.com/aero-v1/sc/h/2ptkqit7fkd9k7k1rr03mau9s",
+      "initiatorType": "fetch",
+      "duration": 148
+    },
+    {
+      "name": "https://static.licdn.com/aero-v1/sc/h/7tldu7rqyuhu4zt1pmh49huq3",
+      "initiatorType": "fetch",
+      "duration": 163
+    },
+    {
+      "name": "https://static.licdn.com/aero-v1/sc/h/1sufbxo3bbo9nde70jwltz7dr",
+      "initiatorType": "fetch",
+      "duration": 150
+    },
+    {
+      "name": "https://static.licdn.com/aero-v1/sc/h/8li7bh3x0vjl6eog3k6gdnec8",
+      "initiatorType": "fetch",
+      "duration": 151
+    },
+    {
+      "name": "https://static.licdn.com/aero-v1/sc/h/4kqemjz6wnrwxht8otc1zstb5",
+      "initiatorType": "fetch",
+      "duration": 152
+    },
+    {
+      "name": "https://static.licdn.com/aero-v1/sc/h/3o46pahpsvlgywm445w8gxsrb",
+      "initiatorType": "fetch",
+      "duration": 152
+    },
+    {
+      "name": "https://static.licdn.com/aero-v1/sc/h/bqb9vp31tzora09h6603cxigp",
+      "initiatorType": "fetch",
+      "duration": 156
+    },
+    {
+      "name": "https://static.licdn.com/aero-v1/sc/h/ah84a4kcg2akgyt6296nd7cp6",
+      "initiatorType": "fetch",
+      "duration": 153
+    },
+    {
+      "name": "https://static.licdn.com/aero-v1/sc/h/98ztlkd46sxq076gx566dqlm8",
+      "initiatorType": "fetch",
+      "duration": 164
+    },
+    {
+      "name": "https://www.linkedin.com/OEZNP8d5z_B9lPDDkPf",
+      "initiatorType": "fetch",
+      "duration": 394
+    }
+  ]
+}
