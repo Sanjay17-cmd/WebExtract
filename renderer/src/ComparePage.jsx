@@ -126,6 +126,7 @@ export default function ComparePage({ goHome }) {
         const result = await window.electronAPI.getHistory();
 
         if (result.success) {
+            console.log(result.rows);
             setHistory(result.rows);
         }
     };
@@ -359,13 +360,16 @@ export default function ComparePage({ goHome }) {
                                             {
 
     new Date(
-        item.captured_at
-    )
-
-    .toLocaleString()
-
+    item.captured_at
+)
+.toLocaleString(
+    "en-IN",
+    {
+        dateStyle: "medium",
+        timeStyle: "medium"
+    }
+)
 }
-
 {" — "}
 
 {item.title}
@@ -390,10 +394,20 @@ export default function ComparePage({ goHome }) {
                                             {
 
     new Date(
-        item.captured_at
-    )
+    item.captured_at
+)
 
-    .toLocaleString()
+.toLocaleString(
+
+    "en-IN",
+
+    {
+
+        dateStyle: "medium",
+
+        timeStyle: "medium"
+    }
+)
 
 }
 

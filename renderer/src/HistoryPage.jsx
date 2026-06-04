@@ -86,6 +86,40 @@ export default function HistoryPage({ goHome }) {
                         <div>{item.title}</div>
                         <div style={{ fontSize: "12px", color: "#94a3b8" }}>
                             {item.url}
+                            <div
+
+    style={{
+
+        fontSize: "11px",
+
+        color: "#94a3b8",
+
+        marginTop: "4px"
+    }}
+>
+
+    {
+
+        new Date(
+
+            item.captured_at
+
+        )
+
+        .toLocaleString(
+
+            "en-IN",
+
+            {
+
+                dateStyle: "medium",
+
+                timeStyle: "medium"
+            }
+        )
+    }
+
+</div>
                         </div>
                     </div>
                 ))}

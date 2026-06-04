@@ -1,51 +1,24 @@
-const {
+const { contextBridge, ipcRenderer } = require("electron");
 
-    contextBridge,
+contextBridge.exposeInMainWorld("electronAPI", {
+    saveCapture: (data) =>
+        ipcRenderer.invoke("save-capture", data),
 
-    ipcRenderer
+    startCrawl: (config) =>
+        ipcRenderer.invoke("start-crawl", config),
 
-} = require("electron");
+    getCrawlRuns: () =>
+        ipcRenderer.invoke("get-crawl-runs"),
 
+    getCrawlPages: (crawlRunId) =>
+        ipcRenderer.invoke("get-crawl-pages", crawlRunId),
 
-// ========================================
-// SAFE IPC API
-// ========================================
+    getCrawlPageDetails: (pageId) =>
+        ipcRenderer.invoke("get-crawl-page-details", pageId),
 
-contextBridge.exposeInMainWorld(
+    getHistory: () =>
+        ipcRenderer.invoke("get-history"),
 
-    "electronAPI",
-
-    {
-
-        saveCapture:
-
-            (data) =>
-
-                ipcRenderer.invoke(
-
-                    "save-capture",
-
-                    data
-                ),
-
-        getHistory:
-
-            () =>
-
-                ipcRenderer.invoke(
-
-                    "get-history"
-                ),
-
-        getCaptureDetails:
-
-            (id) =>
-
-                ipcRenderer.invoke(
-
-                    "get-capture-details",
-
-                    id
-                )
-    }
-);
+    getCaptureDetails: (id) =>
+        ipcRenderer.invoke("get-capture-details", id)
+});

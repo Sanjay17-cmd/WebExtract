@@ -2,6 +2,7 @@ const fs = require("fs");
 const path = require("path");
 const { ipcMain } = require("electron");
 const { pool } = require("../storage/postgres");
+const { takeFullPageScreenshot } = require("../capture/playwrightCapture");
 
 // ========================================
 // SAVE CAPTURE
@@ -70,39 +71,18 @@ ipcMain.handle("save-capture", async (event, captureData) => {
 
     `);
 
-const image =
-    await event.sender.capturePage({
+await takeFullPageScreenshot(
 
-        x: 0,
+    captureData.url,
 
-        y: 0,
-
-        width:
-
-            Math.min(
-                contentSize.width,
-                5000
-            ),
-
-        height:
-
-            Math.min(
-                contentSize.height,
-                15000
-            )
-    });
-
-fs.writeFileSync(
-
-    screenshotPath,
-
-    image.toPNG()
+    screenshotPath
 );
 
         const query = `
             INSERT INTO captures (
                 url,
                 title,
+                captured_at,
                 screenshot_path,
                 html_path,
                 dom_path,
@@ -118,7 +98,7 @@ fs.writeFileSync(
                 api_count
             )
             VALUES (
-                $1, $2,
+                $1, $2, NOW(),
                 $3, $4, $5, $6,
                 $7, $8,
                 $9, $10, $11, $12,
