@@ -1,0 +1,32 @@
+{
+  "name": "webextract",
+  "version": "1.0.0",
+  "description": "nothing",
+  "main": "electron/main.js",
+  "scripts": {
+
+  "react": "npm run dev --prefix renderer",
+
+  "electron": "wait-on http://localhost:5173 && electron .",
+
+  "dev": "concurrently \"npm run react\" \"npm run electron\""
+},
+  "keywords": [],
+  "author": "sanjay",
+  "license": "ISC",
+  "dependencies": {
+    "better-sqlite3": "^12.10.0",
+    "diff": "^9.0.0",
+    "electron": "^42.2.0",
+    "monaco-editor": "^0.55.1",
+    "playwright": "^1.60.0",
+    "react": "^19.2.6",
+    "react-dom": "^19.2.6",
+    "vite": "^8.0.14"
+  },
+  "devDependencies": {
+    "concurrently": "^9.2.1",
+    "electronmon": "^2.0.4",
+    "wait-on": "^9.0.10"
+  }
+}
