@@ -6,6 +6,14 @@ import {
 
 } from "react";
 
+import {
+
+    saveCapture
+
+} from "./captureStorage";
+
+import HistoryPage from "./HistoryPage";
+
 import "./App.css";
 
 export default function App() {
@@ -17,6 +25,9 @@ export default function App() {
     const [url, setUrl] = useState(
         "https://example.com"
     );
+
+    const [page, setPage] =
+    useState("home");
 
     const [currentUrl, setCurrentUrl] =
         useState(
@@ -281,6 +292,20 @@ export default function App() {
             setDomNodes(
                 data.domNodes
             );
+            const captureData =
+    await saveCapture(
+
+        webviewRef.current,
+
+        data.metrics,
+
+        data.domNodes
+    );
+
+console.log(
+    "Saved:",
+    captureData
+);
 
         } catch (err) {
 
@@ -344,11 +369,19 @@ export default function App() {
 
                 </button>
 
-                <button className="action-btn">
+                <button
 
-                    History
+    className="action-btn"
 
-                </button>
+    onClick={() =>
+
+        setPage("history")
+    }
+>
+
+    History
+
+</button>
 
                 <button className="action-btn">
 
@@ -361,183 +394,175 @@ export default function App() {
             {/* ========================= */}
             {/* MAIN */}
             {/* ========================= */}
+{
 
-            <div className="main-layout">
+    page === "home"
 
-                {/* ===================== */}
-                {/* LEFT */}
-                {/* ===================== */}
+    &&
 
-                <div className="left-panel">
+    (
 
-                    {/* ================= */}
-                    {/* HTML */}
-                    {/* ================= */}
+        <div className="main-layout">
 
-                    <div className="panel">
+            {/* ===================== */}
+            {/* LEFT */}
+            {/* ===================== */}
 
-                        <h3>
+            <div className="left-panel">
 
-                            HTML PREVIEW
+                <div className="panel">
 
-                        </h3>
+                    <h3>
 
-                        <div className="tree-box">
+                        HTML TREE
 
-                            {
+                    </h3>
 
-    domNodes
-        .slice(0, 250)
-        .map((node) => (
+                    <div className="tree-box">
 
-        <div
+                        {
 
-            key={node.id}
+                            domNodes
 
-            style={{
+                            .slice(0, 250)
 
-                paddingLeft:
+                            .map((node) => (
 
-                    `${node.depth * 16}px`,
+                                <div
 
-                marginBottom: "4px",
+                                    key={node.id}
 
-                fontSize: "13px"
-            }}
-        >
+                                    style={{
 
-            <span
-                style={{
-                    color: "#60a5fa"
-                }}
-            >
+                                        paddingLeft:
 
-                {"<"}
-                {node.tag}
-                {">"}
+                                            `${node.depth * 16}px`
+                                    }}
+                                >
 
-            </span>
+                                    {"<"}
 
-            {
+                                    {node.tag}
 
-                node.idAttr && (
+                                    {">"}
 
-                    <span
-                        style={{
-                            color: "#f472b6"
-                        }}
-                    >
-
-                        {" "}
-                        #{node.idAttr}
-
-                    </span>
-                )
-            }
-
-            
-
-        </div>
-    ))
-}
-
-                        </div>
+                                </div>
+                            ))
+                        }
 
                     </div>
 
-                    {/* ================= */}
-                    {/* SUMMARY */}
-                    {/* ================= */}
+                </div>
+{/* ================= */}
+                {/* SUMMARY */}
+                {/* ================= */}
 
-                    <div className="panel">
+                <div className="panel">
 
-                        <h3>
+                    <h3>
 
-                            SUMMARY
+                        SUMMARY
 
-                        </h3>
+                    </h3>
 
-                        <div className="summary-grid">
+                    <div className="summary-grid">
 
-                            <div className="metric-card">
+                        <div className="metric-card">
 
-                                Buttons:
-                                {" "}
-                                {metrics.buttons}
+                            Buttons:
+                            {" "}
 
-                            </div>
+                            {metrics.buttons}
 
-                            <div className="metric-card">
+                        </div>
 
-                                Links:
-                                {" "}
-                                {metrics.links}
+                        <div className="metric-card">
 
-                            </div>
+                            Links:
+                            {" "}
 
-                            <div className="metric-card">
+                            {metrics.links}
 
-                                Forms:
-                                {" "}
-                                {metrics.forms}
+                        </div>
 
-                            </div>
+                        <div className="metric-card">
 
-                            <div className="metric-card">
+                            Forms:
+                            {" "}
 
-                                Tables:
-                                {" "}
-                                {metrics.tables}
+                            {metrics.forms}
 
-                            </div>
+                        </div>
 
-                            <div className="metric-card">
+                        <div className="metric-card">
 
-                                Sections:
-                                {" "}
-                                {metrics.sections}
+                            Tables:
+                            {" "}
 
-                            </div>
+                            {metrics.tables}
 
-                            <div className="metric-card">
+                        </div>
 
-                                DOM Nodes:
-                                {" "}
-                                {metrics.domNodes}
+                        <div className="metric-card">
 
-                            </div>
+                            Sections:
+                            {" "}
+
+                            {metrics.sections}
+
+                        </div>
+
+                        <div className="metric-card">
+
+                            DOM Nodes:
+                            {" "}
+
+                            {metrics.domNodes}
 
                         </div>
 
                     </div>
 
                 </div>
+            </div>
 
-                {/* ===================== */}
-                {/* RIGHT */}
-                {/* ===================== */}
+            {/* ===================== */}
+            {/* RIGHT */}
+            {/* ===================== */}
 
-                <div className="right-panel">
+            <div className="right-panel">
 
-                    <webview
+                <webview
 
-                        ref={webviewRef}
+                    ref={webviewRef}
 
-                        src={currentUrl}
+                    src={currentUrl}
 
-                        allowpopups="true"
+                    allowpopups="true"
 
-                        style={{
+                    style={{
 
-                            width: "100%",
+                        width: "100%",
 
-                            height: "100%"
-                        }}
-                    />
-
-                </div>
+                        height: "100%"
+                    }}
+                />
 
             </div>
+
+        </div>
+    )
+}
+
+
+{
+
+    page === "history"
+
+    &&
+
+    <HistoryPage />
+}
 
         </div>
     );

@@ -1,5 +1,17 @@
 const { app, BrowserWindow } = require("electron");
 
+const {
+
+    initDatabase
+
+} = require(
+    "../storage/postgres"
+);
+
+require("./ipc");
+
+
+
 let mainWindow;
 
 function createWindow() {
@@ -12,11 +24,18 @@ function createWindow() {
 
         webPreferences: {
 
-            nodeIntegration: true,
+            nodeIntegration: false,
 
-            contextIsolation: false,
+            contextIsolation: true,
 
-            webviewTag: true
+            preload: require("path").join(
+    __dirname,
+    "preload.js"
+),
+
+            webviewTag: true,
+
+            webSecurity: false
         }
     });
 
@@ -25,7 +44,9 @@ function createWindow() {
     );
 }
 
-app.whenReady().then(() => {
+app.whenReady().then(async () => {
+
+    await initDatabase();
 
     createWindow();
 

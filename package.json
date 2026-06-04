@@ -4,13 +4,10 @@
   "description": "nothing",
   "main": "electron/main.js",
   "scripts": {
-
-  "react": "npm run dev --prefix renderer",
-
-  "electron": "wait-on http://localhost:5173 && electron .",
-
-  "dev": "concurrently \"npm run react\" \"npm run electron\""
-},
+    "react": "npm run dev --prefix renderer",
+    "electron": "wait-on http://localhost:5173 && electron .",
+    "dev": "concurrently \"npm run react\" \"npm run electron\""
+  },
   "keywords": [],
   "author": "sanjay",
   "license": "ISC",
@@ -19,6 +16,7 @@
     "diff": "^9.0.0",
     "electron": "^42.2.0",
     "monaco-editor": "^0.55.1",
+    "pg": "^8.21.0",
     "playwright": "^1.60.0",
     "react": "^19.2.6",
     "react-dom": "^19.2.6",
