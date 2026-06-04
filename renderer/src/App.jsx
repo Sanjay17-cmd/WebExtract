@@ -1,4 +1,10 @@
-import { useRef, useState } from "react";
+import {
+
+    useEffect,
+    useRef,
+    useState
+
+} from "react";
 
 import "./App.css";
 
@@ -12,18 +18,24 @@ export default function App() {
         "https://example.com"
     );
 
-    const [metrics, setMetrics] = useState({
+    const [currentUrl, setCurrentUrl] =
+        useState(
+            "https://example.com"
+        );
 
-        buttons: 0,
-        links: 0,
-        forms: 0,
-        tables: 0,
-        sections: 0,
-        domNodes: 0
-    });
+    const [metrics, setMetrics] =
+        useState({
 
-    const [htmlPreview, setHtmlPreview] =
-        useState("");
+            buttons: 0,
+            links: 0,
+            forms: 0,
+            tables: 0,
+            sections: 0,
+            domNodes: 0
+        });
+
+    const [domNodes, setDomNodes] =
+        useState([]);
 
     // =====================================
     // WEBVIEW REF
@@ -39,16 +51,83 @@ export default function App() {
 
         if (
 
-            webviewRef.current
-
-            &&
-
-            url
+            !url.startsWith("http")
         ) {
 
-            webviewRef.current.src = url;
+            const formatted =
+                "https://" + url;
+
+            setCurrentUrl(formatted);
+
+            return;
+        }
+
+        setCurrentUrl(url);
+    };
+
+    // =====================================
+    // ENTER KEY SUPPORT
+    // =====================================
+
+    const handleKeyDown = (e) => {
+
+        if (e.key === "Enter") {
+
+            openWebsite();
         }
     };
+
+    // =====================================
+    // UPDATE URL ON NAVIGATION
+    // =====================================
+
+    useEffect(() => {
+
+        const webview =
+            webviewRef.current;
+
+        if (!webview)
+            return;
+
+        const updateUrl = () => {
+
+            setUrl(
+                webview.getURL()
+            );
+        };
+
+        webview.addEventListener(
+
+            "did-navigate",
+
+            updateUrl
+        );
+
+        webview.addEventListener(
+
+            "did-navigate-in-page",
+
+            updateUrl
+        );
+
+        return () => {
+
+            webview.removeEventListener(
+
+                "did-navigate",
+
+                updateUrl
+            );
+
+            webview.removeEventListener(
+
+                "did-navigate-in-page",
+
+                updateUrl
+            );
+        };
+
+    }, []);
 
     // =====================================
     // CAPTURE PAGE
@@ -59,84 +138,163 @@ export default function App() {
         if (!webviewRef.current)
             return;
 
-        // ---------------------------------
-        // EXECUTE INSIDE WEBVIEW
-        // ---------------------------------
+        try {
 
-        const data =
-            await webviewRef.current
-            .executeJavaScript(`
+            const data =
+                await webviewRef.current
+                .executeJavaScript(`
 
-            (() => {
+                (() => {
 
-                return {
+                    return {
 
-                    html:
-                        document
-                        .documentElement
-                        .outerHTML,
+                        domNodes: (() => {
 
-                    metrics: {
+    const nodes = [];
 
-                        buttons:
-                            document
-                            .querySelectorAll(
-                                "button"
-                            ).length,
+    let nodeId = 0;
 
-                        links:
-                            document
-                            .querySelectorAll(
-                                "a"
-                            ).length,
+    function walk(
 
-                        forms:
-                            document
-                            .querySelectorAll(
-                                "form"
-                            ).length,
+        element,
 
-                        tables:
-                            document
-                            .querySelectorAll(
-                                "table"
-                            ).length,
+        parentId = null,
 
-                        sections:
-                            document
-                            .querySelectorAll(
-                                "section"
-                            ).length,
+        depth = 0
+    ) {
 
-                        domNodes:
-                            document
-                            .querySelectorAll("*")
-                            .length
-                    }
-                };
+        if (nodes.length > 400)
+            return;
 
-            })();
+        const currentId = nodeId++;
 
-        `);
+        const attributes = {};
 
-        // ---------------------------------
-        // UPDATE UI
-        // ---------------------------------
+        for (
 
-        setMetrics(data.metrics);
+            const attr of element.attributes || []
 
-        setHtmlPreview(
-            data.html.slice(0, 8000)
-        );
+        ) {
+
+            attributes[attr.name] =
+                attr.value;
+        }
+
+        nodes.push({
+
+            id: currentId,
+
+            parentId,
+
+            depth,
+
+            tag:
+
+                element.tagName
+                ?.toLowerCase() || "",
+
+            idAttr:
+
+                element.id || "",
+
+            classAttr:
+
+                element.className || "",
+
+            text: "",
+
+            attributes
+        });
+
+        for (
+
+            const child of element.children || []
+
+        ) {
+
+            walk(
+
+                child,
+
+                currentId,
+
+                depth + 1
+            );
+        }
+    }
+
+    walk(
+        document.documentElement
+    );
+
+    return nodes;
+
+})(),
+
+                        metrics: {
+
+                            buttons:
+                                document
+                                .querySelectorAll(
+                                    "button"
+                                ).length,
+
+                            links:
+                                document
+                                .querySelectorAll(
+                                    "a"
+                                ).length,
+
+                            forms:
+                                document
+                                .querySelectorAll(
+                                    "form"
+                                ).length,
+
+                            tables:
+                                document
+                                .querySelectorAll(
+                                    "table"
+                                ).length,
+
+                            sections:
+                                document
+                                .querySelectorAll(
+                                    "section"
+                                ).length,
+
+                            domNodes:
+                                document
+                                .querySelectorAll("*")
+                                .length
+                        }
+                    };
+
+                })();
+
+            `);
+
+            setMetrics(
+                data.metrics
+            );
+
+            setDomNodes(
+                data.domNodes
+            );
+
+        } catch (err) {
+
+            console.error(err);
+        }
     };
 
     return (
 
         <div className="app">
 
-            {/* ============================= */}
+            {/* ========================= */}
             {/* TOPBAR */}
-            {/* ============================= */}
+            {/* ========================= */}
 
             <div className="topbar">
 
@@ -154,7 +312,13 @@ export default function App() {
 
                     onChange={(e) =>
 
-                        setUrl(e.target.value)
+                        setUrl(
+                            e.target.value
+                        )
+                    }
+
+                    onKeyDown={
+                        handleKeyDown
                     }
                 />
 
@@ -194,21 +358,21 @@ export default function App() {
 
             </div>
 
-            {/* ============================= */}
+            {/* ========================= */}
             {/* MAIN */}
-            {/* ============================= */}
+            {/* ========================= */}
 
             <div className="main-layout">
 
-                {/* ========================= */}
+                {/* ===================== */}
                 {/* LEFT */}
-                {/* ========================= */}
+                {/* ===================== */}
 
                 <div className="left-panel">
 
-                    {/* ===================== */}
-                    {/* HTML TREE */}
-                    {/* ===================== */}
+                    {/* ================= */}
+                    {/* HTML */}
+                    {/* ================= */}
 
                     <div className="panel">
 
@@ -220,19 +384,70 @@ export default function App() {
 
                         <div className="tree-box">
 
-                            <pre>
+                            {
 
-                                {htmlPreview}
+    domNodes
+        .slice(0, 250)
+        .map((node) => (
 
-                            </pre>
+        <div
+
+            key={node.id}
+
+            style={{
+
+                paddingLeft:
+
+                    `${node.depth * 16}px`,
+
+                marginBottom: "4px",
+
+                fontSize: "13px"
+            }}
+        >
+
+            <span
+                style={{
+                    color: "#60a5fa"
+                }}
+            >
+
+                {"<"}
+                {node.tag}
+                {">"}
+
+            </span>
+
+            {
+
+                node.idAttr && (
+
+                    <span
+                        style={{
+                            color: "#f472b6"
+                        }}
+                    >
+
+                        {" "}
+                        #{node.idAttr}
+
+                    </span>
+                )
+            }
+
+            
+
+        </div>
+    ))
+}
 
                         </div>
 
                     </div>
 
-                    {/* ===================== */}
+                    {/* ================= */}
                     {/* SUMMARY */}
-                    {/* ===================== */}
+                    {/* ================= */}
 
                     <div className="panel">
 
@@ -298,9 +513,9 @@ export default function App() {
 
                 </div>
 
-                {/* ========================= */}
+                {/* ===================== */}
                 {/* RIGHT */}
-                {/* ========================= */}
+                {/* ===================== */}
 
                 <div className="right-panel">
 
@@ -308,7 +523,9 @@ export default function App() {
 
                         ref={webviewRef}
 
-                        src={url}
+                        src={currentUrl}
+
+                        allowpopups="true"
 
                         style={{
 
