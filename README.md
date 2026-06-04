@@ -338,6 +338,151 @@ For every capture the system stores:
 
 ---
 
+## PostgreSQL Database Setup
+
+The application automatically creates tables during startup. The SQL below is provided for manual database setup or deployment environments where automatic table creation is disabled.
+
+-- =========================================
+-- DATABASE
+-- =========================================
+
+CREATE USER webuser
+WITH PASSWORD 'webpass';
+
+CREATE DATABASE webextract;
+
+GRANT ALL PRIVILEGES
+ON DATABASE webextract
+TO webuser;
+
+\c webextract
+
+GRANT ALL ON SCHEMA public
+TO webuser;
+
+ALTER SCHEMA public
+OWNER TO webuser;
+
+-- =========================================
+-- CAPTURES TABLE
+-- =========================================
+
+CREATE TABLE captures (
+
+    id SERIAL PRIMARY KEY,
+
+    url TEXT,
+
+    title TEXT,
+
+    captured_at TIMESTAMPTZ
+    DEFAULT NOW(),
+
+    screenshot_path TEXT,
+
+    html_path TEXT,
+
+    dom_path TEXT,
+
+    structured_data_path TEXT,
+
+    load_time_ms INTEGER
+    DEFAULT 0,
+
+    dom_nodes INTEGER
+    DEFAULT 0,
+
+    buttons_count INTEGER
+    DEFAULT 0,
+
+    links_count INTEGER
+    DEFAULT 0,
+
+    forms_count INTEGER
+    DEFAULT 0,
+
+    tables_count INTEGER
+    DEFAULT 0,
+
+    sections_count INTEGER
+    DEFAULT 0,
+
+    headings_count INTEGER
+    DEFAULT 0,
+
+    api_count INTEGER
+    DEFAULT 0
+);
+
+-- =========================================
+-- CRAWL RUNS
+-- =========================================
+
+CREATE TABLE crawl_runs (
+
+    id SERIAL PRIMARY KEY,
+
+    root_url TEXT,
+
+    started_at TIMESTAMPTZ
+    DEFAULT NOW(),
+
+    finished_at TIMESTAMPTZ,
+
+    total_pages INTEGER
+    DEFAULT 0
+);
+
+-- =========================================
+-- CRAWL PAGES
+-- =========================================
+
+CREATE TABLE crawl_pages (
+
+    id SERIAL PRIMARY KEY,
+
+    crawl_run_id INTEGER
+
+        REFERENCES crawl_runs(id)
+
+        ON DELETE CASCADE,
+
+    url TEXT,
+
+    title TEXT,
+
+    depth INTEGER,
+
+    captured_at TIMESTAMPTZ
+    DEFAULT NOW(),
+
+    screenshot_path TEXT,
+
+    html_path TEXT,
+
+    dom_path TEXT,
+
+    structured_data_path TEXT
+);
+
+-- =========================================
+-- INDEXES
+-- =========================================
+
+CREATE INDEX idx_captures_url
+ON captures(url);
+
+CREATE INDEX idx_captures_time
+ON captures(captured_at);
+
+CREATE INDEX idx_crawl_pages_run
+ON crawl_pages(crawl_run_id);
+
+CREATE INDEX idx_crawl_pages_url
+ON crawl_pages(url);
+
+---
+
 ## Future Enhancements
 
 * AI-generated change summaries
