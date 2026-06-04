@@ -1,9 +1,10 @@
 const { chromium } = require("playwright");
 
 async function takeFullPageScreenshot(
+
     url,
-    screenshotPath,
-    cookies = []
+
+    screenshotPath
 ) {
 
     const browser =
@@ -13,33 +14,17 @@ async function takeFullPageScreenshot(
         });
 
     try {
-        const context =
-    await browser
-    .newContext({
 
-        viewport: {
+        const page =
+            await browser.newPage({
 
-            width: 1440,
+                viewport: {
 
-            height: 900
-        }
-    });
+                    width: 1440,
 
-if (
-
-    cookies.length
-
-) {
-
-    await context
-    .addCookies(
-        cookies
-    );
-}
-
-const page =
-    await context
-    .newPage();
+                    height: 900
+                }
+            });
 
         // ====================================
         // OPEN URL
@@ -58,10 +43,7 @@ const page =
                 timeout: 60000
             }
         );
-await page.waitForTimeout(
 
-    5000
-);
         // ====================================
         // FULL PAGE SCREENSHOT
         // ====================================

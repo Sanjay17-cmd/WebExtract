@@ -1,0 +1,19 @@
+{
+  "buttons": [],
+  "links": [
+    {
+      "text": "Learn more",
+      "href": "https://iana.org/domains/example"
+    }
+  ],
+  "forms": [],
+  "tables": [],
+  "headings": [
+    {
+      "tag": "h1",
+      "text": "Example Domain"
+    }
+  ],
+  "sections": [],
+  "apiCalls": []
+}

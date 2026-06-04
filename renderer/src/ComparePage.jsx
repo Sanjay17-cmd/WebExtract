@@ -1,21 +1,9 @@
 import { useEffect, useMemo, useState } from "react";
-import HtmlDiffViewer from "./HtmlDiffViewer";
 
 function toFileUrl(p) {
     if (!p) return "";
     if (p.startsWith("file://")) return p;
     return `file://${p}`;
-}
-
-function prettyDate(value) {
-    try {
-        return new Date(value).toLocaleString("en-IN", {
-            dateStyle: "medium",
-            timeStyle: "medium"
-        });
-    } catch {
-        return String(value || "");
-    }
 }
 
 function normalizeText(value) {
@@ -129,7 +117,6 @@ export default function ComparePage({ goHome }) {
     const [versionBId, setVersionBId] = useState("");
     const [comparison, setComparison] = useState(null);
     const [loading, setLoading] = useState(false);
-    const [visualDiff, setVisualDiff] = useState(null);
 
     useEffect(() => {
         loadHistory();
@@ -137,7 +124,9 @@ export default function ComparePage({ goHome }) {
 
     const loadHistory = async () => {
         const result = await window.electronAPI.getHistory();
+
         if (result.success) {
+            console.log(result.rows);
             setHistory(result.rows);
         }
     };
@@ -178,87 +167,105 @@ export default function ComparePage({ goHome }) {
             const first = String(versionsForSelectedUrl[0].id);
             const second = String(versionsForSelectedUrl[1].id);
 
-            setVersionAId((prev) =>
-                versionsForSelectedUrl.some((v) => String(v.id) === prev)
-                    ? prev
-                    : first
-            );
-
-            setVersionBId((prev) =>
-                versionsForSelectedUrl.some((v) => String(v.id) === prev && prev !== versionAId)
-                    ? prev
-                    : second
-            );
+            setVersionAId((prev) => (versionsForSelectedUrl.some((v) => String(v.id) === prev) ? prev : first));
+            setVersionBId((prev) => (versionsForSelectedUrl.some((v) => String(v.id) === prev && prev !== versionAId) ? prev : second));
         }
     }, [versionsForSelectedUrl, versionAId]);
 
     const runComparison = async () => {
-    if (!versionAId || !versionBId || versionAId === versionBId) return;
+        if (!versionAId || !versionBId || versionAId === versionBId) return;
 
-    setLoading(true);
-    setComparison(null);
-    setVisualDiff(null);
+        setLoading(true);
+        setComparison(null);
 
-    try {
-        const [resultA, resultB] = await Promise.all([
-            window.electronAPI.getCaptureDetails(Number(versionAId)),
-            window.electronAPI.getCaptureDetails(Number(versionBId))
-        ]);
+        try {
+            const [resultA, resultB] = await Promise.all([
+                window.electronAPI.getCaptureDetails(Number(versionAId)),
+                window.electronAPI.getCaptureDetails(Number(versionBId))
+            ]);
 
-        if (!resultA.success || !resultB.success) {
-            return;
+            if (!resultA.success || !resultB.success) {
+                setLoading(false);
+                return;
+            }
+
+            const a = resultA.data;
+            const b = resultB.data;
+
+            const structuredA = a.structured || {};
+            const structuredB = b.structured || {};
+
+            const rows = [
+                {
+                    metric: "Load Time (ms)",
+                    a: a.load_time_ms || 0,
+                    b: b.load_time_ms || 0
+                },
+                {
+                    metric: "DOM Nodes",
+                    a: a.dom_nodes || 0,
+                    b: b.dom_nodes || 0
+                },
+                {
+                    metric: "Buttons",
+                    a: a.buttons_count || 0,
+                    b: b.buttons_count || 0
+                },
+                {
+                    metric: "Links",
+                    a: a.links_count || 0,
+                    b: b.links_count || 0
+                },
+                {
+                    metric: "Forms",
+                    a: a.forms_count || 0,
+                    b: b.forms_count || 0
+                },
+                {
+                    metric: "Tables",
+                    a: a.tables_count || 0,
+                    b: b.tables_count || 0
+                },
+                {
+                    metric: "Sections",
+                    a: a.sections_count || 0,
+                    b: b.sections_count || 0
+                },
+                {
+                    metric: "Headings",
+                    a: a.headings_count || 0,
+                    b: b.headings_count || 0
+                },
+                {
+                    metric: "API Calls",
+                    a: a.api_count || 0,
+                    b: b.api_count || 0
+                }
+            ].map((row) => ({
+                ...row,
+                diff: row.b - row.a
+            }));
+
+            const diffs = {
+                buttons: diffCollection(structuredA.buttons || [], structuredB.buttons || [], sigButton),
+                links: diffCollection(structuredA.links || [], structuredB.links || [], sigLink),
+                forms: diffCollection(structuredA.forms || [], structuredB.forms || [], sigForm),
+                tables: diffCollection(structuredA.tables || [], structuredB.tables || [], sigTable),
+                sections: diffCollection(structuredA.sections || [], structuredB.sections || [], sigSection),
+                headings: diffCollection(structuredA.headings || [], structuredB.headings || [], sigHeading),
+                apiCalls: diffCollection(structuredA.apiCalls || [], structuredB.apiCalls || [], sigApi)
+            };
+
+            setComparison({
+                a,
+                b,
+                rows,
+                diffs
+            });
+        } finally {
+            setLoading(false);
         }
-
-        const a = resultA.data;
-        const b = resultB.data;
-
-        const structuredA = a.structured || {};
-        const structuredB = b.structured || {};
-
-        const rows = [
-            { metric: "Load Time (ms)", a: a.load_time_ms || 0, b: b.load_time_ms || 0 },
-            { metric: "DOM Nodes", a: a.dom_nodes || 0, b: b.dom_nodes || 0 },
-            { metric: "Buttons", a: a.buttons_count || 0, b: b.buttons_count || 0 },
-            { metric: "Links", a: a.links_count || 0, b: b.links_count || 0 },
-            { metric: "Forms", a: a.forms_count || 0, b: b.forms_count || 0 },
-            { metric: "Tables", a: a.tables_count || 0, b: b.tables_count || 0 },
-            { metric: "Sections", a: a.sections_count || 0, b: b.sections_count || 0 },
-            { metric: "Headings", a: a.headings_count || 0, b: b.headings_count || 0 },
-            { metric: "API Calls", a: a.api_count || 0, b: b.api_count || 0 }
-        ].map((row) => ({
-            ...row,
-            diff: row.b - row.a
-        }));
-
-        const diffs = {
-            buttons: diffCollection(structuredA.buttons || [], structuredB.buttons || [], sigButton),
-            links: diffCollection(structuredA.links || [], structuredB.links || [], sigLink),
-            forms: diffCollection(structuredA.forms || [], structuredB.forms || [], sigForm),
-            tables: diffCollection(structuredA.tables || [], structuredB.tables || [], sigTable),
-            sections: diffCollection(structuredA.sections || [], structuredB.sections || [], sigSection),
-            headings: diffCollection(structuredA.headings || [], structuredB.headings || [], sigHeading),
-            apiCalls: diffCollection(structuredA.apiCalls || [], structuredB.apiCalls || [], sigApi)
-        };
-
-        setComparison({
-            a,
-            b,
-            rows,
-            diffs
-        });
-
-        const visualResult = await window.electronAPI.generateVisualDiff(
-            Number(versionAId),
-            Number(versionBId)
-        );
-
-        if (visualResult.success) {
-            setVisualDiff(visualResult);
-        }
-    } finally {
-        setLoading(false);
-    }
-};
+    };
 
     return (
         <div style={{ display: "flex", height: "100%" }}>
@@ -278,11 +285,19 @@ export default function ComparePage({ goHome }) {
                     }}
                 >
                     <h2>Compare</h2>
-                    <button onClick={goHome}>Home</button>
-                </div>
-
-                <div style={{ marginTop: "12px", color: "#94a3b8", fontSize: "13px" }}>
-                    Only URLs with at least two saved versions are shown.
+                    <button
+                        onClick={goHome}
+                        style={{
+                            padding: "8px 14px",
+                            border: "none",
+                            borderRadius: "8px",
+                            background: "#2563eb",
+                            color: "white",
+                            cursor: "pointer"
+                        }}
+                    >
+                        Home
+                    </button>
                 </div>
 
                 <div style={{ marginTop: "16px" }}>
@@ -342,7 +357,22 @@ export default function ComparePage({ goHome }) {
                                 >
                                     {versionsForSelectedUrl.map((item) => (
                                         <option key={item.id} value={item.id}>
-                                            {prettyDate(item.captured_at)} — {item.title}
+                                            {
+
+    new Date(
+    item.captured_at
+)
+.toLocaleString(
+    "en-IN",
+    {
+        dateStyle: "medium",
+        timeStyle: "medium"
+    }
+)
+}
+{" — "}
+
+{item.title}
                                         </option>
                                     ))}
                                 </select>
@@ -361,7 +391,29 @@ export default function ComparePage({ goHome }) {
                                 >
                                     {versionsForSelectedUrl.map((item) => (
                                         <option key={item.id} value={item.id}>
-                                            {prettyDate(item.captured_at)} — {item.title}
+                                            {
+
+    new Date(
+    item.captured_at
+)
+
+.toLocaleString(
+
+    "en-IN",
+
+    {
+
+        dateStyle: "medium",
+
+        timeStyle: "medium"
+    }
+)
+
+}
+
+{" — "}
+
+{item.title}
                                         </option>
                                     ))}
                                 </select>
@@ -388,22 +440,26 @@ export default function ComparePage({ goHome }) {
                             <>
                                 <div style={{ marginTop: "24px" }}>
                                     <h3>Summary Differences</h3>
-                                    <div
-                                        style={{
-                                            display: "grid",
-                                            gridTemplateColumns: "repeat(3, 1fr)",
-                                            gap: "12px"
-                                        }}
-                                    >
-                                        {comparison.rows.map((row) => (
-                                            <div key={row.metric} className="metric-card">
-                                                <div style={{ fontWeight: "bold" }}>{row.metric}</div>
-                                                <div>A: {row.a}</div>
-                                                <div>B: {row.b}</div>
-                                                <div>Diff: {row.diff}</div>
-                                            </div>
-                                        ))}
-                                    </div>
+                                    <table style={{ width: "100%", borderCollapse: "collapse", marginTop: "10px" }}>
+                                        <thead>
+                                            <tr>
+                                                <th style={{ textAlign: "left", padding: "8px" }}>Metric</th>
+                                                <th style={{ textAlign: "left", padding: "8px" }}>A</th>
+                                                <th style={{ textAlign: "left", padding: "8px" }}>B</th>
+                                                <th style={{ textAlign: "left", padding: "8px" }}>Diff</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            {comparison.rows.map((row) => (
+                                                <tr key={row.metric}>
+                                                    <td style={{ padding: "8px" }}>{row.metric}</td>
+                                                    <td style={{ padding: "8px" }}>{row.a}</td>
+                                                    <td style={{ padding: "8px" }}>{row.b}</td>
+                                                    <td style={{ padding: "8px" }}>{row.diff}</td>
+                                                </tr>
+                                            ))}
+                                        </tbody>
+                                    </table>
                                 </div>
 
                                 {[
@@ -463,69 +519,6 @@ export default function ComparePage({ goHome }) {
                                         </div>
                                     </div>
                                 </div>
-
-                                {
-
-visualDiff && (
-
-<div
-
-    style={{
-
-        marginTop:
-            "30px"
-    }}
->
-
-    <h3>
-
-        Visual Diff
-
-    </h3>
-
-    <div>
-
-        Changed Pixels:
-
-        {" "}
-
-        {
-
-            visualDiff
-            .changedPixels
-
-        }
-
-    </div>
-
-    <img
-        src={
-            toFileUrl(
-                visualDiff.diffPath
-            )
-        }
-        style={{
-            width:"100%", marginTop:"10px", borderRadius:"10px"
-        }}
-        alt="Visual Diff"
-    />
-</div>)}
-                                <div
-    style={{
-        marginTop:
-            "30px"
-    }}
->
-    <h3>     HTML Source Diff    </h3>
-    <HtmlDiffViewer
-        oldHtml={
-            comparison.a.html
-        }
-        newHtml={
-            comparison.b.html
-        }
-    />
-</div>
                             </>
                         )}
                     </>

@@ -1,0 +1,120 @@
+{
+  "buttons": [
+    {
+      "text": "Skip to main content",
+      "id": "",
+      "className": "_4e973f5f _56467f9d _497fc0a7 _7555fd41 _63279000 _0812541b fbe33369 _97603941 e798f07c aaf03ae8 b90aaa13 _90752ee4 f93f8ece",
+      "type": "button"
+    },
+    {
+      "text": "",
+      "id": "",
+      "className": "_4e973f5f _56467f9d _497fc0a7 _7555fd41 _63279000 _0812541b fbe33369 _97603941 e798f07c aaf03ae8 b90aaa13 _90752ee4 f93f8ece _1305054a",
+      "type": "button"
+    },
+    {
+      "text": "Home",
+      "id": "",
+      "className": "_10f217b6 _1a63c0b8 _90752ee4 _497fc0a7 _7555fd41 a8f884a9 _4f0eb1d0 _65eb7f3e _105ef322 _0812541b _0355fc36 dff6fb4b c55d71cc b2ac0f54 f93f8ece fa8bc61c fbe33369 _05f00e2b",
+      "type": "submit"
+    },
+    {
+      "text": "Me",
+      "id": "",
+      "className": "_10f217b6 _1a63c0b8 _90752ee4 _497fc0a7 _7555fd41 a8f884a9 _4f0eb1d0 _65eb7f3e _105ef322 _0812541b _0355fc36 dff6fb4b c55d71cc b2ac0f54 f93f8ece fa8bc61c fbe33369 _05f00e2b",
+      "type": "submit"
+    },
+    {
+      "text": "For Business",
+      "id": "",
+      "className": "_10f217b6 _1a63c0b8 _90752ee4 _497fc0a7 _7555fd41 a8f884a9 _4f0eb1d0 _65eb7f3e _105ef322 _0812541b _0355fc36 dff6fb4b c55d71cc b2ac0f54 f93f8ece fa8bc61c fbe33369 _05f00e2b",
+      "type": "submit"
+    },
+    {
+      "text": "",
+      "id": "",
+      "className": "_4e973f5f _56467f9d _497fc0a7 _7555fd41 _63279000 _0812541b fbe33369 _3ee27ee8 e798f07c aaf03ae8 b90aaa13 _90752ee4 f93f8ece a38869ab",
+      "type": "button"
+    },
+    {
+      "text": "Settings",
+      "id": "",
+      "className": "_4e973f5f _56467f9d _497fc0a7 _7555fd41 _63279000 _0812541b fbe33369 _3ee27ee8 e798f07c aaf03ae8 b90aaa13 _90752ee4 f93f8ece ea13b12b _12e743a5 _497c3b21",
+      "type": "button"
+    },
+    {
+      "text": "Undo",
+      "id": "",
+      "className": "_4e973f5f _56467f9d _497fc0a7 _7555fd41 _63279000 _0812541b fbe33369 _3ee27ee8 e798f07c aaf03ae8 b90aaa13 _90752ee4 f93f8ece _0eca8e58",
+      "type": "button"
+    },
+    {
+      "text": "Hint",
+      "id": "",
+      "className": "_4e973f5f _56467f9d _497fc0a7 _7555fd41 _63279000 _0812541b fbe33369 _3ee27ee8 e798f07c aaf03ae8 b90aaa13 _90752ee4 f93f8ece _0eca8e58",
+      "type": "button"
+    }
+  ],
+  "links": [
+    {
+      "text": "My Network",
+      "href": "https://www.linkedin.com/mynetwork"
+    },
+    {
+      "text": "Jobs",
+      "href": "https://www.linkedin.com/jobs/"
+    },
+    {
+      "text": "Messaging",
+      "href": "https://www.linkedin.com/messaging/"
+    },
+    {
+      "text": "2 Notifications",
+      "href": "https://www.linkedin.com/notifications/"
+    },
+    {
+      "text": "Try Premium for ₹0",
+      "href": "https://www.linkedin.com/"
+    },
+    {
+      "text": "Reset",
+      "href": "https://www.linkedin.com/"
+    },
+    {
+      "text": "See results",
+      "href": "https://www.linkedin.com/games/patches/results/"
+    }
+  ],
+  "forms": [],
+  "tables": [],
+  "headings": [
+    {
+      "tag": "h2",
+      "text": "0 notifications"
+    }
+  ],
+  "sections": [
+    {
+      "tag": "section",
+      "id": "",
+      "heading": "0 notifications"
+    }
+  ],
+  "apiCalls": [
+    {
+      "name": "https://www.linkedin.com/flagship-web/rsc-action/actions/app-config",
+      "initiatorType": "fetch",
+      "duration": 793
+    },
+    {
+      "name": "https://www.linkedin.com/flagship-web/rsc-action/actions/server-request?sduiid=com.linkedin.sdui.impl.homenav.requests.getThirdPartyTrackingPixels&parentSpanId=WTlxcVpWoWY%3D",
+      "initiatorType": "fetch",
+      "duration": 345
+    },
+    {
+      "name": "https://www.linkedin.com/flagship-web/feed/",
+      "initiatorType": "fetch",
+      "duration": 1574
+    }
+  ]
+}

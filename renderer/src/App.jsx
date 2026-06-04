@@ -1,5 +1,5 @@
 import { useEffect, useRef, useState } from "react";
-import CrawlHistoryPage from "./CrawlHistoryPage";
+
 import { saveCapture } from "./captureStorage";
 import HistoryPage from "./HistoryPage";
 import ComparePage from "./ComparePage";
@@ -11,39 +11,6 @@ export default function App() {
     // =====================================================
     // STATES
     // =====================================================
-
-
-    const [
-
-    allowExternal,
-
-    setAllowExternal
-
-] = useState(false);
-
-const [
-
-    maxDepth,
-
-    setMaxDepth
-
-] = useState(3);
-
-const [
-
-    maxPages,
-
-    setMaxPages
-
-] = useState(50);
-
-const [
-
-    crawlDelay,
-
-    setCrawlDelay
-
-] = useState(1000);
 
     const [url, setUrl] =
         useState("https://google.com");
@@ -690,7 +657,7 @@ const [
                 // WAIT FOR PAGE LOAD
                 // ====================================
 
-                await wait(4000);
+                await wait(8000);
 
                 // ====================================
                 // CAPTURE
@@ -702,7 +669,7 @@ const [
                 // SMALL DELAY
                 // ====================================
 
-                await wait(1000);
+                await wait(2000);
             }
 
             setBulkStatus(
@@ -722,46 +689,6 @@ const [
             setIsBulkRunning(false);
         }
     };
-
-
-    // =====================================================
-// SITE CRAWLER
-// =====================================================
-
-const startSiteCrawl = async () => {
-
-    try {
-
-        const result =
-            await window
-            .electronAPI
-            .startCrawl({
-
-                url,
-
-                allowExternal,
-
-                maxDepth,
-
-                maxPages,
-
-                delayMs: crawlDelay
-            });
-
-        console.log(
-            "Crawler Result:",
-            result
-        );
-
-    } catch (err) {
-
-        console.error(
-            err
-        );
-    }
-};
-
-
 
     // =====================================================
     // UI
@@ -833,23 +760,7 @@ const startSiteCrawl = async () => {
                     Capture
 
                 </button>
-<button
 
-    className="action-btn"
-
-    onClick={startSiteCrawl}
-
->
-
-    Crawl Site
-
-</button>
-<button
-    className="action-btn"
-    onClick={() => setPage("crawl-history")}
->
-    Crawl History
-</button>
                 <button
 
                     className="action-btn"
@@ -1121,111 +1032,7 @@ const startSiteCrawl = async () => {
                                 </div>
 
                             </div>
-<div className="panel">
 
-    <h3>
-
-        CRAWLER SETTINGS
-
-    </h3>
-
-    <div
-        style={{
-            display: "flex",
-            flexDirection: "column",
-            gap: "10px"
-        }}
-    >
-
-        <label>
-
-            Allow External Links
-
-            <input
-
-                type="checkbox"
-
-                checked={allowExternal}
-
-                onChange={(e) =>
-
-                    setAllowExternal(
-                        e.target.checked
-                    )
-                }
-            />
-
-        </label>
-
-        <label>
-
-            Max Depth
-
-            <input
-
-                type="number"
-
-                value={maxDepth}
-
-                onChange={(e) =>
-
-                    setMaxDepth(
-                        Number(
-                            e.target.value
-                        )
-                    )
-                }
-            />
-
-        </label>
-
-        <label>
-
-            Max Pages
-
-            <input
-
-                type="number"
-
-                value={maxPages}
-
-                onChange={(e) =>
-
-                    setMaxPages(
-                        Number(
-                            e.target.value
-                        )
-                    )
-                }
-            />
-
-        </label>
-
-        <label>
-
-            Delay (ms)
-
-            <input
-
-                type="number"
-
-                value={crawlDelay}
-
-                onChange={(e) =>
-
-                    setCrawlDelay(
-                        Number(
-                            e.target.value
-                        )
-                    )
-                }
-            />
-
-        </label>
-
-    </div>
-
-</div>
                         </div>
 
                         {/* ===================== */}
@@ -1259,9 +1066,7 @@ const startSiteCrawl = async () => {
             {/* ================================= */}
             {/* HISTORY */}
             {/* ================================= */}
-{page === "crawl-history" && (
-    <CrawlHistoryPage goHome={() => setPage("home")} />
-)}
+
             {
 
                 page === "history" && (

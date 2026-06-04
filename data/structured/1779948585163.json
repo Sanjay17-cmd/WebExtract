@@ -1,0 +1,646 @@
+{
+  "buttons": [
+    {
+      "text": "Skip to main content",
+      "id": "",
+      "className": "_4e973f5f _56467f9d _497fc0a7 _7555fd41 _63279000 _0812541b fbe33369 _97603941 e798f07c aaf03ae8 b90aaa13 _90752ee4 f93f8ece",
+      "type": "button"
+    },
+    {
+      "text": "",
+      "id": "",
+      "className": "_4e973f5f _56467f9d _497fc0a7 _7555fd41 _63279000 _0812541b fbe33369 _97603941 e798f07c aaf03ae8 b90aaa13 _90752ee4 f93f8ece _1305054a",
+      "type": "button"
+    },
+    {
+      "text": "Home",
+      "id": "",
+      "className": "_10f217b6 _1a63c0b8 _90752ee4 _497fc0a7 _7555fd41 a8f884a9 _4f0eb1d0 _65eb7f3e _105ef322 _0812541b _0355fc36 dff6fb4b c55d71cc b2ac0f54 f93f8ece fa8bc61c fbe33369 _05f00e2b",
+      "type": "submit"
+    },
+    {
+      "text": "Me",
+      "id": "",
+      "className": "_10f217b6 _1a63c0b8 _90752ee4 _497fc0a7 _7555fd41 a8f884a9 _4f0eb1d0 _65eb7f3e _105ef322 _0812541b _0355fc36 dff6fb4b c55d71cc b2ac0f54 f93f8ece fa8bc61c fbe33369 _05f00e2b",
+      "type": "submit"
+    },
+    {
+      "text": "For Business",
+      "id": "",
+      "className": "_10f217b6 _1a63c0b8 _90752ee4 _497fc0a7 _7555fd41 a8f884a9 _4f0eb1d0 _65eb7f3e _105ef322 _0812541b _0355fc36 dff6fb4b c55d71cc b2ac0f54 f93f8ece fa8bc61c fbe33369 _05f00e2b",
+      "type": "submit"
+    },
+    {
+      "text": "",
+      "id": "",
+      "className": "_4e973f5f _56467f9d _497fc0a7 _7555fd41 _63279000 _0812541b fbe33369 _3ee27ee8 e798f07c aaf03ae8 b90aaa13 _90752ee4 f93f8ece a38869ab",
+      "type": "button"
+    },
+    {
+      "text": "Settings",
+      "id": "",
+      "className": "_4e973f5f _56467f9d _497fc0a7 _7555fd41 _63279000 _0812541b fbe33369 _3ee27ee8 e798f07c aaf03ae8 b90aaa13 _90752ee4 f93f8ece ea13b12b _12e743a5 _497c3b21",
+      "type": "button"
+    },
+    {
+      "text": "Undo",
+      "id": "",
+      "className": "_4e973f5f _56467f9d _497fc0a7 _7555fd41 _63279000 _0812541b fbe33369 _3ee27ee8 e798f07c aaf03ae8 b90aaa13 _90752ee4 f93f8ece _0eca8e58",
+      "type": "button"
+    },
+    {
+      "text": "Hint",
+      "id": "",
+      "className": "_4e973f5f _56467f9d _497fc0a7 _7555fd41 _63279000 _0812541b fbe33369 _3ee27ee8 e798f07c aaf03ae8 b90aaa13 _90752ee4 f93f8ece _0eca8e58",
+      "type": "button"
+    }
+  ],
+  "links": [
+    {
+      "text": "My Network",
+      "href": "https://www.linkedin.com/mynetwork?lipi=urn%3Ali%3Apage%3Ad_flagship3_feed%3BcTHLkzSBReK2h10xVZ9uOQ%3D%3D"
+    },
+    {
+      "text": "Jobs",
+      "href": "https://www.linkedin.com/jobs/"
+    },
+    {
+      "text": "Messaging",
+      "href": "https://www.linkedin.com/messaging/"
+    },
+    {
+      "text": "2 Notifications",
+      "href": "https://www.linkedin.com/notifications/"
+    },
+    {
+      "text": "Try Premium for ₹0",
+      "href": "https://www.linkedin.com/games/patches/"
+    },
+    {
+      "text": "Reset",
+      "href": "https://www.linkedin.com/games/patches/"
+    }
+  ],
+  "forms": [],
+  "tables": [],
+  "headings": [
+    {
+      "tag": "h2",
+      "text": "0 notifications"
+    }
+  ],
+  "sections": [
+    {
+      "tag": "section",
+      "id": "",
+      "heading": "0 notifications"
+    }
+  ],
+  "apiCalls": [
+    {
+      "name": "https://www.linkedin.com/flagship-web/rsc-action/actions/app-config",
+      "initiatorType": "fetch",
+      "duration": 589
+    },
+    {
+      "name": "https://www.linkedin.com/flagship-web/rsc-action/actions/server-request?sduiid=com.linkedin.sdui.impl.homenav.requests.getThirdPartyTrackingPixels&parentSpanId=omx%2BoJGkK%2F0%3D",
+      "initiatorType": "fetch",
+      "duration": 357
+    },
+    {
+      "name": "https://platform.linkedin.com/litms/allowlist/voyager-web-feed",
+      "initiatorType": "xmlhttprequest",
+      "duration": 2
+    },
+    {
+      "name": "https://static.licdn.com/aero-v1/sc/h/ev3prx6qwul6j3me07vap4ui1",
+      "initiatorType": "fetch",
+      "duration": 16
+    },
+    {
+      "name": "https://static.licdn.com/aero-v1/sc/h/bredpxsi5risry9tbd1ujbu8t",
+      "initiatorType": "fetch",
+      "duration": 67
+    },
+    {
+      "name": "https://static.licdn.com/aero-v1/sc/h/286sd8im0g89q9d4i0xr6ru5w",
+      "initiatorType": "fetch",
+      "duration": 94
+    },
+    {
+      "name": "https://static.licdn.com/aero-v1/sc/h/d5ukcuzvolzuhgfhh7hiyyfk2",
+      "initiatorType": "fetch",
+      "duration": 24
+    },
+    {
+      "name": "https://static.licdn.com/aero-v1/sc/h/875wusd8r0g1r1ljk8aexm9z0",
+      "initiatorType": "fetch",
+      "duration": 18
+    },
+    {
+      "name": "https://static.licdn.com/aero-v1/sc/h/1qb9dmzwvef7v6qso0tozjagy",
+      "initiatorType": "fetch",
+      "duration": 19
+    },
+    {
+      "name": "https://static.licdn.com/aero-v1/sc/h/4oh9r66yxuaqvezedncxmyowe",
+      "initiatorType": "fetch",
+      "duration": 23
+    },
+    {
+      "name": "https://static.licdn.com/aero-v1/sc/h/8v9l751rxzhu8vgn6fkg4duit",
+      "initiatorType": "fetch",
+      "duration": 23
+    },
+    {
+      "name": "https://static.licdn.com/aero-v1/sc/h/7tldu7rqyuhu4zt1pmh49huq3",
+      "initiatorType": "fetch",
+      "duration": 45
+    },
+    {
+      "name": "https://static.licdn.com/aero-v1/sc/h/1sufbxo3bbo9nde70jwltz7dr",
+      "initiatorType": "fetch",
+      "duration": 25
+    },
+    {
+      "name": "https://static.licdn.com/aero-v1/sc/h/8li7bh3x0vjl6eog3k6gdnec8",
+      "initiatorType": "fetch",
+      "duration": 26
+    },
+    {
+      "name": "https://static.licdn.com/aero-v1/sc/h/4kqemjz6wnrwxht8otc1zstb5",
+      "initiatorType": "fetch",
+      "duration": 36
+    },
+    {
+      "name": "https://static.licdn.com/aero-v1/sc/h/3o46pahpsvlgywm445w8gxsrb",
+      "initiatorType": "fetch",
+      "duration": 36
+    },
+    {
+      "name": "https://static.licdn.com/aero-v1/sc/h/b1bndndq0sn22x73kj9xodi84",
+      "initiatorType": "fetch",
+      "duration": 41
+    },
+    {
+      "name": "https://static.licdn.com/aero-v1/sc/h/ah84a4kcg2akgyt6296nd7cp6",
+      "initiatorType": "fetch",
+      "duration": 73
+    },
+    {
+      "name": "https://static.licdn.com/aero-v1/sc/h/blmc5ghyknl6ffign8g3713u5",
+      "initiatorType": "fetch",
+      "duration": 79
+    },
+    {
+      "name": "https://static.licdn.com/aero-v1/sc/h/ev3prx6qwul6j3me07vap4ui1",
+      "initiatorType": "fetch",
+      "duration": 27
+    },
+    {
+      "name": "https://static.licdn.com/aero-v1/sc/h/bredpxsi5risry9tbd1ujbu8t",
+      "initiatorType": "fetch",
+      "duration": 68
+    },
+    {
+      "name": "https://static.licdn.com/aero-v1/sc/h/286sd8im0g89q9d4i0xr6ru5w",
+      "initiatorType": "fetch",
+      "duration": 92
+    },
+    {
+      "name": "https://static.licdn.com/aero-v1/sc/h/d5ukcuzvolzuhgfhh7hiyyfk2",
+      "initiatorType": "fetch",
+      "duration": 42
+    },
+    {
+      "name": "https://static.licdn.com/aero-v1/sc/h/875wusd8r0g1r1ljk8aexm9z0",
+      "initiatorType": "fetch",
+      "duration": 28
+    },
+    {
+      "name": "https://static.licdn.com/aero-v1/sc/h/1qb9dmzwvef7v6qso0tozjagy",
+      "initiatorType": "fetch",
+      "duration": 28
+    },
+    {
+      "name": "https://static.licdn.com/aero-v1/sc/h/4oh9r66yxuaqvezedncxmyowe",
+      "initiatorType": "fetch",
+      "duration": 35
+    },
+    {
+      "name": "https://static.licdn.com/aero-v1/sc/h/8v9l751rxzhu8vgn6fkg4duit",
+      "initiatorType": "fetch",
+      "duration": 31
+    },
+    {
+      "name": "https://static.licdn.com/aero-v1/sc/h/7tldu7rqyuhu4zt1pmh49huq3",
+      "initiatorType": "fetch",
+      "duration": 61
+    },
+    {
+      "name": "https://static.licdn.com/aero-v1/sc/h/1sufbxo3bbo9nde70jwltz7dr",
+      "initiatorType": "fetch",
+      "duration": 43
+    },
+    {
+      "name": "https://static.licdn.com/aero-v1/sc/h/8li7bh3x0vjl6eog3k6gdnec8",
+      "initiatorType": "fetch",
+      "duration": 31
+    },
+    {
+      "name": "https://static.licdn.com/aero-v1/sc/h/4kqemjz6wnrwxht8otc1zstb5",
+      "initiatorType": "fetch",
+      "duration": 48
+    },
+    {
+      "name": "https://static.licdn.com/aero-v1/sc/h/3o46pahpsvlgywm445w8gxsrb",
+      "initiatorType": "fetch",
+      "duration": 49
+    },
+    {
+      "name": "https://static.licdn.com/aero-v1/sc/h/b1bndndq0sn22x73kj9xodi84",
+      "initiatorType": "fetch",
+      "duration": 53
+    },
+    {
+      "name": "https://static.licdn.com/aero-v1/sc/h/ah84a4kcg2akgyt6296nd7cp6",
+      "initiatorType": "fetch",
+      "duration": 75
+    },
+    {
+      "name": "https://static.licdn.com/aero-v1/sc/h/blmc5ghyknl6ffign8g3713u5",
+      "initiatorType": "fetch",
+      "duration": 84
+    },
+    {
+      "name": "https://static.licdn.com/aero-v1/sc/h/ev3prx6qwul6j3me07vap4ui1",
+      "initiatorType": "fetch",
+      "duration": 36
+    },
+    {
+      "name": "https://static.licdn.com/aero-v1/sc/h/bredpxsi5risry9tbd1ujbu8t",
+      "initiatorType": "fetch",
+      "duration": 73
+    },
+    {
+      "name": "https://static.licdn.com/aero-v1/sc/h/286sd8im0g89q9d4i0xr6ru5w",
+      "initiatorType": "fetch",
+      "duration": 91
+    },
+    {
+      "name": "https://static.licdn.com/aero-v1/sc/h/d5ukcuzvolzuhgfhh7hiyyfk2",
+      "initiatorType": "fetch",
+      "duration": 43
+    },
+    {
+      "name": "https://static.licdn.com/aero-v1/sc/h/875wusd8r0g1r1ljk8aexm9z0",
+      "initiatorType": "fetch",
+      "duration": 40
+    },
+    {
+      "name": "https://static.licdn.com/aero-v1/sc/h/1qb9dmzwvef7v6qso0tozjagy",
+      "initiatorType": "fetch",
+      "duration": 40
+    },
+    {
+      "name": "https://static.licdn.com/aero-v1/sc/h/4oh9r66yxuaqvezedncxmyowe",
+      "initiatorType": "fetch",
+      "duration": 43
+    },
+    {
+      "name": "https://static.licdn.com/aero-v1/sc/h/8v9l751rxzhu8vgn6fkg4duit",
+      "initiatorType": "fetch",
+      "duration": 40
+    },
+    {
+      "name": "https://static.licdn.com/aero-v1/sc/h/7tldu7rqyuhu4zt1pmh49huq3",
+      "initiatorType": "fetch",
+      "duration": 68
+    },
+    {
+      "name": "https://static.licdn.com/aero-v1/sc/h/1sufbxo3bbo9nde70jwltz7dr",
+      "initiatorType": "fetch",
+      "duration": 60
+    },
+    {
+      "name": "https://static.licdn.com/aero-v1/sc/h/8li7bh3x0vjl6eog3k6gdnec8",
+      "initiatorType": "fetch",
+      "duration": 41
+    },
+    {
+      "name": "https://static.licdn.com/aero-v1/sc/h/4kqemjz6wnrwxht8otc1zstb5",
+      "initiatorType": "fetch",
+      "duration": 61
+    },
+    {
+      "name": "https://static.licdn.com/aero-v1/sc/h/3o46pahpsvlgywm445w8gxsrb",
+      "initiatorType": "fetch",
+      "duration": 64
+    },
+    {
+      "name": "https://static.licdn.com/aero-v1/sc/h/b1bndndq0sn22x73kj9xodi84",
+      "initiatorType": "fetch",
+      "duration": 65
+    },
+    {
+      "name": "https://static.licdn.com/aero-v1/sc/h/ah84a4kcg2akgyt6296nd7cp6",
+      "initiatorType": "fetch",
+      "duration": 81
+    },
+    {
+      "name": "https://static.licdn.com/aero-v1/sc/h/blmc5ghyknl6ffign8g3713u5",
+      "initiatorType": "fetch",
+      "duration": 84
+    },
+    {
+      "name": "https://www.linkedin.com/flagship-web/rsc-action/actions/pagination?sduiid=com.linkedin.sdui.pagers.feed.mainFeed&parentSpanId=fLAGshUbwD8%3D",
+      "initiatorType": "fetch",
+      "duration": 1411
+    },
+    {
+      "name": "https://www.linkedin.com/7Ar6k1U-L2bl4e2",
+      "initiatorType": "fetch",
+      "duration": 359
+    },
+    {
+      "name": "https://www.linkedin.com/litms/api/metadata/user",
+      "initiatorType": "xmlhttprequest",
+      "duration": 363
+    },
+    {
+      "name": "https://www.linkedin.com/7Ar6k1U-L2bl4e2",
+      "initiatorType": "fetch",
+      "duration": 354
+    },
+    {
+      "name": "https://www.linkedin.com/7Ar6k1U-L2bl4e2",
+      "initiatorType": "fetch",
+      "duration": 341
+    },
+    {
+      "name": "https://www.linkedin.com/7Ar6k1U-L2bl4e2",
+      "initiatorType": "fetch",
+      "duration": 332
+    },
+    {
+      "name": "https://www.linkedin.com/litms/api/events/tms-load",
+      "initiatorType": "xmlhttprequest",
+      "duration": 280
+    },
+    {
+      "name": "https://www.linkedin.com/litms/api/events/ext-tag-load",
+      "initiatorType": "xmlhttprequest",
+      "duration": 279
+    },
+    {
+      "name": "https://dpm.demdex.net/id?d_visid_ver=5.1.1&d_fieldgroup=MC&d_rtbd=json&d_ver=2&d_orgid=14215E3D5995C57C0A495C55%40AdobeOrg&d_nsid=0&d_mid=47021915048901824990940904969884193047&d_blob=6G1ynYcLPuiQxYZrsz_pkqfLG9yMXBpb2zX5dvJdYQJzPXImdj0y&ts=1779948474647",
+      "initiatorType": "xmlhttprequest",
+      "duration": 317
+    },
+    {
+      "name": "https://lnkd.demdex.net/event?d_dil_ver=9.4&_ts=1779948474650",
+      "initiatorType": "xmlhttprequest",
+      "duration": 317
+    },
+    {
+      "name": "https://www.linkedin.com/7Ar6k1U-L2bl4e2",
+      "initiatorType": "fetch",
+      "duration": 409
+    },
+    {
+      "name": "https://www.linkedin.com/flagship-web/rsc-action/actions/pagination?sduiid=com.linkedin.sdui.pagers.feed.mainFeed&parentSpanId=hrGm1rN555I%3D",
+      "initiatorType": "fetch",
+      "duration": 1198
+    },
+    {
+      "name": "https://www.linkedin.com/7Ar6k1U-L2bl4e2",
+      "initiatorType": "fetch",
+      "duration": 335
+    },
+    {
+      "name": "https://www.linkedin.com/7Ar6k1U-L2bl4e2",
+      "initiatorType": "fetch",
+      "duration": 324
+    },
+    {
+      "name": "https://www.linkedin.com/7Ar6k1U-L2bl4e2",
+      "initiatorType": "fetch",
+      "duration": 329
+    },
+    {
+      "name": "https://www.linkedin.com/flagship-web/rsc-action/actions/server-request?sduiid=com.linkedin.sdui.update.incrementCounterMetric&parentSpanId=38lGOpj8jlE%3D",
+      "initiatorType": "fetch",
+      "duration": 388
+    },
+    {
+      "name": "https://www.linkedin.com/flagship-web/rsc-action/actions/pagination?sduiid=com.linkedin.sdui.pagers.feed.mainFeed&parentSpanId=pY0l8z9FQak%3D",
+      "initiatorType": "fetch",
+      "duration": 1344
+    },
+    {
+      "name": "https://www.linkedin.com/flagship-web/rsc-action/actions/server-request?sduiid=com.linkedin.sdui.update.incrementCounterMetric&parentSpanId=i4TOLG6wmN4%3D",
+      "initiatorType": "fetch",
+      "duration": 355
+    },
+    {
+      "name": "https://www.linkedin.com/7Ar6k1U-L2bl4e2",
+      "initiatorType": "fetch",
+      "duration": 320
+    },
+    {
+      "name": "https://www.linkedin.com/flagship-web/rsc-action/actions/pagination?sduiid=com.linkedin.sdui.pagers.feed.mainFeed&parentSpanId=P2S7cukadsA%3D",
+      "initiatorType": "fetch",
+      "duration": 2189
+    },
+    {
+      "name": "https://www.linkedin.com/flagship-web/rsc-action/actions/server-request?sduiid=com.linkedin.sdui.search.requests.searchHomeRequestAction&parentSpanId=%2B6BRmHaT4mk%3D",
+      "initiatorType": "fetch",
+      "duration": 491
+    },
+    {
+      "name": "https://www.linkedin.com/7Ar6k1U-L2bl4e2",
+      "initiatorType": "fetch",
+      "duration": 269
+    },
+    {
+      "name": "https://www.linkedin.com/flagship-web/rsc-action/actions/server-request?sduiid=com.linkedin.sdui.update.incrementCounterMetric&parentSpanId=vx6SRU6QZ6U%3D",
+      "initiatorType": "fetch",
+      "duration": 323
+    },
+    {
+      "name": "https://www.linkedin.com/flagship-web/rsc-action/actions/server-request?sduiid=com.linkedin.sdui.search.requests.searchHomeRequestAction&parentSpanId=zX5K7VOppts%3D",
+      "initiatorType": "fetch",
+      "duration": 704
+    },
+    {
+      "name": "https://www.linkedin.com/7Ar6k1U-L2bl4e2",
+      "initiatorType": "fetch",
+      "duration": 394
+    },
+    {
+      "name": "https://www.linkedin.com/7Ar6k1U-L2bl4e2",
+      "initiatorType": "fetch",
+      "duration": 293
+    },
+    {
+      "name": "https://www.linkedin.com/7Ar6k1U-L2bl4e2",
+      "initiatorType": "fetch",
+      "duration": 385
+    },
+    {
+      "name": "https://www.linkedin.com/7Ar6k1U-L2bl4e2",
+      "initiatorType": "fetch",
+      "duration": 297
+    },
+    {
+      "name": "https://www.linkedin.com/li/tscp/sct",
+      "initiatorType": "fetch",
+      "duration": 386
+    },
+    {
+      "name": "https://www.linkedin.com/7Ar6k1U-L2bl4e2",
+      "initiatorType": "fetch",
+      "duration": 343
+    },
+    {
+      "name": "https://www.linkedin.com/li/tscp/sct",
+      "initiatorType": "fetch",
+      "duration": 325
+    },
+    {
+      "name": "https://www.linkedin.com/li/tscp/sct",
+      "initiatorType": "fetch",
+      "duration": 311
+    },
+    {
+      "name": "https://www.linkedin.com/li/tscp/sct",
+      "initiatorType": "fetch",
+      "duration": 296
+    },
+    {
+      "name": "https://www.linkedin.com/li/tscp/sct",
+      "initiatorType": "fetch",
+      "duration": 337
+    },
+    {
+      "name": "https://www.linkedin.com/7Ar6k1U-L2bl4e2",
+      "initiatorType": "fetch",
+      "duration": 307
+    },
+    {
+      "name": "https://www.linkedin.com/7Ar6k1U-L2bl4e2",
+      "initiatorType": "fetch",
+      "duration": 394
+    },
+    {
+      "name": "https://www.linkedin.com/li/tscp/sct",
+      "initiatorType": "fetch",
+      "duration": 240
+    },
+    {
+      "name": "https://www.linkedin.com/li/tscp/sct",
+      "initiatorType": "fetch",
+      "duration": 274
+    },
+    {
+      "name": "https://www.linkedin.com/li/tscp/sct",
+      "initiatorType": "fetch",
+      "duration": 260
+    },
+    {
+      "name": "https://www.linkedin.com/7Ar6k1U-L2bl4e2",
+      "initiatorType": "fetch",
+      "duration": 400
+    },
+    {
+      "name": "https://www.linkedin.com/7Ar6k1U-L2bl4e2",
+      "initiatorType": "fetch",
+      "duration": 291
+    },
+    {
+      "name": "https://www.linkedin.com/flagship-web/mynetwork",
+      "initiatorType": "fetch",
+      "duration": 1099
+    },
+    {
+      "name": "https://platform.linkedin.com/litms/allowlist/voyager-web-mynetwork",
+      "initiatorType": "xmlhttprequest",
+      "duration": 175
+    },
+    {
+      "name": "https://www.linkedin.com/flagship-web/rsc-action/actions/server-request?sduiid=com.linkedin.sdui.requests.mynetwork.mojoTabsBadge&parentSpanId=PgQCl6h0Lo8%3D",
+      "initiatorType": "fetch",
+      "duration": 321
+    },
+    {
+      "name": "https://www.linkedin.com/flagship-web/rsc-action/actions/server-request?sduiid=com.linkedin.sdui.requests.mynetwork.addaClearUnseenInvitationsMutation&parentSpanId=5CH6BRrBt4Q%3D",
+      "initiatorType": "fetch",
+      "duration": 298
+    },
+    {
+      "name": "https://www.linkedin.com/flagship-web/rsc-action/actions/server-request?sduiid=com.linkedin.sdui.requests.mynetwork.addaMarkNotificationsSeen&parentSpanId=BtGe3%2F15np0%3D",
+      "initiatorType": "fetch",
+      "duration": 352
+    },
+    {
+      "name": "https://www.linkedin.com/flagship-web/rsc-action/actions/pagination?sduiid=com.linkedin.sdui.pagers.mynetwork.adda-cohorts-components&parentSpanId=oNzflkh85W8%3D",
+      "initiatorType": "fetch",
+      "duration": 815
+    },
+    {
+      "name": "https://www.linkedin.com/flagship-web/rsc-action/actions/server-request?sduiid=com.linkedin.sdui.requests.mynetwork.addaMarkNotificationsSeen&parentSpanId=XphJVyxOfNM%3D",
+      "initiatorType": "fetch",
+      "duration": 299
+    },
+    {
+      "name": "https://www.linkedin.com/7Ar6k1U-L2bl4e2",
+      "initiatorType": "fetch",
+      "duration": 261
+    },
+    {
+      "name": "https://www.linkedin.com/litms/api/events/ext-tag-load",
+      "initiatorType": "xmlhttprequest",
+      "duration": 238
+    },
+    {
+      "name": "https://lnkd.demdex.net/event?d_dil_ver=9.4&_ts=1779948576370",
+      "initiatorType": "xmlhttprequest",
+      "duration": 305
+    },
+    {
+      "name": "https://www.linkedin.com/litms/api/events/tms-load",
+      "initiatorType": "xmlhttprequest",
+      "duration": 248
+    },
+    {
+      "name": "https://www.linkedin.com/7Ar6k1U-L2bl4e2",
+      "initiatorType": "fetch",
+      "duration": 281
+    },
+    {
+      "name": "https://www.linkedin.com/flagship-web/games/patches/",
+      "initiatorType": "fetch",
+      "duration": 561
+    },
+    {
+      "name": "https://www.linkedin.com/7Ar6k1U-L2bl4e2",
+      "initiatorType": "fetch",
+      "duration": 387
+    },
+    {
+      "name": "https://www.linkedin.com/7Ar6k1U-L2bl4e2",
+      "initiatorType": "fetch",
+      "duration": 378
+    },
+    {
+      "name": "https://www.linkedin.com/7Ar6k1U-L2bl4e2",
+      "initiatorType": "fetch",
+      "duration": 363
+    },
+    {
+      "name": "https://www.linkedin.com/7Ar6k1U-L2bl4e2",
+      "initiatorType": "fetch",
+      "duration": 349
+    }
+  ]
+}

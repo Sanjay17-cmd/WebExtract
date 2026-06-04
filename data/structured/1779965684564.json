@@ -1,0 +1,449 @@
+{
+  "buttons": [
+    {
+      "text": "",
+      "id": "",
+      "className": "glue-header__drawer-toggle-btn",
+      "type": "submit"
+    },
+    {
+      "text": "",
+      "id": "glue-carousel-prev-2",
+      "className": "glue-carousel__button glue-carousel__button--prev glue-is-inactive",
+      "type": "submit"
+    },
+    {
+      "text": "",
+      "id": "glue-carousel-next-2",
+      "className": "glue-carousel__button glue-carousel__button--next glue-is-inactive",
+      "type": "submit"
+    },
+    {
+      "text": "",
+      "id": "prev-mobile-btn",
+      "className": "glue-button glue-button--high-emphasis glue-button--icon interactive",
+      "type": "submit"
+    },
+    {
+      "text": "",
+      "id": "",
+      "className": "glue-carousel__dot glue-is-active",
+      "type": "submit"
+    },
+    {
+      "text": "",
+      "id": "next-mobile-btn",
+      "className": "glue-button glue-button--high-emphasis glue-button--icon interactive",
+      "type": "submit"
+    },
+    {
+      "text": "",
+      "id": "",
+      "className": "glue-carousel__button glue-carousel__button--prev glue-is-inactive",
+      "type": "submit"
+    },
+    {
+      "text": "",
+      "id": "",
+      "className": "glue-carousel__button glue-carousel__button--next",
+      "type": "submit"
+    },
+    {
+      "text": "",
+      "id": "prev-full-bleed-map-mobile-btn",
+      "className": "glue-button glue-button--high-emphasis glue-button--icon navigation-prev interactive",
+      "type": "submit"
+    },
+    {
+      "text": "",
+      "id": "",
+      "className": "glue-carousel__dot glue-is-active",
+      "type": "submit"
+    },
+    {
+      "text": "",
+      "id": "",
+      "className": "glue-carousel__dot",
+      "type": "submit"
+    },
+    {
+      "text": "",
+      "id": "",
+      "className": "glue-carousel__dot",
+      "type": "submit"
+    },
+    {
+      "text": "",
+      "id": "next-full-bleed-map-mobile-btn",
+      "className": "glue-button glue-button--high-emphasis glue-button--icon navigation-next interactive",
+      "type": "submit"
+    },
+    {
+      "text": "Next",
+      "id": "",
+      "className": "quiz-button interactive",
+      "type": "submit"
+    },
+    {
+      "text": "Surprise me",
+      "id": "",
+      "className": "cta cta--1 discover-color_random-button",
+      "type": "submit"
+    },
+    {
+      "text": "",
+      "id": "",
+      "className": "cta cta--2 interactive doodles-container__close-button",
+      "type": "submit"
+    },
+    {
+      "text": "",
+      "id": "",
+      "className": "cards-stack-content-change",
+      "type": "submit"
+    }
+  ],
+  "links": [
+    {
+      "text": "",
+      "href": "https://doodles.google/#content"
+    },
+    {
+      "text": "",
+      "href": "https://doodles.google/"
+    },
+    {
+      "text": "",
+      "href": "https://doodles.google/search/"
+    },
+    {
+      "text": "",
+      "href": "https://doodles.google/"
+    },
+    {
+      "text": "",
+      "href": "https://doodles.google/search/"
+    },
+    {
+      "text": "",
+      "href": "https://doodles.google/creating-a-doodle/"
+    },
+    {
+      "text": "",
+      "href": "https://doodles.google/about/"
+    },
+    {
+      "text": "",
+      "href": "https://doodles.google/search/"
+    },
+    {
+      "text": "",
+      "href": "https://doodles.google/doodle/celebrating-cherry-blossom-season/"
+    },
+    {
+      "text": "",
+      "href": "https://doodles.google/doodle/nba-playoffs-2025-am/"
+    },
+    {
+      "text": "",
+      "href": "https://doodles.google/doodle/celebrating-house-music/"
+    },
+    {
+      "text": "",
+      "href": "https://doodles.google/doodle/celebrating-the-appalachian-trail/"
+    },
+    {
+      "text": "",
+      "href": "https://doodles.google/doodle/earth-day-2025/"
+    },
+    {
+      "text": "",
+      "href": "https://doodles.google/doodle/us-teacher-appreciation-day-2025/"
+    },
+    {
+      "text": "",
+      "href": "https://doodles.google/doodle/new-years-day-2025/"
+    },
+    {
+      "text": "",
+      "href": "https://doodles.google/doodle/halloween-2024/"
+    },
+    {
+      "text": "",
+      "href": "https://doodles.google/doodle/fourth-of-july-2025/"
+    },
+    {
+      "text": "Culture",
+      "href": "https://doodles.google/search/"
+    },
+    {
+      "text": "Places",
+      "href": "https://doodles.google/search/"
+    },
+    {
+      "text": "Holidays",
+      "href": "https://doodles.google/search/"
+    },
+    {
+      "text": "Play now",
+      "href": "https://doodles.google/search/?form_tags=interactive%20game"
+    },
+    {
+      "text": "May 26, 2026 Men's IPL 2026 - Playoffs",
+      "href": "https://doodles.google/doodle/mens-ipl-2026-playoffs/"
+    },
+    {
+      "text": "May 25, 2026 Memorial Day 2026",
+      "href": "https://doodles.google/doodle/memorial-day-2026/"
+    },
+    {
+      "text": "May 10, 2026 Mother's Day 2026 (May 10)",
+      "href": "https://doodles.google/doodle/mothers-day-2026-may-10/"
+    },
+    {
+      "text": "May 07, 2026 The Art of K-Pop Dance",
+      "href": "https://doodles.google/doodle/the-art-of-k-pop-dance/"
+    },
+    {
+      "text": "May 05, 2026 US Teacher Appreciation Day 2026",
+      "href": "https://doodles.google/doodle/us-teacher-appreciation-day-2026/"
+    },
+    {
+      "text": "May 01, 2026 Labour Day 2026",
+      "href": "https://doodles.google/doodle/labour-day-2026/"
+    },
+    {
+      "text": "July 13, 2025 Bastille Day 2025",
+      "href": "https://doodles.google/doodle/bastille-day-2025/"
+    },
+    {
+      "text": "September 18, 2024 Celebrating Emerson Romero",
+      "href": "https://doodles.google/doodle/celebrating-emerson-romero/"
+    },
+    {
+      "text": "March 28, 2024 Abbas Attar's 80th Birthday",
+      "href": "https://doodles.google/doodle/abbas-attars-80th-birthday/"
+    },
+    {
+      "text": "See all results",
+      "href": "https://doodles.google/search/?color_tags=black"
+    },
+    {
+      "text": "Learn More",
+      "href": "https://doodles.google/about/"
+    },
+    {
+      "text": "Learn More",
+      "href": "https://doodles.google/about/"
+    },
+    {
+      "text": "Learn More",
+      "href": "https://doodles.google/about/"
+    },
+    {
+      "text": "Learn More",
+      "href": "https://doodles.google/about/"
+    },
+    {
+      "text": "Learn More",
+      "href": "https://doodles.google/about/"
+    },
+    {
+      "text": "Learn More",
+      "href": "https://doodles.google/about/"
+    },
+    {
+      "text": "Learn More",
+      "href": "https://doodles.google/about/"
+    },
+    {
+      "text": "Learn More",
+      "href": "https://doodles.google/about/"
+    },
+    {
+      "text": "Learn More",
+      "href": "https://doodles.google/about/"
+    },
+    {
+      "text": "",
+      "href": "https://www.linkedin.com/company/google"
+    },
+    {
+      "text": "",
+      "href": "https://www.facebook.com/Google/"
+    },
+    {
+      "text": "",
+      "href": "https://www.instagram.com/google/"
+    },
+    {
+      "text": "",
+      "href": "https://www.x.com/@googledoodles"
+    },
+    {
+      "text": "",
+      "href": "https://www.youtube.com/@googledoodles"
+    },
+    {
+      "text": "Library",
+      "href": "https://doodles.google/search/"
+    },
+    {
+      "text": "Creating a Doodle",
+      "href": "https://doodles.google/creating-a-doodle/"
+    },
+    {
+      "text": "About",
+      "href": "https://doodles.google/about/"
+    },
+    {
+      "text": "Privacy Policy",
+      "href": "https://policies.google.com/privacy"
+    },
+    {
+      "text": "Terms of Service",
+      "href": "https://policies.google.com/terms"
+    },
+    {
+      "text": "",
+      "href": "https://google.com/"
+    },
+    {
+      "text": "About Google",
+      "href": "https://about.google/"
+    },
+    {
+      "text": "Google Products",
+      "href": "https://about.google/products/"
+    },
+    {
+      "text": "Privacy",
+      "href": "https://policies.google.com/privacy"
+    },
+    {
+      "text": "Terms",
+      "href": "https://policies.google.com/terms"
+    },
+    {
+      "text": "Help",
+      "href": "https://support.google.com/"
+    }
+  ],
+  "forms": [
+    {
+      "action": "https://doodles.google/search/",
+      "method": "get",
+      "inputCount": 2
+    }
+  ],
+  "tables": [],
+  "headings": [
+    {
+      "tag": "h2",
+      "text": "Explore interactive Doodles"
+    },
+    {
+      "tag": "h2",
+      "text": "Latest Doodles from around the world"
+    },
+    {
+      "tag": "h2",
+      "text": "Find your Doodle"
+    },
+    {
+      "tag": "h2",
+      "text": "Discover more Doodles by color"
+    },
+    {
+      "tag": "h2",
+      "text": "Footer Links"
+    },
+    {
+      "tag": "h3",
+      "text": "Follow us"
+    },
+    {
+      "tag": "h3",
+      "text": "Doodles"
+    }
+  ],
+  "sections": [
+    {
+      "tag": "section",
+      "id": "",
+      "heading": "Follow us"
+    },
+    {
+      "tag": "section",
+      "id": "",
+      "heading": "Follow us"
+    },
+    {
+      "tag": "section",
+      "id": "",
+      "heading": ""
+    }
+  ],
+  "apiCalls": [
+    {
+      "name": "https://www.gstatic.com/glue/cookienotificationbar/config/2b.json?hl=en",
+      "initiatorType": "fetch",
+      "duration": 445
+    },
+    {
+      "name": "https://www.google-analytics.com/g/collect?v=2&tid=G-WJ020WWLN5&gtm=45je65q2v9116670880z89116628750za20gzb9116628750zd9116628750&_p=1779965651717&gcd=13l3l3l3l1l1&npa=0&dma=0&are=1&cid=212371879.1779965652&frm=0&lps=1&pscdl=noapi&rcb=16&sr=1366x768&uaa=x86&uab=64&uafvl=Not%252FA)Brand%3B99.0.0.0%7CChromium%3B148.0.7778.97&uam=&uamb=0&uap=Linux&uapv=&uaw=0&ul=en-us&_s=1&tag_exp=0~115938466~115938468~119034491&dr=https%3A%2F%2Fwww.google.com%2F&dl=https%3A%2F%2Fdoodles.google%2F&sid=1779965652&sct=1&seg=0&dt=Google%20Doodles%20-%20Google%E2%80%99s%20Search%20Logo%20Changes%20for%20Every%20Occasion&en=page_view&_fv=1&_nsi=1&_ss=1&ep.page_locale=default&ep.locale_fallback=root&ep.percent_scrolled=0&ep.scroll_increment=0&ep.scroll_instance=1&ep.pageType=homepage&tfd=3384",
+      "initiatorType": "fetch",
+      "duration": 416
+    },
+    {
+      "name": "https://www.gstatic.com/charts/geochart/10/info/mapList.js",
+      "initiatorType": "xmlhttprequest",
+      "duration": 135
+    },
+    {
+      "name": "https://www.gstatic.com/charts/geochart/10/mapfiles/world_COUNTRIES.js",
+      "initiatorType": "xmlhttprequest",
+      "duration": 92
+    },
+    {
+      "name": "https://doodles.google/live/api/v1/doodles?order_by=date&sort_direction=desc&page=1&limit=3&color_tags=pink&recaptcha_token=0cAFcWeA61qVhWRVYsosiE4Tq7vmnZ2SROHZaXTZETDnRKZyibkzMHEUGD4AY0JaKz_mOiElUhHvQHKTkP2vGUNeLW2dPNhe1t-vWXFA3t-tsWqArN_07A8FC6aEktcLfSdt4NwX8LtOOHHXLEvzGbhkMK7l_5BEuNe2e3ow9wnth8b_YT59y3JIEyzqjYcNxeXfoxW4bsETJNWiXSr2O3BUf3gYgrx4os2d_FXItc_C-OBFhze5eOw6xhU62_PhxIBjwmGg04-MTzL-SSztsPQ6TSGdo6AHwvhPL9-870iVoHmaxpFIRy0fwOxcQPL6nqojKixLjGOt22Qd4_KLojACA5Zf2YctiopLJ2-xTM9RJV7meV1IvSdpSWw01QqTXqyv-VE_teDlR9L-rB23ri67bGe6p8g9_NXZj0V8Si9-PQQS4_AvMhfoTKS5UM2Heb2kMq3bfhLGfSdU8Du5mPol3zE4eoC8uy6uRhPJh1crngBA6f-YkDXpKZL9bq0oq4EbGbUYETdFbsg7KnrhcQWhbvM0vbe2nrTDOdEeL9_lMRhBomtjLeHK8kWozKVa07HGRr3jtUDubzXNy-U2njPW8c0xnYJWQgKqNz2I0lNwvNmR9l9PiqYEiEZAY_xwoJq9-3NruCE65Q2ncWwpAk1SH18T2fu4rDbNG5OL9DdQUwQYKcOfrMLxDM-vsNlCr0pbN8Tb8uNQi-Vo2DbonIypMMFiY7_tpPPBchGTtUiRyIbuxyQ6rSXkp-BajyiMdPMTKCPcxWM9OnzGmCtsaIssxhVQW7NCwH_n4EUjEzIBywqkSgLIut9FK022GyzNGWGmmp_ct3cwg5QL1Zm7xClMhKB4VBrG7mB6nOVTR790RWor2VCcz0d7mlHy4TneACNgxo5Wxgvvy13BUzC6eT2IpZFgF0doihXB5EJGgHP0VyAwIMa8Hfgw7zdQELQtnKBDpBqli1iUbtLYeN6vwReE3Q2SFL3IzRWJFqFEtSVHbZJXDX6YetdIcGM4fSTQW_09nS7Nddf7hGEz5KsgaQp7XcB4RYAIH87Sm4FIyj9WDPw9bW4bQH6m3d6x7usgZP52T6aHCi26DhwKbnZxAWfxGRbUr2Um38b03Qpp-5vHiXvvmV7zgXF6MriIFlIidX9qHyeB2Odmu9AOPGewV2y2KDxkJAzDxIInqvrkZFCeyT52aOJ6bpc9LpshVv_owVZgNXc1mfD5nRrUGWE15RSmf7j-iJIhZ2v7AoENkqgKNFS81vZhaHUj8ku9_uYPjsRAnrsv9QiO2hl6z1-AB_zSF36OLc6i-BS6kbk1zjTFxsbu5faqqrhPwqYZIZOwV0UkLtcRfVCeImlg-v5ci92a-bJ-VCD-Nu2obN0hNQZGEEyTNQgRnAgVds5OfwMq4T1quU6wziGbPiPwO5a021GsntTY6oozmeoGnaA74ukhvxTt332AEjMDhpKYyu83HbKg-C0gh_WmvkJhi8MTWwLc8X565wPXGlgvKIKx569ZhsGuVNop1C6_3YuFSXMuW2u1Hqeo-zFgvEHbgH0mMx2uPc-X91nP1C7b1_h__jbb5-xqZjyzd1aGlB75XnnidR2crVQGVrgf4r4bXhm3mkhOhwy7r0emdnWz1DROT31OJ_5mEfQ-pf5CLwDodRc-5ctlsF_7vg7KWj9E5PiRNjRquHTThpjmKIqWKMQZlbWY2te6JXSwa3b2y4RyYxufgUF5WLoNjrO12KTc0NFyWM9JF5nhg59JokhpfwwqY5CT4HVIlhT8tEE2w4Eo4n0A3S5KRCknKgNhgvA2EKATADtgTezTrEb-87aTVB7TdgnFP7_pewtHQ6oR9S__5yNAhVUSkRUhWF9aIoe1dsKy12jF_95RUwYQ7tddz592MSEzkTic6DCBKj5yxqAA_MIjUcOfYJ893g8wSOPXN56iYgn97zDWDRdtyX_6b2exAogAFYL3vuAvHnDKEuXwWCysBmtpGO6ijDKLG2z6_QZfsn1cf0zs6sKP-6qnYgEj5JFw231iZrZ6-inhgWoEfOyxLyzC_6qbGuRjlFWml16boIslCALAsOGz5VpEkksbkk9BjZI2Tw_WqGmdzsAfLgGTU9Cnren_FwT7BOWYlvvZp5xnY0nB0Q3zJGfgGJS_nvMi9gBMZYS2WXCC0yzqXjBz-p7lsNRGZuV5TGNA28f3B5XI0gl4cVA7h9cOYvFLM4CM2hrX_KQZQJpBHBDV-fhqh_EO0rcUZdrhrOrwNKDXJuKSepygV4bYTzRQ",
+      "initiatorType": "fetch",
+      "duration": 807
+    },
+    {
+      "name": "https://www.google.com/recaptcha/enterprise/clr?k=6Ld2VXUnAAAAAOmlNm2Lz5S1UddvU-mZWr4raoPI",
+      "initiatorType": "fetch",
+      "duration": 292
+    },
+    {
+      "name": "https://www.google-analytics.com/g/collect?v=2&tid=G-WJ020WWLN5&gtm=45je65q2v9116670880z89116628750za20gzb9116628750zd9116628750&_p=1779965651717&gcd=13l3l3l3l1l1&npa=0&dma=0&_eu=AAAAAAQ&are=1&cid=212371879.1779965652&frm=0&lps=1&pscdl=noapi&rcb=16&sr=1366x768&uaa=x86&uab=64&uafvl=Not%252FA)Brand%3B99.0.0.0%7CChromium%3B148.0.7778.97&uam=&uamb=0&uap=Linux&uapv=&uaw=0&ul=en-us&tag_exp=0~115938466~115938468~119034491&dr=https%3A%2F%2Fwww.google.com%2F&dl=https%3A%2F%2Fdoodles.google%2F&sid=1779965652&sct=1&seg=0&dt=Google%20Doodles%20-%20Google%E2%80%99s%20Search%20Logo%20Changes%20for%20Every%20Occasion&_s=2&tfd=8439",
+      "initiatorType": "fetch",
+      "duration": 191
+    },
+    {
+      "name": "https://doodles.google/live/api/v1/doodles?order_by=date&sort_direction=desc&page=1&limit=3&color_tags=green&recaptcha_token=0cAFcWeA4A7X62MsEy1HSlDwrS3OFVRCQdP-hqdjiogpLP98xuvvprIXPsHd7FragWCgvmFawvDGfFdSzfzOI8ClFj6BH13CBySfMbuhE8ErbLwbKHnvNydIN5NsdoewNC-OwhA6dyjCnemZsrJr6U23kpZ-RM6PmVbbWFT82YNWmsga4EwlJ9TO_Y0Hy6QIlWg7UjMFIOcoOdMdmnuFPM2cZ-zitE-dLB6TWyI96rWfaGQ3HK097dlkUfKTzM623hOvhzU__vTbtiaGhnCXjLLOfREou_XXICTmESmerThye3q6knt6KCy5nHQrap-gqb0THvEXV7hQGdgaTAlgPi31bAEcTjMoL0IMClxYUB69ISTf8yw7il7FwKS6ykfYbpyCY8IUduQr1HoK6BNqGgTD22_A6qI-poxNEQ86EdlejIL31GwOD1JlBkDYA6btEvv15BRX3OqPHc0GMbt1KVtE5Yvdu7KaRMO5Jrcjw5FC8YbiBG8wSaS-0iaG_enotnGD7L-LP0rhHwlBOXSzvxUGe5LHF_hgQRlXLMDvTRNQ6oPWKpUe0Zqp9VZtSaRAsywR_tWYT9D2wZRWxzff3t9FZ1EqcAmwsWl_hZ5SIj09TwNhkvJzktDGp9lYZOWMSCW1dzoSm38LxaPEAOJtWnkOXshwsKE9_J3puRKR0l5r_ObTU2A64eesbDF4hHEWvSLone3yd4f0Iort4VekZvA9mZTJxwuUnv7sr2UL0I-5EKeBTNtMcp6gjHTN0kracbFhaqPubpj6l8-52HmtlREICUb4VseFjIaIUHbcaE3wlPh69yA8-jZENVRAvH7WVlk6J3ZjCp6MHZeqTCj8Y6RPr8zeem7IuBi_hc3dSb_fdpQuxUuPJchA98ZKgJxaMNRPYA2JKHsrl2avk2vQRuPwyR3cCcyjI4Vbd2-iNSsO8D6uy78EGCernQfxnhgBZBwa5VJu5XK1ps9xw4jKNAWebyVAg-cTr2XDBQt3gQgS8e91pOaV9rkZYhiR2z8fDN3bsPZakPEfitLssPA1uAvRi01jP1nGX7i9oqN6ESKCUVQQUxLhdwjVz5SAxnWtaAQX39ojkeMRxubQNV8QbE-pwZsBaLwMu6jmYk9mf7LcAX0mJXawtksv35ng7eJOOKfb_vsR7XdQBHWVoo4eRjTEkdIVjq7RdwgO85xh7cyQJopnBmUURjHN0PMyxxAKl6Pe3eNgyd216-Gzu0FvZ0DHIwl-YjdNSCRSztP39ZKQDYQatRHc9xZrcJQkXnau-QtT8rEvOLq9HXQJvvbLvL5lkVT425mf1jgEtKF1UGxytAIab2tBBpGYyxVhshRTW40soc2Z44Tw4xdzrDLU5g63aLHMHKbc2EHM5a6hN0xtf1WumEQZ3IRaVCEB9voyapgauVVsYxdDR_PiZvOdDFTH6WOWxajwp6-7rXkwSRfreQBsW4FIHmVPggpXt2AkHSgeytfwuGiObm_9X-6CFGaP5hDJF6TVZfzM880Aecx4y75tQZyTxDQTADMb6bEvm_ZAq6rdhrGqyP5g0bSiHeznthEiBtPNkzKvxq88YvjtfaUWEBUgdR5zzzM2KYvfHlwqsoG2G0vTvYkZ1Z2f1I_STrNX0GnnAlBilJCn60AL1ncJOC9Hl_RCJKmfKZ-v3J5ym9FP2rFPhwLBKkjl-nfPRrD4Kt9Y18_O2sz3Epypuv-vvOtLSuIb2lZuGV05_t2654WvPKormvg2fVVO0eXPXKYatOqGh_f87jqrlaCOG6YpJ4uiGOxevhYgKeaS2acnaYs48uSuhPa_UgRejZgRR1MN8ETjp_FRhCQZ_5W6zJwYnI-L7_bNB45OFk49xu-yG3atafBNLUksbyKwlAoYPjE3A57deT-p12Whfpb0Ph8YG2HKChaq8kH3D-JMgpBTtUh71Hc7Ys3ROCqwkfD1emRNVaypxOOTW0Cvd0PKnM-_TB2h1PTtcnS7rU_jEVpPNjFvAaC9DV65W0-iWETD9JXavtHZ1fxJhfKJfrltcC6Gc6riuyiWt5NN-8weIWWCq8bZwcjymaz7bw16pN7cVye6VvKv2uUG833uFqXOzT_3g2tZOKot8APifbVdIMcLCj_4KCRQPPVOZ8N2wcxYpf9vZfdnnHkeqmKSr-LkXoCPdMmhGi4ad1bHKodwqTgpmSNH4lg6oL5zwFGtgG33poPOvzZ0EQ2u3Ml7AhckaObXfZ5mwloXcvwACr306C0Th4Q4Dw9ibPUZtPeDYV6u9QOWyxbCUqC73N-CkDzJVIXxjBBngILcu-Q6SktWDzk9CV8mBesmbbAunM22HT_uYMaXvF1pfwYENcs8sOfx2iLW9lXcQPVUaw-8PDZO0ZGahux-s4bxq-",
+      "initiatorType": "fetch",
+      "duration": 806
+    },
+    {
+      "name": "https://www.google.com/recaptcha/enterprise/clr?k=6Ld2VXUnAAAAAOmlNm2Lz5S1UddvU-mZWr4raoPI",
+      "initiatorType": "fetch",
+      "duration": 86
+    },
+    {
+      "name": "https://www.google-analytics.com/g/collect?v=2&tid=G-WJ020WWLN5&gtm=45je65q2v9116670880z89116628750za20gzb9116628750zd9116628750&_p=1779965651717&gcd=13l3l3l3l1l1&npa=0&dma=0&_eu=AAAAAAQ&are=1&cid=212371879.1779965652&frm=0&lps=1&pscdl=noapi&rcb=16&sr=1366x768&uaa=x86&uab=64&uafvl=Not%252FA)Brand%3B99.0.0.0%7CChromium%3B148.0.7778.97&uam=&uamb=0&uap=Linux&uapv=&uaw=0&ul=en-us&tag_exp=0~115938466~115938468~119034491&dr=https%3A%2F%2Fwww.google.com%2F&dl=https%3A%2F%2Fdoodles.google%2F&sid=1779965652&sct=1&seg=0&dt=Google%20Doodles%20-%20Google%E2%80%99s%20Search%20Logo%20Changes%20for%20Every%20Occasion&_s=3&tfd=17088",
+      "initiatorType": "fetch",
+      "duration": 230
+    },
+    {
+      "name": "https://doodles.google/live/api/v1/doodles?order_by=date&sort_direction=desc&page=1&limit=3&color_tags=black&recaptcha_token=0cAFcWeA5wDRNyvO3soyLcdxdnB7ZFUphlu790dz3RmkZCA6WmRY8UYE6-ebwhnI7JzDFsGOYm0iGycH_ktqkc3LpzA7GB0CPck-yCbp4VcF7FgFVQAOhE1DmRwUq2g3dx5QsOf3-TPj8RuEtpa6eJQrOWfR8HJTe8I3qW7cds5wp2IDgNYrzJbw_FA09ODOyNayKv5wZzL5MftZSWQL-ukwt6qMxOdcz5juk2_jnP3dKlHvwgjYkv2qNm64j7Fad1RgByPRzASNBdl4M52CQejSeZIUjbiEzQYHSLINf2R4iBu880R7bI22cuaMolFqXzz-fwpl24LIQKhgev8Bb5rlg8SumqCGPFTK2PwYXbazOWCI5Quo60WbO3vyiImIQVJLcjwn1SK_tBz35dTGf2f27U-bWnN1A48FutIKJHWh5HbKKfQ1vVmqm1_aifXxYWMWElyPxRVdPrbq0-JstVlonBOlCj7RMU2u7oXMgfL6N8e4DCADIFVxCDwAkCrqzQbZjCJhm2CPc2LkbE7eSbsrmzYhEV1ascYGD1sSs1odK78Zvcbjam2zq4U-71uM4bDnNPi_udzlNIL7rjsA30Cu9LLtqDrU-Y5XsqNsE-zyTquSFNlntYyz3jJo-g8cL7s7IWoB-ETesY008oVS2MW-CbeZL2YpSyUwqrmBU_KWW_WFsv7E9RKnwV9YN1QIRzLixs-UUd9_FUjd-B7enEuPOC0Fu48t19j1WJsv0F27vM8KIyarAUAhlr-LtIB8HiumhTdJIxE5eYbbPsnQf_iTUIMYGMmEI64gxqV3QMBJeWX26y4_FDbQyn5j7_ZIEfErQUv6M3iLTgHyBwbghFU-snjtgQVsHrsfbBoMzv5up1095zjuMAd7gOoU4sygBdWS7eFd07ep_8Rc6E6ohq1N2mzP1rX1Q6CDIRvA1MrXeJ_ejJE9xNqjLBUuB90_mfgS6_S37mO5CBv03As_rlkr4ry7v4MG6CYtEzClGR_jzeLx6AVgu_edzLbEXA2CS6s--n6rto3ZwKUs92oFLgD_XebMWZQTtUvn7uYecG95OFTpWyN2LqX_saPwtZwIY7kkOwpnVov_jH9FsAqvocPuyEypb2y21xY26WKcLNU04amcqL3RjUtmVDRqmDXsY2wZ_s1dRqIMTxvWEu-fVvf9-yiXZR-IjuPgmrZ2FnzzgdZqbqxlFsx9eLhLwlwwyG6MuHjW4k5XCqYeFD34u8DhiwjEnTDcuncAA3ad3cunMMniOn-LYP0hkrO6Pa_29o3YDDuiKCsrWNGrkyTqGDnz7AY-l9CNdIlBwwzI36IUzIecgUv-52yXeEzZE_loZXh7J4rfCQJnRY2LzrxXWZR1_7Eu_UkCDu20cfUKoQYy3FHxl7YSppTnoc12-PBABy6UQY4JavGc0EvQjt2DYF0GJJqRGLno5v98fMJjOfcQvnSVYOooxdtuYUrBJKpLav0J-VURNN3kD23aGXUjPx80iAE2WT1w-YBnSKKMdbJFX1iCnlfnBqlUyaLMfK28Rn7ux24K3F5R8oiN5DrgHM6rYmqYuE247EQOaYEMfGducAJKvTEb0FIMaF3Wo-7OP75RMIHg2QqyC4gW6M37zoae6Nq50FO1qoiCFUvX3DBCw5UjHy1NIpFew2R-TXGl7ivgDBaifMdZFECb8mekgMvpQzdn1YTfHgx5iHTlsZZRp23SlLPw7wlfBQyz-OYzRNW3LzsDlH3QQeyUxDaqlj3emOaAw23BKgNw_7KlvLb4sRdqVqTPR8byGpQkM4MlU7mMqPOx_KMemiBMCjxgxia9KYwHodoqhxDGtNtGiWfbejpkVT9Qt9GhUiTdYhWJimRSlwyrhywF6zxPbbnfOpg3gjm2Pkc4hOcI1bk_i-jcZLrJHgZlAqjTaq1xSESvs7GpiKZdp6UQc5FjA6bjwwxwSIs1BksgiUjwNb7tm4HikCDLYXbPdl2ejKStRTpD9b8bqQJpwvwGrnbcg-1mIQ3uorxElYDGdjY8ncwcTPsxOdYoAYK4NySbeUAyooCqfNR1KOWX2uYtXhdF-rdVOunweirTOmwuEPvNRfEcqF7hNuGY1nqcJwHmm1d82A0QOqdwpyPZ-dS55I2g-vc5TU-TWC5JBtY4F-QYs1N56aXgRzePHAosrpISPYgU6VKKImFk66sQWoYXvnCqeKIfYI8SZeVQ_ZWHNmHtFLgV9u-TDlJxCZXEuM_eH9qORsoEsoO-NuUone7OfBNHVQ7pODfcVyaPe2jdS6OCTsrOjGTr0DtSYptMMGyCt4T-uROXG5Sqcsq6fJSpNlfTRxi0do1ah3X4lXVpQNtqg2w7zMmkHhi-AQDu9j8cDP477Bcumz2_Ypztd_hi_b",
+      "initiatorType": "fetch",
+      "duration": 809
+    },
+    {
+      "name": "https://www.google.com/recaptcha/enterprise/clr?k=6Ld2VXUnAAAAAOmlNm2Lz5S1UddvU-mZWr4raoPI",
+      "initiatorType": "fetch",
+      "duration": 94
+    }
+  ]
+}

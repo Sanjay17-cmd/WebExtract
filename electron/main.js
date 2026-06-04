@@ -7,7 +7,7 @@ const {
 } = require(
     "../storage/postgres"
 );
-require("./crawlIpc");
+
 require("./ipc");
 
 
