@@ -1,59 +1,39 @@
 export async function saveCapture(
-
     webview,
-
     metrics,
-
-    domNodes
+    domNodes,
+    buttons,
+    links,
+    forms,
+    tables,
+    headings,
+    sections,
+    apiCalls
 ) {
-
-    // ====================================
-    // HTML
-    // ====================================
-
-    const html =
-        await webview.executeJavaScript(`
-
+    const html = await webview.executeJavaScript(`
         document.documentElement.outerHTML
-
     `);
 
-    // ====================================
-    // TITLE
-    // ====================================
-
-    const title =
-        await webview.executeJavaScript(`
-
+    const title = await webview.executeJavaScript(`
         document.title
-
     `);
 
-    // ====================================
-    // URL
-    // ====================================
+    const url = webview.getURL();
 
-    const url =
-        webview.getURL();
-
-    // ====================================
-    // SAVE THROUGH IPC
-    // ====================================
-
-    const result =
-        await window.electronAPI
-        .saveCapture({
-
-            url,
-
-            title,
-
-            html,
-
-            metrics,
-
-            domNodes
-        });
+    const result = await window.electronAPI.saveCapture({
+        url,
+        title,
+        html,
+        metrics,
+        domNodes,
+        buttons,
+        links,
+        forms,
+        tables,
+        headings,
+        sections,
+        apiCalls
+    });
 
     return result;
 }
