@@ -1,66 +1,14 @@
 const fs = require("fs");
 const path = require("path");
-const { ipcMain } = require("electron");
+const { ipcMain, session } = require("electron");
 const { pool } = require("../storage/postgres");
 const { takeFullPageScreenshot } = require("../capture/playwrightCapture");
+const { createVisualDiff } = require("../capture/visualDiff");
+const { getElectronCookies } = require("../capture/sessionExport");
 
 // ========================================
 // SAVE CAPTURE
 // ========================================
-const { summarizeComparison } = require("./gemini");
-
-ipcMain.handle("summarize-comparison", async (event, payload) => {
-    try {
-        const a = Math.min(payload.captureAId, payload.captureBId);
-        const b = Math.max(payload.captureAId, payload.captureBId);
-
-        const cached = await pool.query(
-            `
-            SELECT summary_json
-            FROM comparison_summaries
-            WHERE capture_a_id = $1 AND capture_b_id = $2
-            `,
-            [a, b]
-        );
-
-        if (cached.rows.length > 0) {
-            return {
-                success: true,
-                cached: true,
-                summary: JSON.parse(cached.rows[0].summary_json)
-            };
-        }
-
-        const summary = await summarizeComparison(payload.diffPayload);
-
-        await pool.query(
-            `
-            INSERT INTO comparison_summaries (
-                capture_a_id,
-                capture_b_id,
-                summary_json
-            )
-            VALUES ($1, $2, $3)
-            ON CONFLICT (capture_a_id, capture_b_id)
-            DO UPDATE SET summary_json = EXCLUDED.summary_json,
-                          created_at = NOW()
-            `,
-            [a, b, JSON.stringify(summary)]
-        );
-
-        return {
-            success: true,
-            cached: false,
-            summary
-        };
-    } catch (err) {
-        console.error(err);
-        return {
-            success: false,
-            error: err.message
-        };
-    }
-});
 
 ipcMain.handle("save-capture", async (event, captureData) => {
     try {
@@ -125,11 +73,19 @@ ipcMain.handle("save-capture", async (event, captureData) => {
 
     `);
 
+const cookies =
+    await getElectronCookies(
+
+        captureData.url
+    );
+
 await takeFullPageScreenshot(
 
     captureData.url,
 
-    screenshotPath
+    screenshotPath,
+
+    cookies
 );
 
         const query = `
@@ -274,3 +230,138 @@ ipcMain.handle("get-capture-details", async (event, captureId) => {
         };
     }
 });
+ipcMain.handle(
+
+    "generate-visual-diff",
+
+    async (
+
+        event,
+
+        captureAId,
+
+        captureBId
+
+    ) => {
+
+        try {
+
+            const resultA =
+                await pool.query(
+
+                    `
+
+                    SELECT *
+
+                    FROM captures
+
+                    WHERE id = $1
+
+                    `,
+
+                    [captureAId]
+                );
+
+            const resultB =
+                await pool.query(
+
+                    `
+
+                    SELECT *
+
+                    FROM captures
+
+                    WHERE id = $1
+
+                    `,
+
+                    [captureBId]
+                );
+
+            if (
+
+                resultA.rows.length === 0 ||
+
+                resultB.rows.length === 0
+
+            ) {
+
+                return {
+
+                    success: false
+                };
+            }
+
+            const captureA =
+                resultA.rows[0];
+
+            const captureB =
+                resultB.rows[0];
+
+            const diffPath =
+                path.join(
+
+                    process.cwd(),
+
+                    "data",
+
+                    "visualdiff",
+
+                    `${captureAId}_${captureBId}.png`
+                );
+
+            fs.mkdirSync(
+
+                path.dirname(
+                    diffPath
+                ),
+
+                {
+
+                    recursive:
+                        true
+                }
+            );
+
+            const result =
+                await createVisualDiff(
+
+                    captureA
+                    .screenshot_path,
+
+                    captureB
+                    .screenshot_path,
+
+                    diffPath
+                );
+
+            return {
+
+                success: true,
+
+                diffPath,
+
+                changedPixels:
+                    result.changedPixels
+            };
+
+        } catch (
+
+            err
+
+        ) {
+
+            console.error(
+                err
+            );
+
+            return {
+
+                success: false,
+
+                error:
+                    err.message
+            };
+        }
+    }
+);

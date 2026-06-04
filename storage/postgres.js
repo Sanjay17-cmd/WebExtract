@@ -64,16 +64,6 @@ async function initDatabase() {
         )
 
     `);
-    await pool.query(`
-    CREATE TABLE IF NOT EXISTS comparison_summaries (
-        id SERIAL PRIMARY KEY,
-        capture_a_id INTEGER NOT NULL,
-        capture_b_id INTEGER NOT NULL,
-        summary_json TEXT NOT NULL,
-        created_at TIMESTAMPTZ DEFAULT NOW(),
-        UNIQUE (capture_a_id, capture_b_id)
-    )
-`);
 
     // ====================================
     // CRAWL RUNS

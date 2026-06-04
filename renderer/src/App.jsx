@@ -23,14 +23,6 @@ export default function App() {
 
 const [
 
-    restrictPath,
-
-    setRestrictPath
-
-] = useState(true);
-
-const [
-
     maxDepth,
 
     setMaxDepth
@@ -749,8 +741,6 @@ const startSiteCrawl = async () => {
 
                 allowExternal,
 
-                restrictPath,
-
                 maxDepth,
 
                 maxPages,
@@ -1166,25 +1156,7 @@ const startSiteCrawl = async () => {
             />
 
         </label>
-<label>
 
-    <input
-
-        type="checkbox"
-
-        checked={restrictPath}
-
-        onChange={(e) =>
-
-            setRestrictPath(
-                e.target.checked
-            )
-        }
-    />
-
-    Restrict To Starting Path
-
-</label>
         <label>
 
             Max Depth

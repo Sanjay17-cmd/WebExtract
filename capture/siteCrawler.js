@@ -22,18 +22,8 @@ async function crawlWebsite(
         }
     ];
 
-const rootObj =
-    new URL(rootUrl);
-
-const rootHost =
-    rootObj.hostname;
-
-const rootPath =
-    rootObj.pathname.endsWith("/")
-
-        ? rootObj.pathname
-
-        : rootObj.pathname + "/";
+    const rootHost =
+        new URL(rootUrl).hostname;
 
     let pagesVisited = 0;
 
@@ -137,63 +127,40 @@ const rootPath =
                                 href
                             );
 
-                            parsed.hash = "";
+                        if (
 
-const normalized =
-    parsed.href.replace(
-        /\/$/,
-        ""
-    );
+                            !config.allowExternal
 
-                        // =====================================
-// DOMAIN FILTER
-// =====================================
+                        ) {
 
-if (
+                            if (
 
-    !config.allowExternal &&
+                                parsed.hostname !==
+                                rootHost
 
-    parsed.hostname !== rootHost
+                            ) {
 
-) {
-
-    continue;
-}
-
-// =====================================
-// PATH FILTER
-// =====================================
-
-if (
-
-    config.restrictPath &&
-
-    !parsed.pathname.startsWith(
-        rootPath
-    )
-
-) {
-
-    continue;
-}
+                                continue;
+                            }
+                        }
 
                         if (
 
-    !visited.has(
-        normalized
-    )
+                            !visited.has(
+                                parsed.href
+                            )
 
-) {
+                        ) {
 
-    queue.push({
+                            queue.push({
 
-        url:
-            normalized,
+                                url:
+                                    parsed.href,
 
-        depth:
-            current.depth + 1
-    });
-}
+                                depth:
+                                    current.depth + 1
+                            });
+                        }
 
                     } catch {}
                 }

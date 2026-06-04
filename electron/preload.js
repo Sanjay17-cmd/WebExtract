@@ -19,9 +19,10 @@ contextBridge.exposeInMainWorld("electronAPI", {
     getHistory: () =>
         ipcRenderer.invoke("get-history"),
 
-    summarizeComparison: (payload) =>
-    ipcRenderer.invoke("summarize-comparison", payload),
-
     getCaptureDetails: (id) =>
-        ipcRenderer.invoke("get-capture-details", id)
+        ipcRenderer.invoke("get-capture-details", id),
+
+    generateVisualDiff: (captureAId, captureBId) =>
+        ipcRenderer.invoke("generate-visual-diff", captureAId, captureBId)
+    
 });
