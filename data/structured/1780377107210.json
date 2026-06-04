@@ -1,0 +1,353 @@
+{
+  "buttons": [
+    {
+      "text": "",
+      "id": "",
+      "className": "gb_Te gb_Ue",
+      "type": "button"
+    },
+    {
+      "text": "",
+      "id": "",
+      "className": "gb_0e",
+      "type": "button"
+    },
+    {
+      "text": "",
+      "id": "",
+      "className": "gb_We",
+      "type": "button"
+    },
+    {
+      "text": "",
+      "id": "",
+      "className": "gb_Ve gb_Ue bEP",
+      "type": "submit"
+    },
+    {
+      "text": "",
+      "id": "",
+      "className": "VYBDae-JX-I VYBDae-JX-I-ql-ay5-ays XyWBof",
+      "type": "submit"
+    },
+    {
+      "text": "Upgrade",
+      "id": "",
+      "className": "FOBRw-I FOBRw-I-ql-JX-O FOBRw-I-ql-Uw FOBRw-I-ql-zcdHbf FOBRw-bHf-YYd4I-Zb FOBRw-kSE8rc-FoKg4d-a2N-YoZ4jf mG9PAb M1LkOe EqiD4b",
+      "type": "submit"
+    },
+    {
+      "text": "",
+      "id": "",
+      "className": "wX4xVc-JX-I MNFoWc hMCF6c",
+      "type": "submit"
+    }
+  ],
+  "links": [
+    {
+      "text": "Gmail help center",
+      "href": "https://support.google.com/mail?p=fix-gmail-loading&authuser=0"
+    },
+    {
+      "text": "Try reloading the page",
+      "href": "https://mail.google.com/mail/u/0/"
+    },
+    {
+      "text": "help center",
+      "href": "https://support.google.com/mail/answer/8767?src=sl&hl=en"
+    },
+    {
+      "text": "Skip to content",
+      "href": "https://mail.google.com/mail/u/0/"
+    },
+    {
+      "text": "Using Gmail with screen readers",
+      "href": "https://mail.google.com/mail/u/0/"
+    },
+    {
+      "text": "Keyboard shortcuts",
+      "href": "https://mail.google.com/mail/u/0/"
+    },
+    {
+      "text": "Gmail (standard view) guide",
+      "href": "https://support.google.com/mail/answer/90559?hl=en"
+    },
+    {
+      "text": "",
+      "href": "https://mail.google.com/mail/u/0/#inbox"
+    },
+    {
+      "text": "",
+      "href": "https://mail.google.com/mail/u/0/#inbox"
+    },
+    {
+      "text": "",
+      "href": ""
+    },
+    {
+      "text": "",
+      "href": ""
+    },
+    {
+      "text": "",
+      "href": "https://www.google.co.in/intl/en/about/products?tab=mh"
+    },
+    {
+      "text": "",
+      "href": "https://accounts.google.com/SignOutOptions?hl=en&continue=https://mail.google.com/mail&service=mail&ec=GBRAFw"
+    },
+    {
+      "text": "Inbox",
+      "href": "https://mail.google.com/mail/u/0/#inbox"
+    },
+    {
+      "text": "Starred",
+      "href": "https://mail.google.com/mail/u/0/#starred"
+    },
+    {
+      "text": "Snoozed",
+      "href": "https://mail.google.com/mail/u/0/#snoozed"
+    },
+    {
+      "text": "Sent",
+      "href": "https://mail.google.com/mail/u/0/#sent"
+    },
+    {
+      "text": "Drafts",
+      "href": "https://mail.google.com/mail/u/0/#drafts"
+    },
+    {
+      "text": "Purchases",
+      "href": "https://mail.google.com/mail/u/0/#category/purchases"
+    },
+    {
+      "text": "Learn more",
+      "href": "https://support.google.com/mail?p=inboxcategories-updates"
+    },
+    {
+      "text": "13% of 15 GB used",
+      "href": "https://drive.google.com/u/0/settings/storage?hl=en&utm_medium=web&utm_source=gmail&utm_campaign=storage_meter&utm_content=storage_normal"
+    },
+    {
+      "text": "Terms",
+      "href": "https://www.google.com/intl/en/policies/terms/"
+    },
+    {
+      "text": "Privacy",
+      "href": "https://www.google.com/intl/en/policies/privacy/"
+    },
+    {
+      "text": "Program Policies",
+      "href": "https://www.google.com/gmail/about/policy/"
+    }
+  ],
+  "forms": [
+    {
+      "action": "https://mail.google.com/mail/u/0/?ui=html&zy=d",
+      "method": "post",
+      "inputCount": 2
+    },
+    {
+      "action": "https://mail.google.com/mail/u/0/#inbox",
+      "method": "get",
+      "inputCount": 1
+    }
+  ],
+  "tables": [
+    {
+      "rows": 2,
+      "columns": 6
+    },
+    {
+      "rows": 50,
+      "columns": 10
+    }
+  ],
+  "headings": [
+    {
+      "tag": "h1",
+      "text": "Search Try Gemini"
+    },
+    {
+      "tag": "h2",
+      "text": "Search"
+    },
+    {
+      "tag": "h2",
+      "text": "Labels"
+    },
+    {
+      "tag": "h2",
+      "text": "Labels"
+    },
+    {
+      "tag": "h2",
+      "text": "Conversations"
+    },
+    {
+      "tag": "h3",
+      "text": "Primary"
+    },
+    {
+      "tag": "h3",
+      "text": "Promotions"
+    },
+    {
+      "tag": "h3",
+      "text": "Social"
+    },
+    {
+      "tag": "h3",
+      "text": "Updates"
+    }
+  ],
+  "sections": [
+    {
+      "tag": "div",
+      "id": "",
+      "heading": "Conversations"
+    }
+  ],
+  "apiCalls": [
+    {
+      "name": "https://mail.google.com/mail/u/0/logstreamz",
+      "initiatorType": "fetch",
+      "duration": 477
+    },
+    {
+      "name": "https://mail.google.com/_/scs/mail-static/_/ss/k=gmail.main.WGIPBeXeSM4.L.W.O/am=oAIAAAAAIPGnAgAP_-_pgw0gAOC_PPjz9YG_1kXz_28YAsEADwFM9RxAD6DLWiE97_9_u_m0AHi7DZfhfPwhAQABto5uy4eHGF3lIQDABQAAOHUmp5kEAAAAAAAAAAAAAAAAAAAAlpGNTAoM/d=1/excm=at/rs=AHGWq9C-R8Kkjfgn1HexLwcqy2t2uq_9Vg",
+      "initiatorType": "xmlhttprequest",
+      "duration": 37
+    },
+    {
+      "name": "https://mail.google.com/mail/u/0/?ui=2&ik=7045f72267&jsver=CSE7PGpuzBE.en.L.es5&cbl=gmail.pinto-server_20260526.07_p0&rid=d902..&view=dd&_reqid=38503&nsc=1&mb=0&rt=j",
+      "initiatorType": "xmlhttprequest",
+      "duration": 683
+    },
+    {
+      "name": "https://ogads-pa.clients6.google.com/$rpc/google.internal.onegoogle.asyncdata.v1.AsyncDataService/GetAsyncData",
+      "initiatorType": "xmlhttprequest",
+      "duration": 608
+    },
+    {
+      "name": "https://waa-pa.clients6.google.com/$rpc/google.internal.waa.v1.Waa/Create",
+      "initiatorType": "xmlhttprequest",
+      "duration": 217
+    },
+    {
+      "name": "https://mail.google.com/mail/u/0/?ui=2&ik=7045f72267&jsver=CSE7PGpuzBE.en.L.es5&cbl=gmail.pinto-server_20260526.07_p0&rid=mail%3Ai.d902.1.0&view=up&act=oetsha&_reqid=138503&at&nsc=1&mb=0&rt=j",
+      "initiatorType": "xmlhttprequest",
+      "duration": 305
+    },
+    {
+      "name": "https://mail.google.com/mail/u/0/logstreamz#inbox",
+      "initiatorType": "fetch",
+      "duration": 305
+    },
+    {
+      "name": "https://mail.google.com/mail/u/0/?ui=2&ik=7045f72267&jsver=CSE7PGpuzBE.en.L.es5&cbl=gmail.pinto-server_20260526.07_p0&rid=mail%3Ai.d902.1.4&view=up&act=uat&_reqid=538503&at&pcd=1&cfinact=7117&mb=0&rt=j",
+      "initiatorType": "xmlhttprequest",
+      "duration": 386
+    },
+    {
+      "name": "https://appsgrowthpromo-pa.clients6.google.com/v1/promotion/FetchRecommendations?key=AIzaSyDGdNt7X8fyTgiZ3aV4ilBbyTjs44q6vGA&alt=protojson",
+      "initiatorType": "xmlhttprequest",
+      "duration": 1000
+    },
+    {
+      "name": "https://mail.google.com/mail/u/0/?ui=2&ik=7045f72267&jsver=CSE7PGpuzBE.en.L.es5&cbl=gmail.pinto-server_20260526.07_p0&rid=mail%3Ai.d902.1.1&view=up&act=oetsha&_reqid=238503&at=AF6bupP-s9tuf_j4e99b8WlX9TJ16nQ4cA&nsc=1&mb=0&rt=j",
+      "initiatorType": "xmlhttprequest",
+      "duration": 350
+    },
+    {
+      "name": "https://play.google.com/log?format=json&hasfast=true&authuser=0",
+      "initiatorType": "xmlhttprequest",
+      "duration": 85
+    },
+    {
+      "name": "https://mail.google.com/mail/u/0/?ui=2&ik=7045f72267&jsver=CSE7PGpuzBE.en.L.es5&cbl=gmail.pinto-server_20260526.07_p0&rid=d902..&view=up&act=rfa&em=undefined&_reqid=638503&at=AF6bupP-s9tuf_j4e99b8WlX9TJ16nQ4cA&pcd=1&cfinact=7117&mb=0&rt=c",
+      "initiatorType": "xmlhttprequest",
+      "duration": 404
+    },
+    {
+      "name": "https://waa-pa.clients6.google.com/$rpc/google.internal.waa.v1.Waa/Ping",
+      "initiatorType": "xmlhttprequest",
+      "duration": 190
+    },
+    {
+      "name": "https://play.google.com/log?format=json&hasfast=true&authuser=0",
+      "initiatorType": "fetch",
+      "duration": 74
+    },
+    {
+      "name": "https://mail.google.com/mail/u/0/?ui=2&ik=7045f72267&jsver=CSE7PGpuzBE.en.L.es5&cbl=gmail.pinto-server_20260526.07_p0&rid=mail%3Ai.d902.1.2&view=up&act=oetsha&_reqid=338503&at=AF6bupP-s9tuf_j4e99b8WlX9TJ16nQ4cA&nsc=1&mb=0&rt=j",
+      "initiatorType": "xmlhttprequest",
+      "duration": 375
+    },
+    {
+      "name": "https://mail.google.com/mail/u/0/?ui=2&ik=7045f72267&jsver=CSE7PGpuzBE.en.L.es5&cbl=gmail.pinto-server_20260526.07_p0&rid=mail%3Ai.d902.1.3&view=up&act=oetsha&_reqid=438503&at=AF6bupP-s9tuf_j4e99b8WlX9TJ16nQ4cA&nsc=1&mb=0&rt=j",
+      "initiatorType": "xmlhttprequest",
+      "duration": 385
+    },
+    {
+      "name": "https://play.google.com/log?format=json&hasfast=true&authuser=0",
+      "initiatorType": "fetch",
+      "duration": 21
+    },
+    {
+      "name": "https://appsgrowthpromo-pa.clients6.google.com/v1/promotion/FetchRecommendation?key=AIzaSyDGdNt7X8fyTgiZ3aV4ilBbyTjs44q6vGA&alt=protojson",
+      "initiatorType": "xmlhttprequest",
+      "duration": 800
+    },
+    {
+      "name": "https://mail.google.com/mail/u/0/?ui=2&ik=7045f72267&jsver=CSE7PGpuzBE.en.L.es5&cbl=gmail.pinto-server_20260526.07_p0&rid=d902..&view=up&act=oestp&_reqid=738503&at=AF6bupP-s9tuf_j4e99b8WlX9TJ16nQ4cA&nsc=1&mb=0&rt=j",
+      "initiatorType": "xmlhttprequest",
+      "duration": 393
+    },
+    {
+      "name": "https://mail.google.com/mail/u/0/?ui=2&ik=7045f72267&jsver=CSE7PGpuzBE.en.L.es5&cbl=gmail.pinto-server_20260526.07_p0&rid=d902..&auto=1&view=omni&_reqid=1138503&pcd=1&cfinact=7117&mb=0&rt=j",
+      "initiatorType": "xmlhttprequest",
+      "duration": 337
+    },
+    {
+      "name": "https://mail.google.com/mail/u/0/?ui=2&ik=7045f72267&jsver=CSE7PGpuzBE.en.L.es5&cbl=gmail.pinto-server_20260526.07_p0&rid=d902..&view=up&act=oetsha&_reqid=838503&at=AF6bupP-s9tuf_j4e99b8WlX9TJ16nQ4cA&nsc=1&mb=0&rt=j",
+      "initiatorType": "xmlhttprequest",
+      "duration": 378
+    },
+    {
+      "name": "https://play.google.com/log?format=json&hasfast=true&authuser=0",
+      "initiatorType": "fetch",
+      "duration": 17
+    },
+    {
+      "name": "https://addons-pa.clients6.google.com/$rpc/google.internal.apps.addons.v1.AddOnService/ListInstallations",
+      "initiatorType": "xmlhttprequest",
+      "duration": 899
+    },
+    {
+      "name": "https://mail.google.com/mail/u/0/?ui=2&ik=7045f72267&jsver=CSE7PGpuzBE.en.L.es5&cbl=gmail.pinto-server_20260526.07_p0&rid=d902..&view=up&act=oetsha&_reqid=938503&at=AF6bupP-s9tuf_j4e99b8WlX9TJ16nQ4cA&nsc=1&mb=0&rt=j",
+      "initiatorType": "xmlhttprequest",
+      "duration": 353
+    },
+    {
+      "name": "https://play.google.com/log?format=json&hasfast=true&authuser=0",
+      "initiatorType": "xmlhttprequest",
+      "duration": 16
+    },
+    {
+      "name": "https://mail.google.com/mail/u/0/?ui=2&ik=7045f72267&jsver=CSE7PGpuzBE.en.L.es5&cbl=gmail.pinto-server_20260526.07_p0&rid=d902..&view=up&act=oetsha&_reqid=1038503&at=AF6bupP-s9tuf_j4e99b8WlX9TJ16nQ4cA&nsc=1&mb=0&rt=j",
+      "initiatorType": "xmlhttprequest",
+      "duration": 454
+    },
+    {
+      "name": "https://mail.google.com/sync/u/0/i/fd?hl=en&c=0&rt=r&pt=ji",
+      "initiatorType": "xmlhttprequest",
+      "duration": 620
+    },
+    {
+      "name": "https://mail.google.com/mail/u/0/?ui=2&ik=7045f72267&jsver=CSE7PGpuzBE.en.L.es5&cbl=gmail.pinto-server_20260526.07_p0&rid=d902..&auto=1&view=mic&_reqid=1238503&pcd=1&cfinact=7117&mb=0&rt=j",
+      "initiatorType": "xmlhttprequest",
+      "duration": 380
+    }
+  ]
+}

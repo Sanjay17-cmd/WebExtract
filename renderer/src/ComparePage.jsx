@@ -110,6 +110,78 @@ function sigApi(x) {
     ].join("||");
 }
 
+function buildGeminiPayload(comparison) {
+    return {
+        captureAId: comparison.a.id,
+        captureBId: comparison.b.id,
+        diffPayload: {
+            url: comparison.a.url,
+            counts: comparison.rows.map((row) => ({
+                metric: row.metric,
+                old: row.a,
+                new: row.b,
+                diff: row.diff
+            })),
+            buttons: {
+                added: comparison.diffs.buttons.added.slice(0, 10).map((x) => ({
+                    text: x.text || "",
+                    id: x.id || "",
+                    className: x.className || "",
+                    type: x.type || ""
+                })),
+                removed: comparison.diffs.buttons.removed.slice(0, 10).map((x) => ({
+                    text: x.text || "",
+                    id: x.id || "",
+                    className: x.className || "",
+                    type: x.type || ""
+                }))
+            },
+            links: {
+                added: comparison.diffs.links.added.slice(0, 10).map((x) => ({
+                    text: x.text || "",
+                    href: x.href || ""
+                })),
+                removed: comparison.diffs.links.removed.slice(0, 10).map((x) => ({
+                    text: x.text || "",
+                    href: x.href || ""
+                }))
+            },
+            forms: {
+                added: comparison.diffs.forms.added.slice(0, 10).map((x) => ({
+                    action: x.action || "",
+                    method: x.method || "",
+                    inputCount: x.inputCount || 0
+                })),
+                removed: comparison.diffs.forms.removed.slice(0, 10).map((x) => ({
+                    action: x.action || "",
+                    method: x.method || "",
+                    inputCount: x.inputCount || 0
+                }))
+            },
+            tables: {
+                added: comparison.diffs.tables.added.slice(0, 10).map((x) => ({
+                    rows: x.rows || 0,
+                    columns: x.columns || 0
+                })),
+                removed: comparison.diffs.tables.removed.slice(0, 10).map((x) => ({
+                    rows: x.rows || 0,
+                    columns: x.columns || 0
+                }))
+            },
+            headings: {
+                added: comparison.diffs.headings.added.slice(0, 10).map((x) => ({
+                    tag: x.tag || "",
+                    text: x.text || ""
+                })),
+                removed: comparison.diffs.headings.removed.slice(0, 10).map((x) => ({
+                    tag: x.tag || "",
+                    text: x.text || ""
+                }))
+            }
+        }
+    };
+}
+
 export default function ComparePage({ goHome }) {
     const [history, setHistory] = useState([]);
     const [selectedUrl, setSelectedUrl] = useState("");
@@ -117,7 +189,53 @@ export default function ComparePage({ goHome }) {
     const [versionBId, setVersionBId] = useState("");
     const [comparison, setComparison] = useState(null);
     const [loading, setLoading] = useState(false);
+    const [geminiSummary, setGeminiSummary] = useState(null);
+const [geminiLoading, setGeminiLoading] = useState(false);
 
+const runGeminiSummary = async () => {
+    if (!comparison) return;
+
+    setGeminiLoading(true);
+    try {
+        const payload = buildGeminiPayload(comparison);
+        console.log(
+    "PAYLOAD TO IPC"
+);
+
+console.dir(
+    payload,
+    {
+        depth: null
+    }
+);
+        const result = await window.electronAPI.summarizeComparison(payload);
+console.log(
+    "RESULT FROM IPC"
+);
+
+console.dir(
+    result,
+    {
+        depth: null
+    }
+);
+        console.log(
+    "Gemini Result:",
+    result
+);
+
+if (
+    result.success &&
+    result.summary
+) {
+    setGeminiSummary(
+        result.summary
+    );
+}
+    } finally {
+        setGeminiLoading(false);
+    }
+};
     useEffect(() => {
         loadHistory();
     }, []);
@@ -435,7 +553,58 @@ export default function ComparePage({ goHome }) {
                         >
                             {loading ? "Comparing..." : "Compare"}
                         </button>
+<button onClick={runGeminiSummary} disabled={geminiLoading || !comparison}
+style={{
+                                marginTop: "16px",
+                                padding: "10px 16px",
+                                border: "none",
+                                borderRadius: "8px",
+                                background: "#2563eb",
+                                color: "white",
+                                cursor: "pointer"
+                            }}>
+    {geminiLoading ? "Summarizing..." : "Gemini Summary"}
+</button>
+{geminiSummary && (
+    <div className="panel">
 
+        <h3>
+            Gemini Summary
+        </h3>
+
+        <p>
+            {
+                geminiSummary.summary_text ||
+                "No summary"
+            }
+        </p>
+
+        <div>
+            Risk:
+            {" "}
+            {
+                geminiSummary.risk_level ||
+                "unknown"
+            }
+        </div>
+
+        <ul>
+            {
+                (
+                    geminiSummary.key_points ||
+                    []
+                ).map(
+                    (x,i) => (
+                        <li key={i}>
+                            {x}
+                        </li>
+                    )
+                )
+            }
+        </ul>
+
+    </div>
+)}
                         {comparison && (
                             <>
                                 <div style={{ marginTop: "24px" }}>

@@ -12,10 +12,12 @@
   "author": "sanjay",
   "license": "ISC",
   "dependencies": {
+    "@google/genai": "^2.7.0",
     "better-sqlite3": "^12.10.0",
     "diff": "^9.0.0",
+    "dotenv": "^17.4.2",
     "electron": "^42.2.0",
-    "monaco-editor": "^0.55.1",
+    "monaco-editor": "^0.53.0",
     "pg": "^8.21.0",
     "playwright": "^1.60.0",
     "react": "^19.2.6",

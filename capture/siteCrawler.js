@@ -22,8 +22,18 @@ async function crawlWebsite(
         }
     ];
 
-    const rootHost =
-        new URL(rootUrl).hostname;
+const rootObj =
+    new URL(rootUrl);
+
+const rootHost =
+    rootObj.hostname;
+
+const rootPath =
+    rootObj.pathname.endsWith("/")
+
+        ? rootObj.pathname
+
+        : rootObj.pathname + "/";
 
     let pagesVisited = 0;
 
@@ -127,40 +137,63 @@ async function crawlWebsite(
                                 href
                             );
 
+                            parsed.hash = "";
+
+const normalized =
+    parsed.href.replace(
+        /\/$/,
+        ""
+    );
+
+                        // =====================================
+// DOMAIN FILTER
+// =====================================
+
+if (
+
+    !config.allowExternal &&
+
+    parsed.hostname !== rootHost
+
+) {
+
+    continue;
+}
+
+// =====================================
+// PATH FILTER
+// =====================================
+
+if (
+
+    config.restrictPath &&
+
+    !parsed.pathname.startsWith(
+        rootPath
+    )
+
+) {
+
+    continue;
+}
+
                         if (
 
-                            !config.allowExternal
+    !visited.has(
+        normalized
+    )
 
-                        ) {
+) {
 
-                            if (
+    queue.push({
 
-                                parsed.hostname !==
-                                rootHost
+        url:
+            normalized,
 
-                            ) {
-
-                                continue;
-                            }
-                        }
-
-                        if (
-
-                            !visited.has(
-                                parsed.href
-                            )
-
-                        ) {
-
-                            queue.push({
-
-                                url:
-                                    parsed.href,
-
-                                depth:
-                                    current.depth + 1
-                            });
-                        }
+        depth:
+            current.depth + 1
+    });
+}
 
                     } catch {}
                 }
