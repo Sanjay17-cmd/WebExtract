@@ -3,8 +3,6 @@ const path = require("path");
 const { ipcMain, session } = require("electron");
 const { pool } = require("../storage/postgres");
 const { captureWebContents } = require("../capture/electronCapture");
-const { takeFullPageScreenshot } = require("../capture/playwrightCapture");
-const { getElectronCookies } = require("../capture/sessionExport");
 const { createVisualDiff } = require("../capture/visualDiff");
 
 // ========================================
@@ -58,36 +56,19 @@ ipcMain.handle("save-capture", async (event, captureData) => {
         );
 
         // ====================================
-        // FULL-PAGE SCREENSHOT (100% SESSION & PAGE CONTENT)
+        // SCREENSHOT via Electron native capture
         // ====================================
 
-        let captured = false;
-
         if (captureData.webContentsId) {
-            try {
-                await captureWebContents(
-                    captureData.webContentsId,
-                    screenshotPath,
-                    { fullPage: true }
-                );
-                captured = true;
-            } catch (err) {
-                console.warn("CDP webContents capture warning, attempting Playwright fallback:", err.message);
-            }
-        }
-
-        if (!captured) {
-            try {
-                const cookies = await getElectronCookies(captureData.url);
-                await takeFullPageScreenshot(
-                    captureData.url,
-                    screenshotPath,
-                    cookies
-                );
-                captured = true;
-            } catch (err) {
-                console.error("Playwright session fallback error:", err.message);
-            }
+            await captureWebContents(
+                captureData.webContentsId,
+                screenshotPath,
+                { fullPage: true }
+            );
+        } else {
+            // Fallback: capture the sender's webContents
+            const image = await event.sender.capturePage();
+            fs.writeFileSync(screenshotPath, image.toPNG());
         }
 
         const query = `
