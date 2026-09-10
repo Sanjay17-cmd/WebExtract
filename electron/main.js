@@ -7,10 +7,11 @@ const {
 } = require(
     "../storage/postgres"
 );
+// Enable Chrome DevTools Protocol remote debugging for Playwright connectOverCDP
+app.commandLine.appendSwitch("remote-debugging-port", "9222");
+
 require("./crawlIpc");
 require("./ipc");
-
-
 
 let mainWindow;
 

@@ -76,25 +76,29 @@ async function captureWebContents(webContentsId, screenshotPath, options = {}) {
             "Page.getLayoutMetrics"
         );
 
+        const size = layoutMetrics.cssContentSize || layoutMetrics.contentSize || layoutMetrics.cssLayoutViewport || layoutMetrics.layoutViewport || {};
+
         const contentWidth = Math.ceil(
-            layoutMetrics.contentSize.width
+            size.width || 1440
         );
 
         const contentHeight = Math.min(
-            Math.ceil(layoutMetrics.contentSize.height),
+            Math.ceil(size.height || 900),
             maxHeight // Cap for infinite-scroll pages
         );
 
-        // 2. Expand viewport to full page size
-        await wc.debugger.sendCommand(
-            "Emulation.setDeviceMetricsOverride",
-            {
-                mobile: false,
-                width: contentWidth,
-                height: contentHeight,
-                deviceScaleFactor: 1
-            }
-        );
+        // 2. Expand viewport to full page size (if possible)
+        try {
+            await wc.debugger.sendCommand(
+                "Emulation.setDeviceMetricsOverride",
+                {
+                    mobile: false,
+                    width: contentWidth,
+                    height: contentHeight,
+                    deviceScaleFactor: 1
+                }
+            );
+        } catch (_) {}
 
         // Small wait for the resize to take effect
         await new Promise((resolve) => setTimeout(resolve, 300));
@@ -105,6 +109,7 @@ async function captureWebContents(webContentsId, screenshotPath, options = {}) {
             {
                 format: "png",
                 captureBeyondViewport: true,
+                fromSurface: true,
                 clip: {
                     x: 0,
                     y: 0,

@@ -3,6 +3,7 @@ const path = require("path");
 const { ipcMain, session } = require("electron");
 const { pool } = require("../storage/postgres");
 const { captureWebContents } = require("../capture/electronCapture");
+const { captureViaPlaywrightCDP } = require("../capture/playwrightCdpCapture");
 const { createVisualDiff } = require("../capture/visualDiff");
 
 // ========================================
@@ -55,20 +56,50 @@ ipcMain.handle("save-capture", async (event, captureData) => {
             "utf-8"
         );
 
-        // ====================================
-        // SCREENSHOT via Electron native capture
-        // ====================================
+        // =========================================================
+        // FULL-PAGE SCREENSHOT via Playwright CDP (connectOverCDP)
+        // =========================================================
+        let screenshotSuccess = false;
 
-        if (captureData.webContentsId) {
-            await captureWebContents(
-                captureData.webContentsId,
-                screenshotPath,
-                { fullPage: true }
-            );
-        } else {
-            // Fallback: capture the sender's webContents
-            const image = await event.sender.capturePage();
-            fs.writeFileSync(screenshotPath, image.toPNG());
+        // 1. Primary Method: Playwright connectOverCDP to live Electron session
+        try {
+            console.log("Capturing full-page screenshot via Playwright connectOverCDP...");
+            await captureViaPlaywrightCDP(captureData.url, screenshotPath);
+            screenshotSuccess = true;
+            console.log("Playwright connectOverCDP screenshot successful!");
+        } catch (pwErr) {
+            console.warn("Playwright CDP capture failed, trying in-session CDP fallback:", pwErr.message);
+        }
+
+        // 2. Secondary Method: In-session WebContents CDP capture (only webview, no app UI)
+        if (!screenshotSuccess && captureData.webContentsId) {
+            try {
+                console.log("Capturing screenshot via in-session WebContents CDP...");
+                await captureWebContents(
+                    captureData.webContentsId,
+                    screenshotPath,
+                    { fullPage: true }
+                );
+                screenshotSuccess = true;
+                console.log("In-session CDP capture successful!");
+            } catch (cdpErr) {
+                console.warn("In-session CDP capture failed:", cdpErr.message);
+            }
+        }
+
+        // 3. Fallback: Capture webContents directly (strictly webview, never main window UI)
+        if (!screenshotSuccess && captureData.webContentsId) {
+            try {
+                const { webContents } = require("electron");
+                const wc = webContents.fromId(captureData.webContentsId);
+                if (wc) {
+                    const img = await wc.capturePage();
+                    fs.writeFileSync(screenshotPath, img.toPNG());
+                    screenshotSuccess = true;
+                }
+            } catch (wcErr) {
+                console.error("WebContents capturePage failed:", wcErr.message);
+            }
         }
 
         const query = `
