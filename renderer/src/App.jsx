@@ -80,6 +80,8 @@ const [
         useState([]);
 
     const webviewRef = useRef(null);
+    const [isCapturing, setIsCapturing] = useState(false);
+    const [captureNotice, setCaptureNotice] = useState("");
 
     // =====================================================
     // OPEN WEBSITE
@@ -184,7 +186,10 @@ const [
 
     const capturePage = async () => {
 
-        if (!webviewRef.current) return;
+        if (!webviewRef.current || isCapturing) return;
+
+        setIsCapturing(true);
+        setCaptureNotice("📸 Capturing full page with live session...");
 
         try {
 
@@ -627,9 +632,20 @@ const [
                 captureData
             );
 
+            if (captureData && captureData.success) {
+                setCaptureNotice("✅ Full-page captured successfully! Check History.");
+            } else {
+                setCaptureNotice("⚠️ Capture completed with notice: " + (captureData?.error || "Done"));
+            }
+            setTimeout(() => setCaptureNotice(""), 4000);
+
         } catch (err) {
 
             console.error(err);
+            setCaptureNotice("❌ Capture failed: " + err.message);
+            setTimeout(() => setCaptureNotice(""), 5000);
+        } finally {
+            setIsCapturing(false);
         }
     };
 
@@ -819,19 +835,16 @@ const startSiteCrawl = async () => {
                 </button>
 
                 <button
-
                     className="action-btn"
-
                     onClick={capturePage}
-
-                    disabled={
-
-                        page !== "home"
-                    }
+                    disabled={page !== "home" || isCapturing}
+                    style={{
+                        backgroundColor: isCapturing ? "#d97706" : "#2563eb",
+                        color: "white",
+                        fontWeight: "600"
+                    }}
                 >
-
-                    Capture
-
+                    {isCapturing ? "⏳ Capturing..." : "📸 Single Page Capture"}
                 </button>
 <button
 
@@ -1232,7 +1245,51 @@ const startSiteCrawl = async () => {
                         {/* RIGHT */}
                         {/* ===================== */}
 
-                        <div className="right-panel">
+                        <div className="right-panel" style={{ display: "flex", flexDirection: "column", height: "100%" }}>
+
+                            <div style={{
+                                display: "flex",
+                                justifyContent: "space-between",
+                                alignItems: "center",
+                                padding: "8px 16px",
+                                background: "#1e293b",
+                                borderBottom: "1px solid #334155",
+                                flexShrink: 0
+                            }}>
+                                <div style={{ display: "flex", alignItems: "center", gap: "8px", overflow: "hidden", maxWidth: "60%" }}>
+                                    <span style={{ fontSize: "14px" }}>🌐</span>
+                                    <span style={{ color: "#94a3b8", fontSize: "13px", overflow: "hidden", textOverflow: "ellipsis", whiteSpace: "nowrap" }}>
+                                        {currentUrl}
+                                    </span>
+                                </div>
+                                <div style={{ display: "flex", alignItems: "center", gap: "12px" }}>
+                                    {captureNotice && (
+                                        <span style={{
+                                            fontSize: "12px",
+                                            fontWeight: "500",
+                                            color: captureNotice.startsWith("✅") ? "#4ade80" : (captureNotice.startsWith("❌") ? "#f87171" : "#fbbf24")
+                                        }}>
+                                            {captureNotice}
+                                        </span>
+                                    )}
+                                    <button
+                                        className="action-btn"
+                                        onClick={capturePage}
+                                        disabled={isCapturing}
+                                        style={{
+                                            backgroundColor: isCapturing ? "#d97706" : "#2563eb",
+                                            color: "white",
+                                            padding: "6px 14px",
+                                            fontSize: "13px",
+                                            fontWeight: "600",
+                                            borderRadius: "6px",
+                                            cursor: isCapturing ? "not-allowed" : "pointer"
+                                        }}
+                                    >
+                                        {isCapturing ? "⏳ Capturing Full Page..." : "📸 Capture This Page"}
+                                    </button>
+                                </div>
+                            </div>
 
                             <webview
 
@@ -1246,7 +1303,9 @@ const startSiteCrawl = async () => {
 
                                     width: "100%",
 
-                                    height: "100%"
+                                    flex: 1,
+
+                                    height: "calc(100% - 45px)"
                                 }}
                             />
 

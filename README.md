@@ -92,5 +92,15 @@ WebExtract/
 
 ---
 
+## 📸 Live Session Screenshot Capture (Playwright CDP)
+
+WebExtract features **In-Session Full-Page Screenshot Capture** using Playwright connected via the Chrome DevTools Protocol (`connectOverCDP` on port `9222`).
+
+- **100% Session Sharing**: Seamlessly captures authenticated pages (e.g., LinkedIn feed, GitHub dashboard, logged-in portals) without hitting bot detection or login walls.
+- **Full Scrolled Capture**: Automatically scrolls and captures the complete document height without any desktop application UI/buttons.
+- **Fail-Safe Pipeline**: If CDP port is unavailable, it gracefully falls back to in-session WebContents CDP capture.
+
+---
+
 ## 🏷️ Version
-- **Tag**: `v1.0.0-windows` (Windows Verified Release)
+- **Tag**: `v1.1.0-windows-cdp` (Live Session Full-Page Capture Release)
