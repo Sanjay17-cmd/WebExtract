@@ -10,10 +10,30 @@ function normalizeSameSite(value) {
     return undefined;
 }
 
-async function getElectronCookies(url) {
-    const cookies = await session.defaultSession.cookies.get({ url });
+/**
+ * Extract all active session and persistent cookies from Electron's session
+ * matching the target URL domain.
+ *
+ * @param {string} targetUrl - The target URL (e.g. https://www.linkedin.com/feed/)
+ * @returns {Promise<Array>} List of Playwright-compatible cookie objects
+ */
+async function getElectronCookies(targetUrl) {
+    let hostname = "";
+    try {
+        hostname = new URL(targetUrl).hostname;
+    } catch (_) {}
 
-    return cookies.map((c) => {
+    // Retrieve all cookies from Electron default session
+    const allCookies = await session.defaultSession.cookies.get({});
+
+    // Filter cookies matching the target domain or parent domain
+    const domainCookies = allCookies.filter((c) => {
+        if (!hostname) return true;
+        const cookieDomain = c.domain.startsWith(".") ? c.domain.slice(1) : c.domain;
+        return hostname === cookieDomain || hostname.endsWith("." + cookieDomain);
+    });
+
+    return domainCookies.map((c) => {
         const cookie = {
             name: c.name,
             value: c.value,

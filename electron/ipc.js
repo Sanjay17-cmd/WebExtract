@@ -2,9 +2,10 @@ const fs = require("fs");
 const path = require("path");
 const { ipcMain, session } = require("electron");
 const { pool } = require("../storage/postgres");
+const { captureWebContents } = require("../capture/electronCapture");
 const { takeFullPageScreenshot } = require("../capture/playwrightCapture");
-const { createVisualDiff } = require("../capture/visualDiff");
 const { getElectronCookies } = require("../capture/sessionExport");
+const { createVisualDiff } = require("../capture/visualDiff");
 
 // ========================================
 // SAVE CAPTURE
@@ -56,36 +57,38 @@ ipcMain.handle("save-capture", async (event, captureData) => {
             "utf-8"
         );
 
-        const contentSize =
-    await event.sender.executeJavaScript(`
+        // ====================================
+        // FULL-PAGE SCREENSHOT (100% SESSION & PAGE CONTENT)
+        // ====================================
 
-        ({
-            width:
+        let captured = false;
 
-                document.documentElement
-                .scrollWidth,
+        if (captureData.webContentsId) {
+            try {
+                await captureWebContents(
+                    captureData.webContentsId,
+                    screenshotPath,
+                    { fullPage: true }
+                );
+                captured = true;
+            } catch (err) {
+                console.warn("CDP webContents capture warning, attempting Playwright fallback:", err.message);
+            }
+        }
 
-            height:
-
-                document.documentElement
-                .scrollHeight
-        })
-
-    `);
-
-const cookies =
-    await getElectronCookies(
-        captureData.url
-    );
-
-await takeFullPageScreenshot(
-
-    captureData.url,
-
-    screenshotPath,
-
-    cookies
-);
+        if (!captured) {
+            try {
+                const cookies = await getElectronCookies(captureData.url);
+                await takeFullPageScreenshot(
+                    captureData.url,
+                    screenshotPath,
+                    cookies
+                );
+                captured = true;
+            } catch (err) {
+                console.error("Playwright session fallback error:", err.message);
+            }
+        }
 
         const query = `
             INSERT INTO captures (

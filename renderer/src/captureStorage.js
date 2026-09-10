@@ -20,6 +20,10 @@ export async function saveCapture(
 
     const url = webview.getURL();
 
+    // Get the webContentsId so the main process can capture
+    // the EXACT webview the user is looking at
+    const webContentsId = webview.getWebContentsId();
+
     const result = await window.electronAPI.saveCapture({
         url,
         title,
@@ -32,7 +36,8 @@ export async function saveCapture(
         tables,
         headings,
         sections,
-        apiCalls
+        apiCalls,
+        webContentsId
     });
 
     return result;
