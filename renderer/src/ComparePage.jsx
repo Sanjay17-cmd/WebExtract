@@ -1,23 +1,6 @@
 import { useEffect, useMemo, useState } from "react";
 import HtmlDiffViewer from "./HtmlDiffViewer";
-
-function toFileUrl(p) {
-    if (!p) return "";
-    if (p.startsWith("file://")) return p;
-    const normalized = p.replace(/\\/g, "/");
-    return normalized.startsWith("/") ? `file://${normalized}` : `file:///${normalized}`;
-}
-
-function prettyDate(value) {
-    try {
-        return new Date(value).toLocaleString("en-IN", {
-            dateStyle: "medium",
-            timeStyle: "medium"
-        });
-    } catch {
-        return String(value || "");
-    }
-}
+import { prettyDate, toFileUrl } from "./formatters";
 
 function normalizeText(value) {
     return String(value ?? "").replace(/\s+/g, " ").trim().toLowerCase();
@@ -126,22 +109,24 @@ function sigApi(x) {
 export default function ComparePage({ goHome }) {
     const [history, setHistory] = useState([]);
     const [selectedUrl, setSelectedUrl] = useState("");
-    const [versionAId, setVersionAId] = useState("");
-    const [versionBId, setVersionBId] = useState("");
+    const [selectedVersionAId, setSelectedVersionAId] = useState("");
+    const [selectedVersionBId, setSelectedVersionBId] = useState("");
     const [comparison, setComparison] = useState(null);
     const [loading, setLoading] = useState(false);
     const [visualDiff, setVisualDiff] = useState(null);
 
     useEffect(() => {
-        loadHistory();
-    }, []);
+        let active = true;
+        window.electronAPI.getHistory().then((result) => {
+            if (active && result.success) {
+                setHistory(result.rows);
+            }
+        });
 
-    const loadHistory = async () => {
-        const result = await window.electronAPI.getHistory();
-        if (result.success) {
-            setHistory(result.rows);
-        }
-    };
+        return () => {
+            active = false;
+        };
+    }, []);
 
     const groupedUrls = useMemo(() => {
         const map = new Map();
@@ -161,37 +146,27 @@ export default function ComparePage({ goHome }) {
             }));
     }, [history]);
 
-    useEffect(() => {
-        if (!selectedUrl && groupedUrls.length > 0) {
-            setSelectedUrl(groupedUrls[0].url);
-        }
-    }, [groupedUrls, selectedUrl]);
+    const activeUrl = groupedUrls.some((group) => group.url === selectedUrl)
+        ? selectedUrl
+        : groupedUrls[0]?.url || "";
 
     const versionsForSelectedUrl = useMemo(() => {
-        if (!selectedUrl) return [];
+        if (!activeUrl) return [];
         return history
-            .filter((item) => item.url === selectedUrl)
+            .filter((item) => item.url === activeUrl)
             .sort((a, b) => b.id - a.id);
-    }, [history, selectedUrl]);
+    }, [history, activeUrl]);
 
-    useEffect(() => {
-        if (versionsForSelectedUrl.length >= 2) {
-            const first = String(versionsForSelectedUrl[0].id);
-            const second = String(versionsForSelectedUrl[1].id);
-
-            setVersionAId((prev) =>
-                versionsForSelectedUrl.some((v) => String(v.id) === prev)
-                    ? prev
-                    : first
-            );
-
-            setVersionBId((prev) =>
-                versionsForSelectedUrl.some((v) => String(v.id) === prev && prev !== versionAId)
-                    ? prev
-                    : second
-            );
-        }
-    }, [versionsForSelectedUrl, versionAId]);
+    const versionAId = versionsForSelectedUrl.some(
+        (item) => String(item.id) === selectedVersionAId
+    )
+        ? selectedVersionAId
+        : String(versionsForSelectedUrl[0]?.id ?? "");
+    const versionBId = versionsForSelectedUrl.some(
+        (item) => String(item.id) === selectedVersionBId && selectedVersionBId !== versionAId
+    )
+        ? selectedVersionBId
+        : String(versionsForSelectedUrl.find((item) => String(item.id) !== versionAId)?.id ?? "");
 
     const runComparison = async () => {
     if (!versionAId || !versionBId || versionAId === versionBId) return;
@@ -294,7 +269,7 @@ export default function ComparePage({ goHome }) {
                             style={{
                                 padding: "12px",
                                 marginTop: "10px",
-                                background: selectedUrl === group.url ? "#334155" : "#1e293b",
+                                background: activeUrl === group.url ? "#334155" : "#1e293b",
                                 borderRadius: "8px",
                                 cursor: "pointer"
                             }}
@@ -316,11 +291,11 @@ export default function ComparePage({ goHome }) {
             <div style={{ flex: 1, overflowY: "auto", padding: "16px" }}>
                 <h2>Version Comparison</h2>
 
-                {!selectedUrl && (
+                {!activeUrl && (
                     <p>Select a URL with at least two saved versions.</p>
                 )}
 
-                {selectedUrl && (
+                {activeUrl && (
                     <>
                         <div
                             style={{
@@ -334,7 +309,7 @@ export default function ComparePage({ goHome }) {
                                 <label>Version A</label>
                                 <select
                                     value={versionAId}
-                                    onChange={(e) => setVersionAId(e.target.value)}
+                                    onChange={(e) => setSelectedVersionAId(e.target.value)}
                                     style={{
                                         width: "100%",
                                         padding: "10px",
@@ -353,7 +328,7 @@ export default function ComparePage({ goHome }) {
                                 <label>Version B</label>
                                 <select
                                     value={versionBId}
-                                    onChange={(e) => setVersionBId(e.target.value)}
+                                    onChange={(e) => setSelectedVersionBId(e.target.value)}
                                     style={{
                                         width: "100%",
                                         padding: "10px",

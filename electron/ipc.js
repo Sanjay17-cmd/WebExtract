@@ -7,10 +7,6 @@ const { captureViaPlaywrightCDP } = require("../capture/playwrightCdpCapture");
 const { getElectronCookies } = require("../capture/sessionExport");
 const { createVisualDiff } = require("../capture/visualDiff");
 
-// ========================================
-// SAVE CAPTURE
-// ========================================
-
 ipcMain.handle("save-capture", async (event, captureData) => {
     try {
         const timestamp = Date.now();
@@ -57,12 +53,8 @@ ipcMain.handle("save-capture", async (event, captureData) => {
             "utf-8"
         );
 
-        // =========================================================
-        // FULL-PAGE SCREENSHOT via Playwright CDP (connectOverCDP)
-        // =========================================================
         let screenshotSuccess = false;
 
-        // 1. Primary Method: Playwright with state exported from the webview
         try {
             console.log("Capturing full-page screenshot via Playwright with webview session state...");
             const wc = captureData.webContentsId
@@ -81,7 +73,6 @@ ipcMain.handle("save-capture", async (event, captureData) => {
             console.warn("Playwright state capture failed, trying in-session CDP fallback:", pwErr.message);
         }
 
-        // 2. Secondary Method: In-session WebContents CDP capture (only webview, no app UI)
         if (!screenshotSuccess && captureData.webContentsId) {
             try {
                 console.log("Capturing screenshot via in-session WebContents CDP...");
@@ -97,7 +88,6 @@ ipcMain.handle("save-capture", async (event, captureData) => {
             }
         }
 
-        // 3. Fallback: Capture webContents directly (strictly webview, never main window UI)
         if (!screenshotSuccess && captureData.webContentsId) {
             try {
                 const { webContents } = require("electron");
@@ -174,10 +164,6 @@ ipcMain.handle("save-capture", async (event, captureData) => {
     }
 });
 
-// ========================================
-// GET HISTORY LIST
-// ========================================
-
 ipcMain.handle("get-history", async () => {
     try {
         const result = await pool.query(`
@@ -203,10 +189,6 @@ ipcMain.handle("get-history", async () => {
         };
     }
 });
-
-// ========================================
-// GET SINGLE CAPTURE
-// ========================================
 
 ipcMain.handle("get-capture-details", async (event, captureId) => {
     try {

@@ -2,25 +2,7 @@ const { webContents } = require("electron");
 const fs = require("fs");
 const path = require("path");
 
-/**
- * Capture a full-page screenshot of an Electron webContents using CDP
- * (Chrome DevTools Protocol) via the webContents.debugger API.
- *
- * This is TRUE session sharing — same process, same cookies,
- * same localStorage, same everything. The screenshot captures
- * EXACTLY the page the user is looking at.
- *
- * Uses CDP commands:
- *   - Page.getLayoutMetrics → get full page dimensions
- *   - Emulation.setDeviceMetricsOverride → expand viewport
- *   - Page.captureScreenshot → native full-page capture
- *
- * @param {number} webContentsId - The webview's webContents ID
- * @param {string} screenshotPath - Where to save the PNG
- * @param {object} options
- * @param {boolean} options.fullPage - Capture full page (default: true)
- * @param {number} options.maxHeight - Maximum fallback capture height in px.
- */
+/** Capture a screenshot from the current Electron webContents session. */
 async function captureWebContents(webContentsId, screenshotPath, options = {}) {
     const {
         fullPage = true,
@@ -34,10 +16,6 @@ async function captureWebContents(webContentsId, screenshotPath, options = {}) {
 
     fs.mkdirSync(path.dirname(screenshotPath), { recursive: true });
 
-    // ====================================
-    // ATTACH CDP DEBUGGER
-    // ====================================
-
     try {
         wc.debugger.attach("1.3");
     } catch (err) {
@@ -49,10 +27,6 @@ async function captureWebContents(webContentsId, screenshotPath, options = {}) {
 
     try {
         if (!fullPage) {
-            // ====================================
-            // VIEWPORT-ONLY SCREENSHOT
-            // ====================================
-
             const { data } = await wc.debugger.sendCommand(
                 "Page.captureScreenshot",
                 { format: "png" }
@@ -65,11 +39,6 @@ async function captureWebContents(webContentsId, screenshotPath, options = {}) {
             return;
         }
 
-        // ====================================
-        // FULL-PAGE SCREENSHOT via CDP
-        // ====================================
-
-        // 1. Get the full page dimensions
         const layoutMetrics = await wc.debugger.sendCommand(
             "Page.getLayoutMetrics"
         );
@@ -85,7 +54,6 @@ async function captureWebContents(webContentsId, screenshotPath, options = {}) {
             maxHeight // Prevent an oversized fallback image.
         );
 
-        // 2. Expand viewport to full page size (if possible)
         try {
             await wc.debugger.sendCommand(
                 "Emulation.setDeviceMetricsOverride",
@@ -101,7 +69,6 @@ async function captureWebContents(webContentsId, screenshotPath, options = {}) {
         // Small wait for the resize to take effect
         await new Promise((resolve) => setTimeout(resolve, 300));
 
-        // 3. Capture the full-page screenshot
         const { data } = await wc.debugger.sendCommand(
             "Page.captureScreenshot",
             {
@@ -118,17 +85,12 @@ async function captureWebContents(webContentsId, screenshotPath, options = {}) {
             }
         );
 
-        // 4. Save the screenshot
         fs.writeFileSync(
             screenshotPath,
             Buffer.from(data, "base64")
         );
 
     } finally {
-        // ====================================
-        // CLEANUP: Restore viewport & detach
-        // ====================================
-
         try {
             await wc.debugger.sendCommand(
                 "Emulation.clearDeviceMetricsOverride"

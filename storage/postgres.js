@@ -1,27 +1,18 @@
 const { Pool } = require("pg");
 
 const pool = new Pool({
-
-    user: "postgres",
-
-    host: "localhost",
-
-    database: "postgres",
-
-    password: "root",
-
-    port: 5432
+    user: process.env.PGUSER || process.env.DB_USER || "postgres",
+    host: process.env.PGHOST || process.env.DB_HOST || "localhost",
+    database: process.env.PGDATABASE || process.env.DB_NAME || "postgres",
+    password: process.env.PGPASSWORD || process.env.DB_PASS || "root",
+    port: parseInt(process.env.PGPORT || process.env.DB_PORT || "5432", 10)
 });
 
-// ========================================
 // INIT DATABASE
-// ========================================
 
 async function initDatabase() {
 
-    // ====================================
     // MANUAL CAPTURES
-    // ====================================
 
     await pool.query(`
 
@@ -65,9 +56,7 @@ async function initDatabase() {
 
     `);
 
-    // ====================================
     // CRAWL RUNS
-    // ====================================
 
     await pool.query(`
 
@@ -87,9 +76,7 @@ async function initDatabase() {
 
     `);
 
-    // ====================================
     // CRAWLED PAGES
-    // ====================================
 
     await pool.query(`
 
@@ -123,9 +110,7 @@ async function initDatabase() {
 
     `);
 
-    // ====================================
     // ALTERS
-    // ====================================
 
     const alterStatements = [
 

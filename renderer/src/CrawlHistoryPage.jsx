@@ -1,22 +1,5 @@
 import { useEffect, useMemo, useState } from "react";
-
-function toFileUrl(p) {
-    if (!p) return "";
-    if (p.startsWith("file://")) return p;
-    const normalized = p.replace(/\\/g, "/");
-    return normalized.startsWith("/") ? `file://${normalized}` : `file:///${normalized}`;
-}
-
-function prettyDate(value) {
-    try {
-        return new Date(value).toLocaleString("en-IN", {
-            dateStyle: "medium",
-            timeStyle: "medium"
-        });
-    } catch {
-        return String(value || "");
-    }
-}
+import { prettyDate, toFileUrl } from "./formatters";
 
 export default function CrawlHistoryPage({ goHome }) {
     const [runs, setRuns] = useState([]);
@@ -25,36 +8,41 @@ export default function CrawlHistoryPage({ goHome }) {
     const [selectedPage, setSelectedPage] = useState(null);
 
     useEffect(() => {
-        loadRuns();
+        let active = true;
+        window.electronAPI.getCrawlRuns().then((result) => {
+            if (active && result.success) {
+                setRuns(result.rows);
+            }
+        });
+
+        return () => {
+            active = false;
+        };
     }, []);
 
-    const loadRuns = async () => {
-        const result = await window.electronAPI.getCrawlRuns();
-        if (result.success) {
-            setRuns(result.rows);
-            if (result.rows.length > 0 && selectedRunId === null) {
-                setSelectedRunId(result.rows[0].id);
-            }
-        }
-    };
-
-    const loadPages = async (runId) => {
-        const result = await window.electronAPI.getCrawlPages(runId);
-        if (result.success) {
-            setPages(result.rows);
-            setSelectedPage(null);
-        }
-    };
+    const activeRunId = runs.some((run) => run.id === selectedRunId)
+        ? selectedRunId
+        : runs[0]?.id ?? null;
 
     useEffect(() => {
-        if (selectedRunId) {
-            loadPages(selectedRunId);
-        }
-    }, [selectedRunId]);
+        if (!activeRunId) return;
+
+        let active = true;
+        window.electronAPI.getCrawlPages(activeRunId).then((result) => {
+            if (active && result.success) {
+                setPages(result.rows);
+                setSelectedPage(null);
+            }
+        });
+
+        return () => {
+            active = false;
+        };
+    }, [activeRunId]);
 
     const selectedRun = useMemo(
-        () => runs.find((r) => r.id === selectedRunId),
-        [runs, selectedRunId]
+        () => runs.find((run) => run.id === activeRunId),
+        [runs, activeRunId]
     );
 
     const openPage = async (pageId) => {

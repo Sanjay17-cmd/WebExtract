@@ -1,27 +1,22 @@
 import { useEffect, useState } from "react";
-
-function toFileUrl(p) {
-    if (!p) return "";
-    if (p.startsWith("file://")) return p;
-    const normalized = p.replace(/\\/g, "/");
-    return normalized.startsWith("/") ? `file://${normalized}` : `file:///${normalized}`;
-}
+import { prettyDate, toFileUrl } from "./formatters";
 
 export default function HistoryPage({ goHome }) {
     const [history, setHistory] = useState([]);
     const [selectedCapture, setSelectedCapture] = useState(null);
 
     useEffect(() => {
-        loadHistory();
+        let active = true;
+        window.electronAPI.getHistory().then((result) => {
+            if (active && result.success) {
+                setHistory(result.rows);
+            }
+        });
+
+        return () => {
+            active = false;
+        };
     }, []);
-
-    const loadHistory = async () => {
-        const result = await window.electronAPI.getHistory();
-
-        if (result.success) {
-            setHistory(result.rows);
-        }
-    };
 
     const openCapture = async (id) => {
         const result = await window.electronAPI.getCaptureDetails(id);
@@ -87,40 +82,9 @@ export default function HistoryPage({ goHome }) {
                         <div>{item.title}</div>
                         <div style={{ fontSize: "12px", color: "#94a3b8" }}>
                             {item.url}
-                            <div
-
-    style={{
-
-        fontSize: "11px",
-
-        color: "#94a3b8",
-
-        marginTop: "4px"
-    }}
->
-
-    {
-
-        new Date(
-
-            item.captured_at
-
-        )
-
-        .toLocaleString(
-
-            "en-IN",
-
-            {
-
-                dateStyle: "medium",
-
-                timeStyle: "medium"
-            }
-        )
-    }
-
-</div>
+                            <div style={{ fontSize: "11px", color: "#94a3b8", marginTop: "4px" }}>
+                                {prettyDate(item.captured_at)}
+                            </div>
                         </div>
                     </div>
                 ))}

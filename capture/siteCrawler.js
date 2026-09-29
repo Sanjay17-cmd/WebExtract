@@ -91,7 +91,6 @@ async function crawlWebsite(
                     config.delayMs
                 );
 
-                // callback
                 await onPage(
                     page,
                     current.url,
