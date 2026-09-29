@@ -11,36 +11,27 @@ export async function saveCapture(
     apiCalls
 ) {
     const html = await webview.executeJavaScript(`
-        document.documentElement.outerHTML
+        (() => {
+            const snapshot = document.documentElement.cloneNode(true);
+            const sourceImages = [...document.images];
+            const snapshotImages = [...snapshot.querySelectorAll("img")];
+
+            sourceImages.forEach((image, index) => {
+                const snapshotImage = snapshotImages[index];
+                if (!snapshotImage) return;
+
+                const source = image.currentSrc || image.src;
+                if (source) snapshotImage.setAttribute("src", source);
+                snapshotImage.removeAttribute("srcset");
+                snapshotImage.removeAttribute("loading");
+            });
+
+            return snapshot.outerHTML;
+        })()
     `);
 
     const title = await webview.executeJavaScript(`
         document.title
-    `);
-
-    const browserState = await webview.executeJavaScript(`
-        (() => {
-            const readStorage = (storage) => {
-                const values = {};
-                for (let index = 0; index < storage.length; index += 1) {
-                    const key = storage.key(index);
-                    values[key] = storage.getItem(key);
-                }
-                return values;
-            };
-            const safeReadStorage = (name) => {
-                try {
-                    return readStorage(window[name]);
-                } catch (_) {
-                    return {};
-                }
-            };
-
-            return {
-                localStorage: safeReadStorage("localStorage"),
-                sessionStorage: safeReadStorage("sessionStorage")
-            };
-        })()
     `);
 
     const url = webview.getURL();
@@ -62,8 +53,7 @@ export async function saveCapture(
         headings,
         sections,
         apiCalls,
-        webContentsId,
-        browserState
+        webContentsId
     });
 
     return result;

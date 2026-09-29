@@ -72,10 +72,8 @@ ipcMain.handle("save-capture", async (event, captureData) => {
                 ? await getElectronCookies(undefined, wc.session)
                 : [];
             await captureViaPlaywrightCDP(captureData.url, screenshotPath, {
-                browserState: {
-                    ...(captureData.browserState || {}),
-                    cookies
-                }
+                htmlSnapshot: captureData.html,
+                cookies
             });
             screenshotSuccess = true;
             console.log("Playwright session-state screenshot successful!");

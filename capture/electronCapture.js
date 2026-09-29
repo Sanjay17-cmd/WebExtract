@@ -19,9 +19,7 @@ const path = require("path");
  * @param {string} screenshotPath - Where to save the PNG
  * @param {object} options
  * @param {boolean} options.fullPage - Capture full page (default: true)
- * @param {number} options.maxHeight - Max capture height in px (default: 15000)
- *                                     Prevents infinite-scroll pages from
- *                                     producing impossibly large images
+ * @param {number} options.maxHeight - Maximum fallback capture height in px.
  */
 async function captureWebContents(webContentsId, screenshotPath, options = {}) {
     const {
@@ -84,7 +82,7 @@ async function captureWebContents(webContentsId, screenshotPath, options = {}) {
 
         const contentHeight = Math.min(
             Math.ceil(size.height || 900),
-            maxHeight // Cap for infinite-scroll pages
+            maxHeight // Prevent an oversized fallback image.
         );
 
         // 2. Expand viewport to full page size (if possible)
