@@ -636,12 +636,6 @@ WebExtract/
 
 ---
 
-## 📄 License
-
-This project is licensed under the [ISC License](LICENSE).
-
----
-
 <p align="center">
   <b>Built with ❤️ by <a href="https://github.com/Sanjay17-cmd">Sanjay</a></b><br/>
   Star ⭐ the repository on <a href="https://github.com/Sanjay17-cmd/WebExtract">GitHub</a> if you found this project helpful!
