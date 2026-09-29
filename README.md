@@ -415,15 +415,15 @@ The **Front Page** provides an interactive web browsing environment with URL nav
 
 <br/>
 
-#### Front Page — View 2: Capture Actions & Bulk Scraper View
-<!-- ================================================================= -->
-<!-- SCREENSHOT SLOT: Front Page (View 2)                              -->
-<!-- Drop your second front-page screenshot below:                     -->
-<!-- ================================================================= -->
+#### Front Page — View 2: Live Browser with Crawler Settings Drawer
 <p align="center">
-  <img src="readme_screenshots/Screenshot%202026-09-29%20200014.png" alt="Front Page - View 2 Placeholder" width="950" />
+  <img src="readme_screenshots/image.png" alt="Front Page - Crawler Settings and Controls" width="950" />
 </p>
-<sub><em>💡 Note: Replace the image source above with your second front page screenshot if you have a distinct secondary view.</em></sub>
+
+<!-- ================================================================= -->
+<!-- SCREENSHOT CODE BLOCK: Front Page (View 2)                        -->
+<!-- File: readme_screenshots/image.png                               -->
+<!-- ================================================================= -->
 
 ---
 
@@ -516,15 +516,14 @@ Displays the pixel-level difference heatmap generated via `pixelmatch` (highligh
 The **Crawl History** view monitors recursive crawling jobs, displaying root URLs, start/finish timestamps, total pages visited, and page-by-page deep extraction hierarchies.
 
 #### Crawl History — Crawl Run Audit & Hierarchical Page Tree
-<!-- ================================================================= -->
-<!-- SCREENSHOT SLOT: Crawl History View                               -->
-<!-- Add your Crawl History screenshot file into readme_screenshots/   -->
-<!-- and reference it below:                                           -->
-<!-- ================================================================= -->
 <p align="center">
-  <img src="readme_screenshots/crawl_history_screenshot.png" alt="Crawl History Screenshot Placeholder" width="950" />
+  <img src="readme_screenshots/crawl_history_screenshot.png" alt="Crawl History View and Extracted Page Data" width="950" />
 </p>
-<sub><em>💡 Note: Place your crawl history image into `readme_screenshots/crawl_history_screenshot.png` (or update the filename in the tag above).</em></sub>
+
+<!-- ================================================================= -->
+<!-- SCREENSHOT CODE BLOCK: Crawl History View                         -->
+<!-- File: readme_screenshots/crawl_history_screenshot.png             -->
+<!-- ================================================================= -->
 
 ---
 
@@ -533,14 +532,14 @@ The **Crawl History** view monitors recursive crawling jobs, displaying root URL
 | Section | Image File | Description |
 |---|---|---|
 | **Front Page (1/2)** | `readme_screenshots/Screenshot 2026-09-29 200014.png` | Main Dashboard: Active Webview, Bulk URL Drawer, HTML Tree |
-| **Front Page (2/2)** | *Placeholder / Custom* | Secondary Dashboard view / Capture in action |
+| **Front Page (2/2)** | `readme_screenshots/image.png` | Main Dashboard: Live Webview with Crawler Settings Drawer |
 | **Single History** | `readme_screenshots/Screenshot 2026-09-29 200025.png` | Capture Audit: YouTube metrics, element counts, screenshot preview |
 | **Compare Versions (1/3)** | `readme_screenshots/Screenshot 2026-09-29 200032.png` | Comparison: Metric difference cards and JSON element deltas |
 | **Compare Versions (2/3)** | `readme_screenshots/Screenshot 2026-09-29 200041.png` | Comparison: Side-by-side full page screenshot comparator |
 | **Compare Versions (3/3)** | `readme_screenshots/Screenshot 2026-09-29 200049.png` | Comparison: Pixelmatch visual difference heatmap |
 | **Compare Source Diff** | `readme_screenshots/Screenshot 2026-09-29 200057.png` | Comparison: Monaco side-by-side HTML source code diff editor |
 | **Version Selector** | `readme_screenshots/Screenshot 2026-09-29 200112.png` | Comparison: Version selection dropdown menu |
-| **Crawl History** | *Placeholder / Custom* | Crawl run session list and crawled page tree |
+| **Crawl History** | `readme_screenshots/crawl_history_screenshot.png` | Crawl Run Audit: Session run list, page tree, and structured data viewer |
 
 ---
 
@@ -589,7 +588,9 @@ WebExtract/
 │   ├── Screenshot 2026-09-29 200041.png
 │   ├── Screenshot 2026-09-29 200049.png
 │   ├── Screenshot 2026-09-29 200057.png
-│   └── Screenshot 2026-09-29 200112.png
+│   ├── Screenshot 2026-09-29 200112.png
+│   ├── image.png
+│   └── crawl_history_screenshot.png
 │
 ├── data/                             # Runtime persistence directory (generated at runtime)
 │   ├── screenshots/                  # Single page screenshots (.png)
