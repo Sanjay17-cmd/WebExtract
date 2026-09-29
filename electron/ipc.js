@@ -1,9 +1,10 @@
 const fs = require("fs");
 const path = require("path");
-const { ipcMain, session } = require("electron");
+const { ipcMain, webContents } = require("electron");
 const { pool } = require("../storage/postgres");
 const { captureWebContents } = require("../capture/electronCapture");
 const { captureViaPlaywrightCDP } = require("../capture/playwrightCdpCapture");
+const { getElectronCookies } = require("../capture/sessionExport");
 const { createVisualDiff } = require("../capture/visualDiff");
 
 // ========================================
@@ -61,14 +62,25 @@ ipcMain.handle("save-capture", async (event, captureData) => {
         // =========================================================
         let screenshotSuccess = false;
 
-        // 1. Primary Method: Playwright connectOverCDP to live Electron session
+        // 1. Primary Method: Playwright with state exported from the webview
         try {
-            console.log("Capturing full-page screenshot via Playwright connectOverCDP...");
-            await captureViaPlaywrightCDP(captureData.url, screenshotPath);
+            console.log("Capturing full-page screenshot via Playwright with webview session state...");
+            const wc = captureData.webContentsId
+                ? webContents.fromId(captureData.webContentsId)
+                : null;
+            const cookies = wc && captureData.url
+                ? await getElectronCookies(undefined, wc.session)
+                : [];
+            await captureViaPlaywrightCDP(captureData.url, screenshotPath, {
+                browserState: {
+                    ...(captureData.browserState || {}),
+                    cookies
+                }
+            });
             screenshotSuccess = true;
-            console.log("Playwright connectOverCDP screenshot successful!");
+            console.log("Playwright session-state screenshot successful!");
         } catch (pwErr) {
-            console.warn("Playwright CDP capture failed, trying in-session CDP fallback:", pwErr.message);
+            console.warn("Playwright state capture failed, trying in-session CDP fallback:", pwErr.message);
         }
 
         // 2. Secondary Method: In-session WebContents CDP capture (only webview, no app UI)

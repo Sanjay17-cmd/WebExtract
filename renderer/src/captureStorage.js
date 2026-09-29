@@ -18,6 +18,31 @@ export async function saveCapture(
         document.title
     `);
 
+    const browserState = await webview.executeJavaScript(`
+        (() => {
+            const readStorage = (storage) => {
+                const values = {};
+                for (let index = 0; index < storage.length; index += 1) {
+                    const key = storage.key(index);
+                    values[key] = storage.getItem(key);
+                }
+                return values;
+            };
+            const safeReadStorage = (name) => {
+                try {
+                    return readStorage(window[name]);
+                } catch (_) {
+                    return {};
+                }
+            };
+
+            return {
+                localStorage: safeReadStorage("localStorage"),
+                sessionStorage: safeReadStorage("sessionStorage")
+            };
+        })()
+    `);
+
     const url = webview.getURL();
 
     // Get the webContentsId so the main process can capture
@@ -37,7 +62,8 @@ export async function saveCapture(
         headings,
         sections,
         apiCalls,
-        webContentsId
+        webContentsId,
+        browserState
     });
 
     return result;

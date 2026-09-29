@@ -5,13 +5,13 @@ function normalizeSameSite(value) {
 
     if (v === "strict") return "Strict";
     if (v === "lax") return "Lax";
-    if (v === "none") return "None";
+    if (v === "none" || v === "no_restriction") return "None";
 
     return undefined;
 }
 
-async function getElectronCookies(url) {
-    const cookies = await session.defaultSession.cookies.get({ url });
+async function getElectronCookies(url, electronSession = session.defaultSession) {
+    const cookies = await electronSession.cookies.get(url ? { url } : {});
 
     return cookies.map((c) => {
         const cookie = {
